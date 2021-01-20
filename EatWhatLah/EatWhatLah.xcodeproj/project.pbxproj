@@ -14,6 +14,7 @@
 		18F8A0B725B8802500BF41C9 /* EatWhatLah.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0B525B8802500BF41C9 /* EatWhatLah.xcdatamodeld */; };
 		18F8A0B925B8802800BF41C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0B825B8802800BF41C9 /* Assets.xcassets */; };
 		18F8A0BC25B8802800BF41C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0BA25B8802800BF41C9 /* LaunchScreen.storyboard */; };
+		5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD882225B88EA9006D6358 /* CommunityController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		18F8A0B825B8802800BF41C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18F8A0BB25B8802800BF41C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18F8A0BD25B8802800BF41C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DCD882225B88EA9006D6358 /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				18F8A0AC25B8802500BF41C9 /* AppDelegate.swift */,
 				18F8A0AE25B8802500BF41C9 /* SceneDelegate.swift */,
 				18F8A0B025B8802500BF41C9 /* ViewController.swift */,
+				5DCD882225B88EA9006D6358 /* CommunityController.swift */,
 				18F8A0B225B8802500BF41C9 /* Main.storyboard */,
 				18F8A0B825B8802800BF41C9 /* Assets.xcassets */,
 				18F8A0BA25B8802800BF41C9 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				18F8A0AD25B8802500BF41C9 /* AppDelegate.swift in Sources */,
 				18F8A0B725B8802500BF41C9 /* EatWhatLah.xcdatamodeld in Sources */,
 				18F8A0AF25B8802500BF41C9 /* SceneDelegate.swift in Sources */,
+				5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
