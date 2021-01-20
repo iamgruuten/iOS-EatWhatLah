@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="09W-PF-1cC">
+            <objects>
+                <viewController id="b9C-i6-JjU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vuv-Ey-Yom">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBq-Ow-C86">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="537"/>
+                                <color key="backgroundColor" red="0.94494354719999996" green="0.98123723269999996" blue="0.93332773449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPq-9l-DVo">
+                                <rect key="frame" x="0.0" y="587" width="414" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nPq-9l-DVo" secondAttribute="height" multiplier="207:35" id="hJm-hC-hXD"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Don't Know What To Eat?">
+                                        <attributes>
+                                            <color key="NSColor" red="0.12020384520000001" green="0.20423847440000001" blue="0.34119313959999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="24" name="SFProText-Semibold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="nKq-k2-CJs">
+                                <rect key="frame" x="6" y="809" width="179" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="pageIndicatorTintColor" systemColor="opaqueSeparatorColor"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemPinkColor"/>
+                            </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBs-Bh-LNR">
+                                <rect key="frame" x="58" y="665" width="313" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Find your favorite food anytime from your nearby location">
+                                        <attributes>
+                                            <color key="NSColor" red="0.6622747779" green="0.85465139150000002" blue="0.86275142429999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="14" name="SFProText-Semibold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pzp-Cj-HEI"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nPq-9l-DVo" firstAttribute="trailing" secondItem="Pzp-Cj-HEI" secondAttribute="trailing" id="03T-ws-Gwa"/>
+                            <constraint firstItem="fBq-Ow-C86" firstAttribute="leading" secondItem="Pzp-Cj-HEI" secondAttribute="leading" id="2E7-bQ-miD"/>
+                            <constraint firstAttribute="trailing" secondItem="fBq-Ow-C86" secondAttribute="trailing" id="9tq-li-TUe"/>
+                            <constraint firstItem="nPq-9l-DVo" firstAttribute="top" secondItem="fBq-Ow-C86" secondAttribute="bottom" constant="50" id="K8G-65-bg7"/>
+                            <constraint firstItem="nPq-9l-DVo" firstAttribute="leading" secondItem="Pzp-Cj-HEI" secondAttribute="leading" id="kbl-vC-XdN"/>
+                            <constraint firstItem="fBq-Ow-C86" firstAttribute="top" secondItem="Vuv-Ey-Yom" secondAttribute="top" id="s7B-Ml-eBa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iZw-Wd-26c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-310.14492753623193" y="-264.50892857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LQf-s7-cFI">
+            <objects>
+                <viewController id="Apc-AI-ULr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RQ2-8r-qXP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hAe-de-9E6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sW9-8w-8tO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="503" y="-265"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

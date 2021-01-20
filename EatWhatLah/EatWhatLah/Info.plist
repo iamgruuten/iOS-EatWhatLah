@@ -55,6 +55,29 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SFProText-Heavy.ttf</string>
+		<string>SFProText-Bold.tff</string>
+		<string>SFProText-BoldItalic.ttf</string>
+		<string>SFProText-HeavyItalic.ttf</string>
+		<string>SFProText-Light.ttf
+</string>
+		<string>SFProText-SemiBold.ttf</string>
+		<string>SFProText-LightItalic.ttf
+</string>
+		<string>SFProText-Medium.ttf
+</string>
+		<string>SFProText-MediumItalic.ttf
+</string>
+		<string>SFProText-Regular.ttf
+</string>
+		<string>SFProText-RegularItalic.ttf
+</string>
+		<string>SFProText-RegularItalic.ttf
+</string>
+		<string>SFProText-SemiBoldItalic.ttf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
