@@ -27,7 +27,7 @@
 		18F8A0DD25B88D4500BF41C9 /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0D125B88D4500BF41C9 /* SFProText-Regular.ttf */; };
 		18F8A0DE25B88D4500BF41C9 /* SFProText-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0D225B88D4500BF41C9 /* SFProText-BoldItalic.ttf */; };
 		18F8A0DF25B88D4500BF41C9 /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0D325B88D4500BF41C9 /* SFProText-Bold.ttf */; };
-		18F8A0E125B891E400BF41C9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0BD25B8802800BF41C9 /* Info.plist */; };
+		18F8A0E825B8AA0100BF41C9 /* onboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0E725B8AA0100BF41C9 /* onboardController.swift */; };
 		5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD882225B88EA9006D6358 /* CommunityController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +54,7 @@
 		18F8A0D125B88D4500BF41C9 /* SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-Regular.ttf"; path = "../../../../../Downloads/sfwin-master/SFPro/TrueType/SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		18F8A0D225B88D4500BF41C9 /* SFProText-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-BoldItalic.ttf"; path = "../../../../../Downloads/sfwin-master/SFPro/TrueType/SFProText-BoldItalic.ttf"; sourceTree = "<group>"; };
 		18F8A0D325B88D4500BF41C9 /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-Bold.ttf"; path = "../../../../../Downloads/sfwin-master/SFPro/TrueType/SFProText-Bold.ttf"; sourceTree = "<group>"; };
+		18F8A0E725B8AA0100BF41C9 /* onboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardController.swift; sourceTree = "<group>"; };
 		5DCD882225B88EA9006D6358 /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +99,7 @@
 				18F8A0BD25B8802800BF41C9 /* Info.plist */,
 				18F8A0B525B8802500BF41C9 /* EatWhatLah.xcdatamodeld */,
 				18F8A0C425B884EE00BF41C9 /* onboard.storyboard */,
+				18F8A0E725B8AA0100BF41C9 /* onboardController.swift */,
 			);
 			path = EatWhatLah;
 			sourceTree = "<group>";
@@ -188,7 +190,6 @@
 				18F8A0DE25B88D4500BF41C9 /* SFProText-BoldItalic.ttf in Resources */,
 				18F8A0D925B88D4500BF41C9 /* SFProText-SemiBold.ttf in Resources */,
 				18F8A0B425B8802500BF41C9 /* Main.storyboard in Resources */,
-				18F8A0E125B891E400BF41C9 /* Info.plist in Resources */,
 				18F8A0DD25B88D4500BF41C9 /* SFProText-Regular.ttf in Resources */,
 				18F8A0DF25B88D4500BF41C9 /* SFProText-Bold.ttf in Resources */,
 				18F8A0D625B88D4500BF41C9 /* SFProText-Light.ttf in Resources */,
@@ -208,6 +209,7 @@
 				18F8A0B125B8802500BF41C9 /* ViewController.swift in Sources */,
 				18F8A0AD25B8802500BF41C9 /* AppDelegate.swift in Sources */,
 				18F8A0B725B8802500BF41C9 /* EatWhatLah.xcdatamodeld in Sources */,
+				18F8A0E825B8AA0100BF41C9 /* onboardController.swift in Sources */,
 				18F8A0AF25B8802500BF41C9 /* SceneDelegate.swift in Sources */,
 				5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */,
 			);
