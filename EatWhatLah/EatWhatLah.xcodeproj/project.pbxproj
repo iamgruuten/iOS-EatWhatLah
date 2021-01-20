@@ -28,6 +28,7 @@
 		18F8A0DE25B88D4500BF41C9 /* SFProText-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0D225B88D4500BF41C9 /* SFProText-BoldItalic.ttf */; };
 		18F8A0DF25B88D4500BF41C9 /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0D325B88D4500BF41C9 /* SFProText-Bold.ttf */; };
 		18F8A0E125B891E400BF41C9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0BD25B8802800BF41C9 /* Info.plist */; };
+		5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD882225B88EA9006D6358 /* CommunityController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		18F8A0D125B88D4500BF41C9 /* SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-Regular.ttf"; path = "../../../../../Downloads/sfwin-master/SFPro/TrueType/SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		18F8A0D225B88D4500BF41C9 /* SFProText-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-BoldItalic.ttf"; path = "../../../../../Downloads/sfwin-master/SFPro/TrueType/SFProText-BoldItalic.ttf"; sourceTree = "<group>"; };
 		18F8A0D325B88D4500BF41C9 /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-Bold.ttf"; path = "../../../../../Downloads/sfwin-master/SFPro/TrueType/SFProText-Bold.ttf"; sourceTree = "<group>"; };
+		5DCD882225B88EA9006D6358 /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				18F8A0AC25B8802500BF41C9 /* AppDelegate.swift */,
 				18F8A0AE25B8802500BF41C9 /* SceneDelegate.swift */,
 				18F8A0B025B8802500BF41C9 /* ViewController.swift */,
+				5DCD882225B88EA9006D6358 /* CommunityController.swift */,
 				18F8A0B225B8802500BF41C9 /* Main.storyboard */,
 				18F8A0B825B8802800BF41C9 /* Assets.xcassets */,
 				18F8A0BA25B8802800BF41C9 /* LaunchScreen.storyboard */,
@@ -206,6 +209,7 @@
 				18F8A0AD25B8802500BF41C9 /* AppDelegate.swift in Sources */,
 				18F8A0B725B8802500BF41C9 /* EatWhatLah.xcdatamodeld in Sources */,
 				18F8A0AF25B8802500BF41C9 /* SceneDelegate.swift in Sources */,
+				5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
