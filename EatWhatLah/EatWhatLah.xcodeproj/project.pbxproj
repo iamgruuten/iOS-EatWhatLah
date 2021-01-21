@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185DF98625B991F300B5929D /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF98525B991F300B5929D /* EmailViewController.swift */; };
+		185DF98B25B9955B00B5929D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF98A25B9955B00B5929D /* Validation.swift */; };
 		18F8A0AD25B8802500BF41C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0AC25B8802500BF41C9 /* AppDelegate.swift */; };
 		18F8A0AF25B8802500BF41C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0AE25B8802500BF41C9 /* SceneDelegate.swift */; };
 		18F8A0B125B8802500BF41C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0B025B8802500BF41C9 /* ViewController.swift */; };
@@ -28,10 +30,17 @@
 		18F8A0DE25B88D4500BF41C9 /* SFProText-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0D225B88D4500BF41C9 /* SFProText-BoldItalic.ttf */; };
 		18F8A0DF25B88D4500BF41C9 /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0D325B88D4500BF41C9 /* SFProText-Bold.ttf */; };
 		18F8A0E825B8AA0100BF41C9 /* onboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0E725B8AA0100BF41C9 /* onboardController.swift */; };
+		18F8A0F425B9223200BF41C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0F325B9223200BF41C9 /* User.swift */; };
+		18F8A0F725B92FA700BF41C9 /* register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0F625B92FA700BF41C9 /* register.swift */; };
+		18F8A0FA25B9312300BF41C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0F925B9312300BF41C9 /* GoogleService-Info.plist */; };
+		3524AA7798A63906661003C8 /* Pods_EatWhatLah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */; };
 		5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD882225B88EA9006D6358 /* CommunityController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1795CC35D3A281EF2DCDC854 /* Pods-EatWhatLah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatWhatLah.debug.xcconfig"; path = "Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah.debug.xcconfig"; sourceTree = "<group>"; };
+		185DF98525B991F300B5929D /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		185DF98A25B9955B00B5929D /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		18F8A0A925B8802500BF41C9 /* EatWhatLah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatWhatLah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8A0AC25B8802500BF41C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F8A0AE25B8802500BF41C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +64,12 @@
 		18F8A0D225B88D4500BF41C9 /* SFProText-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-BoldItalic.ttf"; path = "../../../../../Downloads/sfwin-master/SFPro/TrueType/SFProText-BoldItalic.ttf"; sourceTree = "<group>"; };
 		18F8A0D325B88D4500BF41C9 /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-Bold.ttf"; path = "../../../../../Downloads/sfwin-master/SFPro/TrueType/SFProText-Bold.ttf"; sourceTree = "<group>"; };
 		18F8A0E725B8AA0100BF41C9 /* onboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardController.swift; sourceTree = "<group>"; };
+		18F8A0F325B9223200BF41C9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		18F8A0F625B92FA700BF41C9 /* register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register.swift; sourceTree = "<group>"; };
+		18F8A0F925B9312300BF41C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33113F49FB3C8F4775662E66 /* Pods-EatWhatLah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatWhatLah.release.xcconfig"; path = "Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah.release.xcconfig"; sourceTree = "<group>"; };
 		5DCD882225B88EA9006D6358 /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
+		92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatWhatLah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3524AA7798A63906661003C8 /* Pods_EatWhatLah.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +90,8 @@
 				18F8A0C725B88D0A00BF41C9 /* fonts */,
 				18F8A0AB25B8802500BF41C9 /* EatWhatLah */,
 				18F8A0AA25B8802500BF41C9 /* Products */,
+				4687C70958D12C0E8070D94A /* Pods */,
+				9A8BF4FC7BF04EF1061FDA2C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +106,7 @@
 		18F8A0AB25B8802500BF41C9 /* EatWhatLah */ = {
 			isa = PBXGroup;
 			children = (
+				18F8A0F925B9312300BF41C9 /* GoogleService-Info.plist */,
 				18F8A0AC25B8802500BF41C9 /* AppDelegate.swift */,
 				18F8A0AE25B8802500BF41C9 /* SceneDelegate.swift */,
 				18F8A0B025B8802500BF41C9 /* ViewController.swift */,
@@ -100,6 +118,10 @@
 				18F8A0B525B8802500BF41C9 /* EatWhatLah.xcdatamodeld */,
 				18F8A0C425B884EE00BF41C9 /* onboard.storyboard */,
 				18F8A0E725B8AA0100BF41C9 /* onboardController.swift */,
+				18F8A0F325B9223200BF41C9 /* User.swift */,
+				18F8A0F625B92FA700BF41C9 /* register.swift */,
+				185DF98525B991F300B5929D /* EmailViewController.swift */,
+				185DF98A25B9955B00B5929D /* Validation.swift */,
 			);
 			path = EatWhatLah;
 			sourceTree = "<group>";
@@ -123,6 +145,23 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		4687C70958D12C0E8070D94A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1795CC35D3A281EF2DCDC854 /* Pods-EatWhatLah.debug.xcconfig */,
+				33113F49FB3C8F4775662E66 /* Pods-EatWhatLah.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9A8BF4FC7BF04EF1061FDA2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18F8A0C025B8802800BF41C9 /* Build configuration list for PBXNativeTarget "EatWhatLah" */;
 			buildPhases = (
+				2441BF713747CA428299F2E4 /* [CP] Check Pods Manifest.lock */,
 				18F8A0A525B8802500BF41C9 /* Sources */,
 				18F8A0A625B8802500BF41C9 /* Frameworks */,
 				18F8A0A725B8802500BF41C9 /* Resources */,
+				2BDE981DE743FC3153F863D0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,6 +233,7 @@
 				18F8A0B425B8802500BF41C9 /* Main.storyboard in Resources */,
 				18F8A0DD25B88D4500BF41C9 /* SFProText-Regular.ttf in Resources */,
 				18F8A0DF25B88D4500BF41C9 /* SFProText-Bold.ttf in Resources */,
+				18F8A0FA25B9312300BF41C9 /* GoogleService-Info.plist in Resources */,
 				18F8A0D625B88D4500BF41C9 /* SFProText-Light.ttf in Resources */,
 				18F8A0D425B88D4500BF41C9 /* SFProText-Medium.ttf in Resources */,
 				18F8A0D525B88D4500BF41C9 /* SFProText-SemiBoldItalic.ttf in Resources */,
@@ -201,6 +243,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2441BF713747CA428299F2E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EatWhatLah-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2BDE981DE743FC3153F863D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18F8A0A525B8802500BF41C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -208,9 +292,13 @@
 			files = (
 				18F8A0B125B8802500BF41C9 /* ViewController.swift in Sources */,
 				18F8A0AD25B8802500BF41C9 /* AppDelegate.swift in Sources */,
+				185DF98625B991F300B5929D /* EmailViewController.swift in Sources */,
 				18F8A0B725B8802500BF41C9 /* EatWhatLah.xcdatamodeld in Sources */,
 				18F8A0E825B8AA0100BF41C9 /* onboardController.swift in Sources */,
+				18F8A0F725B92FA700BF41C9 /* register.swift in Sources */,
+				18F8A0F425B9223200BF41C9 /* User.swift in Sources */,
 				18F8A0AF25B8802500BF41C9 /* SceneDelegate.swift in Sources */,
+				185DF98B25B9955B00B5929D /* Validation.swift in Sources */,
 				5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +443,7 @@
 		};
 		18F8A0C125B8802800BF41C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1795CC35D3A281EF2DCDC854 /* Pods-EatWhatLah.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -374,6 +463,7 @@
 		};
 		18F8A0C225B8802800BF41C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33113F49FB3C8F4775662E66 /* Pods-EatWhatLah.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
