@@ -86,6 +86,8 @@
 	<string>We will need camera access to upload your post</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app want to select picutres</string>
+	<key>FirebaseAutomaticScreenReportingEnabled</key>
+	<false/>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

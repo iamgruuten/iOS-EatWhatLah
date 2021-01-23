@@ -73,7 +73,7 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
                     self.ref = Database.database().reference()
                     
                     self.ref.child("users").child(self.appDelegate.user.uid).updateChildValues(
-                            ["profileURL":url?.absoluteString]
+                        ["profileURL":url?.absoluteString]
                     )
                     
                 } else {
@@ -153,7 +153,14 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
                 ["Email": appDelegate.user.email,
                  "Bio": "0",
                  "Name":username.text!,
-                 "Preference":0
+                 "Preference": "0"
+                ]
+            )
+            
+            //Initialize user favourite places
+            ref.child("favourite").child(appDelegate.user.uid).setValue(
+                [
+                    "Venue":"Nothing here yet"
                 ]
             )
             

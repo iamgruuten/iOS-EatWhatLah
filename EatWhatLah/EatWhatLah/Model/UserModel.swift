@@ -10,6 +10,7 @@ import UIKit
 
 class User{
     var name:String;
+    var bio:String;
     var favourite:[String];
     var email:String;
     var uid:String;
@@ -19,6 +20,7 @@ class User{
     init(){
         name = "";
         uid = "";
+        bio = "";
         favourite = [];
         email = "";
         password = "";
