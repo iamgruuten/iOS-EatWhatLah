@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		185DF98625B991F300B5929D /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF98525B991F300B5929D /* EmailViewController.swift */; };
 		185DF98B25B9955B00B5929D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF98A25B9955B00B5929D /* Validation.swift */; };
+		188D6F3625BA5FBC00061EEB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D6F3525BA5FBC00061EEB /* ImagePicker.swift */; };
 		18F8A0AD25B8802500BF41C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0AC25B8802500BF41C9 /* AppDelegate.swift */; };
 		18F8A0AF25B8802500BF41C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0AE25B8802500BF41C9 /* SceneDelegate.swift */; };
 		18F8A0B125B8802500BF41C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0B025B8802500BF41C9 /* ViewController.swift */; };
@@ -31,7 +32,6 @@
 		18F8A0DF25B88D4500BF41C9 /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0D325B88D4500BF41C9 /* SFProText-Bold.ttf */; };
 		18F8A0E825B8AA0100BF41C9 /* onboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0E725B8AA0100BF41C9 /* onboardController.swift */; };
 		18F8A0F425B9223200BF41C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0F325B9223200BF41C9 /* User.swift */; };
-		18F8A0F725B92FA700BF41C9 /* register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0F625B92FA700BF41C9 /* register.swift */; };
 		18F8A0FA25B9312300BF41C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0F925B9312300BF41C9 /* GoogleService-Info.plist */; };
 		3524AA7798A63906661003C8 /* Pods_EatWhatLah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */; };
 		5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD882225B88EA9006D6358 /* CommunityController.swift */; };
@@ -41,6 +41,7 @@
 		1795CC35D3A281EF2DCDC854 /* Pods-EatWhatLah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatWhatLah.debug.xcconfig"; path = "Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah.debug.xcconfig"; sourceTree = "<group>"; };
 		185DF98525B991F300B5929D /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		185DF98A25B9955B00B5929D /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		188D6F3525BA5FBC00061EEB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		18F8A0A925B8802500BF41C9 /* EatWhatLah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatWhatLah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8A0AC25B8802500BF41C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F8A0AE25B8802500BF41C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		18F8A0D325B88D4500BF41C9 /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-Bold.ttf"; path = "../../../../../Downloads/sfwin-master/SFPro/TrueType/SFProText-Bold.ttf"; sourceTree = "<group>"; };
 		18F8A0E725B8AA0100BF41C9 /* onboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardController.swift; sourceTree = "<group>"; };
 		18F8A0F325B9223200BF41C9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		18F8A0F625B92FA700BF41C9 /* register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register.swift; sourceTree = "<group>"; };
 		18F8A0F925B9312300BF41C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		33113F49FB3C8F4775662E66 /* Pods-EatWhatLah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatWhatLah.release.xcconfig"; path = "Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah.release.xcconfig"; sourceTree = "<group>"; };
 		5DCD882225B88EA9006D6358 /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
@@ -84,6 +84,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		188D6F3925BBB4E800061EEB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18F8A0B225B8802500BF41C9 /* Main.storyboard */,
+				18F8A0BA25B8802800BF41C9 /* LaunchScreen.storyboard */,
+				18F8A0C425B884EE00BF41C9 /* onboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		188D6F3A25BBB4EE00061EEB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				188D6F3525BA5FBC00061EEB /* ImagePicker.swift */,
+				18F8A0F325B9223200BF41C9 /* User.swift */,
+				185DF98A25B9955B00B5929D /* Validation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		188D6F3B25BBB4F300061EEB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				185DF98525B991F300B5929D /* EmailViewController.swift */,
+				18F8A0E725B8AA0100BF41C9 /* onboardController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		188D6F3E25BBB52C00061EEB /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				18F8A0AC25B8802500BF41C9 /* AppDelegate.swift */,
+				18F8A0AE25B8802500BF41C9 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		18F8A0A025B8802500BF41C9 = {
 			isa = PBXGroup;
 			children = (
@@ -106,22 +144,16 @@
 		18F8A0AB25B8802500BF41C9 /* EatWhatLah */ = {
 			isa = PBXGroup;
 			children = (
+				188D6F3E25BBB52C00061EEB /* Delegate */,
+				188D6F3B25BBB4F300061EEB /* Controller */,
+				188D6F3A25BBB4EE00061EEB /* Model */,
+				188D6F3925BBB4E800061EEB /* View */,
 				18F8A0F925B9312300BF41C9 /* GoogleService-Info.plist */,
-				18F8A0AC25B8802500BF41C9 /* AppDelegate.swift */,
-				18F8A0AE25B8802500BF41C9 /* SceneDelegate.swift */,
 				18F8A0B025B8802500BF41C9 /* ViewController.swift */,
 				5DCD882225B88EA9006D6358 /* CommunityController.swift */,
-				18F8A0B225B8802500BF41C9 /* Main.storyboard */,
 				18F8A0B825B8802800BF41C9 /* Assets.xcassets */,
-				18F8A0BA25B8802800BF41C9 /* LaunchScreen.storyboard */,
 				18F8A0BD25B8802800BF41C9 /* Info.plist */,
 				18F8A0B525B8802500BF41C9 /* EatWhatLah.xcdatamodeld */,
-				18F8A0C425B884EE00BF41C9 /* onboard.storyboard */,
-				18F8A0E725B8AA0100BF41C9 /* onboardController.swift */,
-				18F8A0F325B9223200BF41C9 /* User.swift */,
-				18F8A0F625B92FA700BF41C9 /* register.swift */,
-				185DF98525B991F300B5929D /* EmailViewController.swift */,
-				185DF98A25B9955B00B5929D /* Validation.swift */,
 			);
 			path = EatWhatLah;
 			sourceTree = "<group>";
@@ -295,7 +327,7 @@
 				185DF98625B991F300B5929D /* EmailViewController.swift in Sources */,
 				18F8A0B725B8802500BF41C9 /* EatWhatLah.xcdatamodeld in Sources */,
 				18F8A0E825B8AA0100BF41C9 /* onboardController.swift in Sources */,
-				18F8A0F725B92FA700BF41C9 /* register.swift in Sources */,
+				188D6F3625BA5FBC00061EEB /* ImagePicker.swift in Sources */,
 				18F8A0F425B9223200BF41C9 /* User.swift in Sources */,
 				18F8A0AF25B8802500BF41C9 /* SceneDelegate.swift in Sources */,
 				185DF98B25B9955B00B5929D /* Validation.swift in Sources */,

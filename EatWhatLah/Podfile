@@ -7,8 +7,9 @@ target 'EatWhatLah' do
   use_frameworks!
 
   # Pods for EatWhatLah
-
+  pod 'SwiftSpinner', '~> 2.2'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 end

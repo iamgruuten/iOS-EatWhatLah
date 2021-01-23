@@ -12,12 +12,16 @@ class User{
     var name:String;
     var favourite:[String];
     var email:String;
+    var uid:String;
+    var password:String;
     var profilePicture:UIImage = UIImage();
     
     init(){
         name = "";
+        uid = "";
         favourite = [];
         email = "";
+        password = "";
     }
 }
 
