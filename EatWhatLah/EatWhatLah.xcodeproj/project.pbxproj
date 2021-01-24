@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183CFC2325BC365B00C07434 /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFC2225BC365B00C07434 /* ExploreController.swift */; };
+		183CFC2725BC49D100C07434 /* nearbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFC2625BC49D100C07434 /* nearbyCell.swift */; };
+		183CFC3125BD224F00C07434 /* nearbyCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFC2F25BD224F00C07434 /* nearbyCellCollectionViewCell.swift */; };
+		183CFC3225BD224F00C07434 /* nearbyCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183CFC3025BD224F00C07434 /* nearbyCellCollectionViewCell.xib */; };
+		183CFC3525BD302200C07434 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFC3425BD302200C07434 /* Places.swift */; };
 		185DF98625B991F300B5929D /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF98525B991F300B5929D /* EmailViewController.swift */; };
 		185DF98B25B9955B00B5929D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF98A25B9955B00B5929D /* Validation.swift */; };
 		188D6F3625BA5FBC00061EEB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D6F3525BA5FBC00061EEB /* ImagePicker.swift */; };
@@ -40,6 +45,11 @@
 
 /* Begin PBXFileReference section */
 		1795CC35D3A281EF2DCDC854 /* Pods-EatWhatLah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatWhatLah.debug.xcconfig"; path = "Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah.debug.xcconfig"; sourceTree = "<group>"; };
+		183CFC2225BC365B00C07434 /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
+		183CFC2625BC49D100C07434 /* nearbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nearbyCell.swift; sourceTree = "<group>"; };
+		183CFC2F25BD224F00C07434 /* nearbyCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nearbyCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		183CFC3025BD224F00C07434 /* nearbyCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = nearbyCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		183CFC3425BD302200C07434 /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		185DF98525B991F300B5929D /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		185DF98A25B9955B00B5929D /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		188D6F3525BA5FBC00061EEB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -102,6 +112,7 @@
 				188D6F3525BA5FBC00061EEB /* ImagePicker.swift */,
 				18F8A0F325B9223200BF41C9 /* UserModel.swift */,
 				185DF98A25B9955B00B5929D /* Validation.swift */,
+				183CFC3425BD302200C07434 /* Places.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -114,6 +125,7 @@
 				5DCD882225B88EA9006D6358 /* CommunityController.swift */,
 				18F8A0E725B8AA0100BF41C9 /* onboardController.swift */,
 				188D6F5525BC025C00061EEB /* LoginViewController.swift */,
+				183CFC2225BC365B00C07434 /* ExploreController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,6 +177,9 @@
 				18F8A0F925B9312300BF41C9 /* GoogleService-Info.plist */,
 				18F8A0B825B8802800BF41C9 /* Assets.xcassets */,
 				18F8A0BD25B8802800BF41C9 /* Info.plist */,
+				183CFC2625BC49D100C07434 /* nearbyCell.swift */,
+				183CFC2F25BD224F00C07434 /* nearbyCellCollectionViewCell.swift */,
+				183CFC3025BD224F00C07434 /* nearbyCellCollectionViewCell.xib */,
 			);
 			path = EatWhatLah;
 			sourceTree = "<group>";
@@ -280,6 +295,7 @@
 				18F8A0D625B88D4500BF41C9 /* SFProText-Light.ttf in Resources */,
 				18F8A0D425B88D4500BF41C9 /* SFProText-Medium.ttf in Resources */,
 				18F8A0D525B88D4500BF41C9 /* SFProText-SemiBoldItalic.ttf in Resources */,
+				183CFC3225BD224F00C07434 /* nearbyCellCollectionViewCell.xib in Resources */,
 				18F8A0DC25B88D4500BF41C9 /* SFProText-HeavyItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,11 +353,15 @@
 				18F8A0AD25B8802500BF41C9 /* AppDelegate.swift in Sources */,
 				185DF98625B991F300B5929D /* EmailViewController.swift in Sources */,
 				18F8A0B725B8802500BF41C9 /* EatWhatLah.xcdatamodeld in Sources */,
+				183CFC2725BC49D100C07434 /* nearbyCell.swift in Sources */,
+				183CFC3525BD302200C07434 /* Places.swift in Sources */,
 				18F8A0E825B8AA0100BF41C9 /* onboardController.swift in Sources */,
+				183CFC2325BC365B00C07434 /* ExploreController.swift in Sources */,
 				188D6F3625BA5FBC00061EEB /* ImagePicker.swift in Sources */,
 				18F8A0F425B9223200BF41C9 /* UserModel.swift in Sources */,
 				18F8A0AF25B8802500BF41C9 /* SceneDelegate.swift in Sources */,
 				185DF98B25B9955B00B5929D /* Validation.swift in Sources */,
+				183CFC3125BD224F00C07434 /* nearbyCellCollectionViewCell.swift in Sources */,
 				5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */,
 				188D6F5625BC025C00061EEB /* LoginViewController.swift in Sources */,
 			);

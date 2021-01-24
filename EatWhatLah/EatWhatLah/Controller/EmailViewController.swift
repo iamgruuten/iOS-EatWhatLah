@@ -73,7 +73,7 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
                     self.ref = Database.database().reference()
                     
                     self.ref.child("users").child(self.appDelegate.user.uid).updateChildValues(
-                        ["profileURL":url?.absoluteString]
+                        ["profileURL":url?.absoluteString as Any]
                     )
                     
                 } else {
