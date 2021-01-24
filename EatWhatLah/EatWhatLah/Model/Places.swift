@@ -12,6 +12,8 @@ class Places{
     var rating:Double = 0;
     var venueImage:UIImage = UIImage();
     var distance:Double = 0;
+    var lat:String = "";
+    var long:String = "";
     
     init(venueName:String, rating:Double, venueImage:UIImage, distance:Double) {
         self.venueName = venueName;

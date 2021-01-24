@@ -22,6 +22,14 @@ class ExploreController : UIViewController{
         
     ]
     
+    let locationManager: CLLocationManager = {
+        $0.requestWhenInUseAuthorization();
+        $0.desiredAccuracy = kCLLocationAccuracyBest;
+        $0.startUpdatingLocation();
+        $0.startUpdatingHeading();
+        return $0
+        
+    }(CLLocationManager())
     
     
     @IBOutlet weak var profileBtn: UIButton!
@@ -48,6 +56,62 @@ class ExploreController : UIViewController{
         
         rngFoodTextField.leftView = imageView;
         
+        let (lat, long) = getCurrentLocation();
+        
+        requestPlacesNearby(lat: lat, long: long, radius: "500", keyword: "", type: "restaurant")
+        
+    }
+    
+    func getCurrentLocation()->(String, String){
+        let currentLocation = locationManager.location;
+        let lat = String((currentLocation?.coordinate.latitude)!)
+        let long = String((currentLocation?.coordinate.longitude)!)
+        
+        return (lat, long)
+    }
+    
+    func requestPlacesNearby(lat:String, long:String, radius:String, keyword:String, type:String){
+        
+        //Api key
+        let apiKey = "AIzaSyDt0QPH_9Bl0h9xWLw2PIFLpnOrcDxGYII"
+        
+        let place : String = "https://maps.googleapis.com/maps/api/place/nearbysearch/"
+        
+        //lat and long
+        var url:String = place + "json?location=" + lat + "," + long;
+        
+        //radius
+        url = url + "&radius="+radius;
+        
+        //type
+        url = url + "&type="+type;
+        
+        //keyword
+        url = url + "&keyword=" + keyword;
+        
+        //key
+        url = url + "&key=" + apiKey;
+        
+        
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            do {
+                let decoder = JSONDecoder()
+                
+                let place = try decoder.decode(PlaceModel.self, from: data!)
+
+                print(place.results!.count)
+            } catch {
+                print("error, unable to request data")
+            }
+        })
+        
+        task.resume()
+
     }
     
     func registerNib() {
