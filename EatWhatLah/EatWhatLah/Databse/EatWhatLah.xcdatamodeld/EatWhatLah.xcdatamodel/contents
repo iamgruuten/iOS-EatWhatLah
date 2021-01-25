@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="SavedLocation" representedClassName="SavedLocation" syncable="YES" codeGenerationType="class">
-        <attribute name="venue" optional="YES" attributeType="String"/>
+        <attribute name="lat" optional="YES" attributeType="String"/>
+        <attribute name="long" optional="YES" attributeType="String"/>
+        <attribute name="place_id" optional="YES" attributeType="String"/>
+        <attribute name="venueName" optional="YES" attributeType="String"/>
+        <relationship name="userID" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserModel" inverseName="savedLocations" inverseEntity="UserModel"/>
     </entity>
     <entity name="UserModel" representedClassName="UserModel" syncable="YES" codeGenerationType="class">
         <attribute name="bio" optional="YES" attributeType="String"/>
@@ -9,9 +13,10 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="preference" optional="YES" attributeType="String"/>
         <attribute name="uid" optional="YES" attributeType="String"/>
+        <relationship name="savedLocations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SavedLocation" inverseName="userID" inverseEntity="SavedLocation"/>
     </entity>
     <elements>
-        <element name="UserModel" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="SavedLocation" positionX="-54" positionY="27" width="128" height="58"/>
+        <element name="SavedLocation" positionX="181.53515625" positionY="26.5234375" width="128" height="118"/>
+        <element name="UserModel" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

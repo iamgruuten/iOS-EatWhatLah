@@ -1,22 +1,20 @@
-
-
 import Foundation
 struct Results : Codable {
-	let business_status : String?
-	let geometry : Geometry?
-	let icon : String?
-	let name : String?
-	let permanently_closed : Bool?
-	let photos : [Photos]?
-	let place_id : String?
-	let plus_code : Plus_code?
-	let price_level : Int?
-	let rating : Double?
-	let reference : String?
-	let scope : String?
-	let types : [String]?
-	let user_ratings_total : Int?
-	let vicinity : String?
+	var business_status : String?
+	var geometry : Geometry?
+	var icon : String?
+	var name : String?
+	var permanently_closed : Bool?
+	var photos : [Photos]?
+	var place_id : String?
+	var plus_code : Plus_code?
+	var price_level : Int?
+	var rating : Double?
+	var reference : String?
+	var scope : String?
+	var types : [String]?
+	var user_ratings_total : Int?
+	var vicinity : String?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -32,13 +30,13 @@ struct Results : Codable {
 		case rating = "rating"
 		case reference = "reference"
 		case scope = "scope"
-		case types = "types"
+		case types  = "types"
 		case user_ratings_total = "user_ratings_total"
 		case vicinity = "vicinity"
 	}
 
 	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
+        let values = try decoder.container(keyedBy: CodingKeys.self)
 		business_status = try values.decodeIfPresent(String.self, forKey: .business_status)
 		geometry = try values.decodeIfPresent(Geometry.self, forKey: .geometry)
 		icon = try values.decodeIfPresent(String.self, forKey: .icon)

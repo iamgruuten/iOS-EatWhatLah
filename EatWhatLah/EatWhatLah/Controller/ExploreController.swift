@@ -14,13 +14,8 @@ import SwiftSpinner
 import CoreLocation
 
 class ExploreController : UIViewController{
-
-    fileprivate let data = [
-        Places(venueName: "China Town", rating: 1.5, venueImage: #imageLiteral(resourceName: "onboard3"), distance: 2.0),
-        Places(venueName: "China Town", rating: 1.5, venueImage: #imageLiteral(resourceName: "Burgers"), distance: 2.0),
-        Places(venueName: "China Town", rating: 1.5, venueImage: #imageLiteral(resourceName: "Burgers"), distance: 2.0)
-        
-    ]
+    
+    var dataNearByVenue = [Places]()
     
     let locationManager: CLLocationManager = {
         $0.requestWhenInUseAuthorization();
@@ -36,12 +31,15 @@ class ExploreController : UIViewController{
     
     @IBOutlet weak var nearbyView: UICollectionView!
     @IBOutlet weak var rngFoodTextField: UITextField!
-
+    
     
     override func viewDidLoad() {
+        self.registerNib();
 
-        registerNib()
+        let (lat, long) = getCurrentLocation();
         
+        requestPlacesNearby(lat: lat, long: long, radius: "500", keyword: "", type: "restaurant")
+
         profileBtn.layer.cornerRadius = 45
         profileBtn.layer.shadowColor = UIColor.lightGray.cgColor
         profileBtn.layer.shadowOffset = CGSize(width: 1, height: 1)
@@ -56,10 +54,7 @@ class ExploreController : UIViewController{
         
         rngFoodTextField.leftView = imageView;
         
-        let (lat, long) = getCurrentLocation();
-        
-        requestPlacesNearby(lat: lat, long: long, radius: "500", keyword: "", type: "restaurant")
-        
+
     }
     
     func getCurrentLocation()->(String, String){
@@ -96,33 +91,84 @@ class ExploreController : UIViewController{
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
+        
         let session = URLSession.shared
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             do {
                 let decoder = JSONDecoder()
                 
-                let place = try decoder.decode(PlaceModel.self, from: data!)
+                let responseDecode = try decoder.decode(PlaceModel.self, from: data!)
+                
+                let placesResponse = responseDecode.results
+                
+                for i in 0...placesResponse!.count-1{
+                    let distance:Double = self.getDistance(lat: String((placesResponse?[i].geometry?.location?.lat)!), long: String((placesResponse?[i].geometry?.location?.lng)!))
+                    let name:String = (placesResponse?[i].name)!
+                    var rating:String = "0"
+                    
+                    if(placesResponse?[i].rating != nil){
+                        rating = String(format: "%.1f", Double(((placesResponse?[i].rating)!)))
+                    }
+                    
+                    var venueImageURL:String = "";
+                    let placeID:String = (placesResponse?[i].place_id)!
+                    
+                    if(placesResponse?[i].photos?[0].photo_reference != nil){
+                        venueImageURL =  "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + (placesResponse?[i].photos?[0].photo_reference)! + "&sensor=true&key=AIzaSyDt0QPH_9Bl0h9xWLw2PIFLpnOrcDxGYII"
+                    }
+                    
+                   
+                    let place = Places(venueName: name, rating: rating, venueImage: venueImageURL, distance: distance, place_id: placeID)
+                    
+                    self.dataNearByVenue.append(place)
+                    
+                    //An object that manages the execution of tasks serially or concurrently on your app's main thread or on a background thread.
+                    DispatchQueue.main.async {
+                        self.nearbyView.reloadData()
+                    }
 
-                print(place.results!.count)
+                }
+                
+                print("Completed")
             } catch {
                 print("error, unable to request data")
             }
         })
         
         task.resume()
+        print("Reloaded Data")
 
     }
     
+    
+    //Return distance from two pin location
+    func getDistance(lat:String, long:String)->Double{
+        
+        let pinLocation = CLLocation(latitude: CLLocationDegrees(lat)!, longitude: CLLocationDegrees(long)!)
+        
+        guard let currentLocation = locationManager.location else {
+            return 0.0
+        }
+                
+        let distance = pinLocation.distance(from: currentLocation)        
+        
+        print(String(format: "The distance to location is %.01fm", distance))
+
+        return Double(String(format: "%.0f", distance)) ?? 0.0;
+    }
+    
+    
+    //Register Nib of UI collecitonView
     func registerNib() {
+        
         print("Registering Nib")
         let nib = UINib(nibName: nearbyCellCollectionViewCell.nibName, bundle: nil)
         nearbyView.register(nib, forCellWithReuseIdentifier: nearbyCellCollectionViewCell.reuseIdentifier)
         
         if let flowLayout = nearbyView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: view.frame.width, height: 230)
-
-
+            
+            
             print("Registering item size")
             
         }
@@ -131,16 +177,18 @@ class ExploreController : UIViewController{
 }
 
 
+
+
 extension ExploreController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(data.count)
-
-        return data.count
+        print(dataNearByVenue.count)
+        
+        return dataNearByVenue.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: nearbyCellCollectionViewCell.reuseIdentifier, for: indexPath) as? nearbyCellCollectionViewCell {
-            let venue = data[indexPath.row]
+            let venue = dataNearByVenue[indexPath.row]
             print("Loading data to cell")
             
             cell.configureCell(place: venue)
@@ -150,7 +198,7 @@ extension ExploreController: UICollectionViewDataSource {
             return cell
         }
         print("Return UICollectionViewCell")
-
+        
         return UICollectionViewCell()
     }
 }
@@ -164,8 +212,8 @@ extension ExploreController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: view.frame.width, height: 230)
         }
         print("Configuring cell")
-        print(data[indexPath.row])
-        cell.configureCell(place: data[indexPath.row])
+        print(dataNearByVenue[indexPath.row])
+        cell.configureCell(place: dataNearByVenue[indexPath.row])
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
         return CGSize(width: view.frame.width, height: 230)
