@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile Controller-->
+        <scene sceneID="zbI-P4-Mjj">
+            <objects>
+                <viewController id="lc5-MR-d1r" customClass="ProfileController" customModule="EatWhatLah" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oc2-Vb-xiy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dN9-5e-ITM">
+                                <rect key="frame" x="30" y="74" width="130" height="130"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBu-vZ-ZTE">
+                                <rect key="frame" x="186" y="89" width="199" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ga-PD-Ewo">
+                                <rect key="frame" x="186" y="118" width="199" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FS2-Pb-YCG">
+                                <rect key="frame" x="186" y="174" width="88" height="30"/>
+                                <state key="normal" title="Edit Profile &gt;"/>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BTx-wa-xoc">
+                                <rect key="frame" x="0.0" y="264" width="414" height="598"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xGz-nI-DQf">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oDB-4O-2lx">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yS9-DJ-NKf">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7FD-6x-fLq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BTx-wa-xoc" firstAttribute="trailing" secondItem="7FD-6x-fLq" secondAttribute="trailing" id="2kU-Ta-ybZ"/>
+                            <constraint firstItem="dN9-5e-ITM" firstAttribute="leading" secondItem="7FD-6x-fLq" secondAttribute="leading" constant="30" id="334-sV-pFx"/>
+                            <constraint firstItem="7FD-6x-fLq" firstAttribute="trailing" secondItem="dN9-5e-ITM" secondAttribute="trailing" constant="254" id="9aw-Mf-Ie6"/>
+                            <constraint firstItem="FS2-Pb-YCG" firstAttribute="top" secondItem="8Ga-PD-Ewo" secondAttribute="bottom" constant="35" id="BLa-VD-4ul"/>
+                            <constraint firstItem="FS2-Pb-YCG" firstAttribute="leading" secondItem="dN9-5e-ITM" secondAttribute="trailing" constant="26" id="BeQ-rf-ENc"/>
+                            <constraint firstItem="7FD-6x-fLq" firstAttribute="trailing" secondItem="KBu-vZ-ZTE" secondAttribute="trailing" constant="29" id="Dp5-kg-DOh"/>
+                            <constraint firstItem="8Ga-PD-Ewo" firstAttribute="top" secondItem="KBu-vZ-ZTE" secondAttribute="bottom" constant="8" symbolic="YES" id="Emo-5H-uvd"/>
+                            <constraint firstItem="BTx-wa-xoc" firstAttribute="leading" secondItem="7FD-6x-fLq" secondAttribute="leading" id="FVO-Lb-lSq"/>
+                            <constraint firstItem="8Ga-PD-Ewo" firstAttribute="leading" secondItem="dN9-5e-ITM" secondAttribute="trailing" constant="26" id="Odd-V7-Cbj"/>
+                            <constraint firstItem="KBu-vZ-ZTE" firstAttribute="leading" secondItem="dN9-5e-ITM" secondAttribute="trailing" constant="26" id="UGf-tz-ATU"/>
+                            <constraint firstItem="BTx-wa-xoc" firstAttribute="top" secondItem="dN9-5e-ITM" secondAttribute="bottom" constant="60" id="atE-Ob-Xmz"/>
+                            <constraint firstItem="7FD-6x-fLq" firstAttribute="trailing" secondItem="FS2-Pb-YCG" secondAttribute="trailing" constant="140" id="nJd-ZW-dl1"/>
+                            <constraint firstItem="dN9-5e-ITM" firstAttribute="top" secondItem="7FD-6x-fLq" secondAttribute="top" constant="30" id="qIa-jW-M9v"/>
+                            <constraint firstItem="7FD-6x-fLq" firstAttribute="bottom" secondItem="dN9-5e-ITM" secondAttribute="bottom" constant="658" id="xCs-dR-vGj"/>
+                            <constraint firstItem="7FD-6x-fLq" firstAttribute="trailing" secondItem="8Ga-PD-Ewo" secondAttribute="trailing" constant="29" id="xVG-i4-lpI"/>
+                            <constraint firstItem="BTx-wa-xoc" firstAttribute="bottom" secondItem="7FD-6x-fLq" secondAttribute="bottom" id="zDY-iP-rTU"/>
+                            <constraint firstItem="KBu-vZ-ZTE" firstAttribute="top" secondItem="7FD-6x-fLq" secondAttribute="top" constant="45" id="zZu-i2-GJ7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ProfileContent" destination="BTx-wa-xoc" id="GbQ-Nw-8C5"/>
+                        <outlet property="ProfileMobile" destination="8Ga-PD-Ewo" id="XOT-CN-9ED"/>
+                        <outlet property="ProfileName" destination="KBu-vZ-ZTE" id="Q13-R8-Xn1"/>
+                        <outlet property="profilePicture" destination="dN9-5e-ITM" id="fc4-qc-x6c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="isA-yu-Q1o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="286.95652173913044" y="80.357142857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
