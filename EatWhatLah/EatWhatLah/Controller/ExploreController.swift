@@ -15,7 +15,11 @@ import CoreLocation
 
 class ExploreController : UIViewController{
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
     var dataNearByVenue = [Places]()
+    
+    var resultVenues = [Results]();
     
     let locationManager: CLLocationManager = {
         $0.requestWhenInUseAuthorization();
@@ -37,6 +41,9 @@ class ExploreController : UIViewController{
         self.registerNib();
 
         let (lat, long) = getCurrentLocation();
+        nearbyView.delegate = self;
+        nearbyView.dataSource = self;
+        nearbyView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10);
         
         requestPlacesNearby(lat: lat, long: long, radius: "500", keyword: "", type: "restaurant")
 
@@ -87,7 +94,7 @@ class ExploreController : UIViewController{
         //key
         url = url + "&key=" + apiKey;
         
-        
+        //Get Request for nearby restaurant
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -100,6 +107,8 @@ class ExploreController : UIViewController{
                 let responseDecode = try decoder.decode(PlaceModel.self, from: data!)
                 
                 let placesResponse = responseDecode.results
+                
+                self.resultVenues = responseDecode.results!
                 
                 for i in 0...placesResponse!.count-1{
                     let distance:Double = self.getDistance(lat: String((placesResponse?[i].geometry?.location?.lat)!), long: String((placesResponse?[i].geometry?.location?.lng)!))
@@ -178,7 +187,6 @@ class ExploreController : UIViewController{
 
 
 
-
 extension ExploreController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(dataNearByVenue.count)
@@ -201,6 +209,21 @@ extension ExploreController: UICollectionViewDataSource {
         
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? nearbyCellCollectionViewCell
+                
+        appDelegate.selectedPlaceImage = cell?.venueImageView.image
+        appDelegate.selectedPlace = resultVenues[indexPath.row]
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "venueDetailview")
+        
+        nextViewController.modalPresentationStyle = .fullScreen
+        
+        self.present(nextViewController, animated:true, completion:nil)
+    }
 }
 
 
@@ -209,13 +232,13 @@ extension ExploreController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let cell: nearbyCellCollectionViewCell = Bundle.main.loadNibNamed(nearbyCellCollectionViewCell.nibName, owner: self, options: nil)?.first as? nearbyCellCollectionViewCell else {
-            return CGSize(width: view.frame.width, height: 230)
+            return CGSize(width: view.frame.width, height: 240)
         }
         print("Configuring cell")
         print(dataNearByVenue[indexPath.row])
         cell.configureCell(place: dataNearByVenue[indexPath.row])
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
-        return CGSize(width: view.frame.width, height: 230)
+        return CGSize(width: view.frame.width, height: 240)
     }
 }

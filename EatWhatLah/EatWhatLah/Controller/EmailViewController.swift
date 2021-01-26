@@ -4,7 +4,7 @@
 //
 //  Created by Apple on 21/1/21.
 //
-//This controller is used to manage sign in and create account
+//This controller is used to manage create account
 
 
 import UIKit
@@ -182,8 +182,6 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
     
     //Back Button On Click
     @IBAction func backBtnOnClick(_ sender: Any) {
-        
-        
         self.navigationController?.popViewController(animated: true)
         
     }

@@ -10,21 +10,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCellReuseIdentifier" id="gTV-IL-0wX" customClass="nearbyCellCollectionViewCell" customModule="EatWhatLah" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="315" height="191"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" reuseIdentifier="CollectionViewCellReuseIdentifier" id="gTV-IL-0wX" customClass="nearbyCellCollectionViewCell" customModule="EatWhatLah" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="315" height="191"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nlh-Wk-wV3">
-                        <rect key="frame" x="0.0" y="0.0" width="315" height="191"/>
+                    <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="Nlh-Wk-wV3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
+                        <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Burgers" translatesAutoresizingMaskIntoConstraints="NO" id="Obf-Yb-kG7">
-                                <rect key="frame" x="5" y="5" width="304" height="141"/>
+                                <rect key="frame" x="5" y="5" width="310" height="141"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="141" id="7eZ-wT-VDB"/>
-                                    <constraint firstAttribute="width" constant="304" id="jfZ-dW-09G"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -33,7 +33,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBx-l1-GsA">
-                                <rect key="frame" x="13" y="152" width="67" height="2"/>
+                                <rect key="frame" x="13" y="152" width="67" height="21"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Venue name">
                                         <attributes>
@@ -45,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ddc-JE-poz">
-                                <rect key="frame" x="162.5" y="158" width="60.5" height="26"/>
+                                <rect key="frame" x="167.5" y="177" width="60.5" height="26"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZP-Yb-XJZ">
                                         <rect key="frame" x="32" y="2" width="19.5" height="22"/>
@@ -84,7 +84,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOI-o4-ana">
-                                <rect key="frame" x="231" y="158" width="74" height="26"/>
+                                <rect key="frame" x="236" y="177" width="74" height="26"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aH9-Qf-fSd">
                                         <rect key="frame" x="29" y="2" width="36" height="22"/>
@@ -156,8 +156,9 @@
                 <outlet property="ratingTextLabel" destination="mZP-Yb-XJZ" id="YlQ-WK-BLx"/>
                 <outlet property="venueImageView" destination="Obf-Yb-kG7" id="caU-VR-D20"/>
                 <outlet property="venueTextLabel" destination="HBx-l1-GsA" id="wMe-VO-49z"/>
+                <outlet property="venueView" destination="Nlh-Wk-wV3" id="A2Q-sz-Ero"/>
             </connections>
-            <point key="canvasLocation" x="136.95652173913044" y="55.245535714285715"/>
+            <point key="canvasLocation" x="136.23188405797103" y="55.245535714285715"/>
         </collectionViewCell>
     </objects>
     <resources>

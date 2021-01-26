@@ -8,27 +8,29 @@
 import UIKit
 
 class nearbyCellCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var distanceTextLabel: UILabel!
     @IBOutlet weak var venueImageView: UIImageView!
     @IBOutlet weak var venueTextLabel: UILabel!
     @IBOutlet weak var ratingTextLabel: UILabel!
     
+    @IBOutlet weak var venueView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
-
+    
     func configureCell(place: Places) {
         distanceTextLabel.text = String(format: "%.0f", place.distance) + "m";
         venueImageView.image = #imageLiteral(resourceName: "noResult")
-
+        
         venueImageView.downloaded(from: place.venueImage)
         
         //if its nil, use default image
         venueTextLabel.text = String(place.venueName);
         ratingTextLabel.text = String(place.rating);
+        
         
     }
     
@@ -57,7 +59,7 @@ class nearbyCellCollectionViewCell: UICollectionViewCell {
     class var nibName: String {
         return "nearbyCellCollectionViewCell"
     }
-
+    
 }
 
 extension UIImageView {
@@ -65,30 +67,30 @@ extension UIImageView {
     //Async method
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
         let semaphore = DispatchSemaphore (value: 0)
-
+        
         var request = URLRequest(url: url,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
-
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-          guard let data = data else {
-            print(String(describing: error))
-            semaphore.signal()
-
-            DispatchQueue.main.async {
-                self.image = #imageLiteral(resourceName: "noResult");
+            guard let data = data else {
+                print(String(describing: error))
+                semaphore.signal()
+                
+                DispatchQueue.main.async {
+                    self.image = #imageLiteral(resourceName: "noResult");
+                }
+                
+                //Cant request for image
+                return
             }
-            
-            //Cant request for image
-            return
-          }
             let imageVenue = UIImage(data: data)
             
             DispatchQueue.main.async {
                 self.image = imageVenue;
             }
-        semaphore.signal()
+            semaphore.signal()
         }
-
+        
         task.resume()
         semaphore.wait()
     }
