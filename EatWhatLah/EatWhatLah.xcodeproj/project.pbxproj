@@ -60,6 +60,7 @@
 		18F8A0C525B884EE00BF41C9 /* onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0C425B884EE00BF41C9 /* onboard.storyboard */; };
 		18F8A0F425B9223200BF41C9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0F325B9223200BF41C9 /* UserModel.swift */; };
 		3524AA7798A63906661003C8 /* Pods_EatWhatLah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */; };
+		5DC73B3E25C06C5D002C7132 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73B3D25C06C5D002C7132 /* ProfileController.swift */; };
 		5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD882225B88EA9006D6358 /* CommunityController.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,7 @@
 		18F8A0C425B884EE00BF41C9 /* onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = onboard.storyboard; sourceTree = "<group>"; };
 		18F8A0F325B9223200BF41C9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		33113F49FB3C8F4775662E66 /* Pods-EatWhatLah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatWhatLah.release.xcconfig"; path = "Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah.release.xcconfig"; sourceTree = "<group>"; };
+		5DC73B3D25C06C5D002C7132 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		5DCD882225B88EA9006D6358 /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
 		92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatWhatLah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -194,6 +196,7 @@
 				18F8A0B025B8802500BF41C9 /* ViewController.swift */,
 				185DF98525B991F300B5929D /* EmailViewController.swift */,
 				5DCD882225B88EA9006D6358 /* CommunityController.swift */,
+				5DC73B3D25C06C5D002C7132 /* ProfileController.swift */,
 				188D6F5525BC025C00061EEB /* LoginViewController.swift */,
 				183CFC2225BC365B00C07434 /* ExploreController.swift */,
 				184EB1C625BF03D10098103A /* VenueDetailController.swift */,
@@ -448,6 +451,7 @@
 				18F8A0F425B9223200BF41C9 /* UserModel.swift in Sources */,
 				184EB1C725BF03D10098103A /* VenueDetailController.swift in Sources */,
 				184EB1F125C040320098103A /* Opening_hours.swift in Sources */,
+				5DC73B3E25C06C5D002C7132 /* ProfileController.swift in Sources */,
 				184EB1F325C040330098103A /* Open.swift in Sources */,
 				184EB1F525C040330098103A /* Close.swift in Sources */,
 				184EB1F225C040330098103A /* Result.swift in Sources */,
