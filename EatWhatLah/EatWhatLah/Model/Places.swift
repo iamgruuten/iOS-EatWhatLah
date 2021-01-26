@@ -10,7 +10,7 @@ import UIKit
 class Places{
     var venueName:String = "";
     var rating:String = "";
-    var venueImage:String;
+    var venueImage:String = "";
     var distance:Double = 0;
     var lat:String = "";
     var long:String = "";
@@ -22,6 +22,10 @@ class Places{
         self.venueImage = venueImage;
         self.distance = distance;
         self.place_id = place_id;
+    }
+    
+    init(){
+        
     }
     
 }

@@ -242,7 +242,7 @@
         <!--Venue Detail Controller-->
         <scene sceneID="Jtb-uN-cK7">
             <objects>
-                <viewController id="W3P-DU-1Zd" customClass="VenueDetailController" customModule="EatWhatLah" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="venueDetailview" id="W3P-DU-1Zd" customClass="VenueDetailController" customModule="EatWhatLah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ofj-s6-al5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

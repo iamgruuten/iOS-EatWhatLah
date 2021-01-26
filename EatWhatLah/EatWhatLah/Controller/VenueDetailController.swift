@@ -49,6 +49,8 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
     
     @IBAction func exploreOnClick(_ sender: Any) {
 
+        //Open in map for directions
+        
         let lat1 : NSString = String((appDelegate.selectedPlace?.geometry?.location?.lat)!) as NSString
         let lng1 : NSString = String((appDelegate.selectedPlace?.geometry?.location?.lng)!) as NSString
 
@@ -74,7 +76,7 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         
         let place = appDelegate.selectedPlace;
 
-        if(appDelegate.user.favourite.contains((place?.place_id)!)) {
+        if(appDelegate.user.favourite.contains(where: {$0.place_id == place?.place_id})) {
             favouriteImage.image = UIImage(systemName: "heart.fill")
             favouriteLabel.titleLabel?.text = "Added To Favourites"
         }else{

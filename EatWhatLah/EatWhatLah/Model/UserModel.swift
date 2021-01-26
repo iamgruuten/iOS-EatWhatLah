@@ -9,13 +9,14 @@
 import UIKit
 
 class User{
-    var name:String;
-    var bio:String;
-    var favourite:[String];
-    var email:String;
-    var uid:String;
-    var password:String;
+    var name:String = "";
+    var bio:String = "";
+    var favourite:[Places] = [];
+    var email:String = "";
+    var uid:String = "";
+    var password:String = "";
     var profilePicture:UIImage = UIImage();
+    var preference:[String] = []
     
     init(){
         name = "";
@@ -25,5 +26,6 @@ class User{
         email = "";
         password = "";
     }
+    
 }
 
