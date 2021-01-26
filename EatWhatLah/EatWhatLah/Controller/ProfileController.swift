@@ -24,7 +24,7 @@ class ProfileController: UIViewController{
         
         ProfileName.text = "Burger Man"
         ProfileMobile.text = "999"
-        profilePicture.image = UIImage.init(named: "users")
+        profilePicture.image = UIImage.init(named: "user")
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
