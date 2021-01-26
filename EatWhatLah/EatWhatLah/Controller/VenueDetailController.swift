@@ -130,7 +130,7 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         
         //Zoom in to location
         let region = MKCoordinateRegion(center: venueCoordinate, span: span)
-        mapView.setRegion(region, animated: true)
+        mapView.setRegion(region, animated: false)
         
         print("Added annonation and setting region")
         
