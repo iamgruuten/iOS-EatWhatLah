@@ -278,7 +278,7 @@
                                 <rect key="frame" x="20" y="239" width="374" height="573"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4q-Rw-EMn">
-                                        <rect key="frame" x="133" y="57" width="108" height="28"/>
+                                        <rect key="frame" x="50" y="57" width="274" height="28"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Mcdonald">
                                                 <attributes>
@@ -553,19 +553,19 @@
                                     <constraint firstItem="bU9-kd-rB9" firstAttribute="centerX" secondItem="bEC-EK-ID0" secondAttribute="centerX" id="Uab-cW-3QM"/>
                                     <constraint firstItem="rxj-2G-UnS" firstAttribute="top" secondItem="Mma-bh-n15" secondAttribute="bottom" constant="22" id="V1s-mS-Iw2"/>
                                     <constraint firstAttribute="bottom" secondItem="73j-71-Rcj" secondAttribute="bottom" constant="32" id="XZW-i7-1gR"/>
+                                    <constraint firstAttribute="trailing" secondItem="k4q-Rw-EMn" secondAttribute="trailing" constant="50" id="Z98-ah-pKq"/>
                                     <constraint firstItem="ckt-0Q-lht" firstAttribute="top" secondItem="dpx-v1-knq" secondAttribute="bottom" constant="16" id="atg-rF-82M"/>
                                     <constraint firstItem="Mma-bh-n15" firstAttribute="top" secondItem="SvH-Cb-yZq" secondAttribute="bottom" constant="14" id="dCW-m5-I1L"/>
                                     <constraint firstAttribute="trailing" secondItem="4hp-OD-hsP" secondAttribute="trailing" constant="65" id="gCR-w0-XaW"/>
                                     <constraint firstItem="4hp-OD-hsP" firstAttribute="leading" secondItem="bEC-EK-ID0" secondAttribute="leading" constant="65" id="hSb-C8-Df9"/>
                                     <constraint firstItem="k4q-Rw-EMn" firstAttribute="top" secondItem="bU9-kd-rB9" secondAttribute="bottom" constant="25" id="kww-EI-1Sa"/>
-                                    <constraint firstItem="k4q-Rw-EMn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bEC-EK-ID0" secondAttribute="leading" id="lhZ-h3-tyR"/>
+                                    <constraint firstItem="k4q-Rw-EMn" firstAttribute="leading" secondItem="bEC-EK-ID0" secondAttribute="leading" constant="50" id="oAD-S1-tcZ"/>
                                     <constraint firstAttribute="trailing" secondItem="73j-71-Rcj" secondAttribute="trailing" constant="22" id="ojL-ye-DF4"/>
                                     <constraint firstItem="dpx-v1-knq" firstAttribute="top" secondItem="1p2-wV-Bpd" secondAttribute="bottom" constant="22" id="p7E-ZJ-pl6"/>
                                     <constraint firstItem="bU9-kd-rB9" firstAttribute="top" secondItem="bEC-EK-ID0" secondAttribute="top" constant="11" id="pxn-Ah-P38"/>
                                     <constraint firstAttribute="trailing" secondItem="rxj-2G-UnS" secondAttribute="trailing" constant="22" id="rCn-M7-H22"/>
                                     <constraint firstItem="SvH-Cb-yZq" firstAttribute="centerX" secondItem="bEC-EK-ID0" secondAttribute="centerX" id="scf-ko-cR8"/>
                                     <constraint firstItem="SvH-Cb-yZq" firstAttribute="top" secondItem="4hp-OD-hsP" secondAttribute="bottom" constant="15" id="tYN-FP-ndz"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k4q-Rw-EMn" secondAttribute="trailing" id="tbt-ty-aJP"/>
                                     <constraint firstItem="4hp-OD-hsP" firstAttribute="top" secondItem="ckt-0Q-lht" secondAttribute="bottom" constant="15" id="ugd-oN-uUq"/>
                                     <constraint firstItem="1p2-wV-Bpd" firstAttribute="top" secondItem="k4q-Rw-EMn" secondAttribute="bottom" constant="12" id="unl-zT-czY"/>
                                     <constraint firstItem="SvH-Cb-yZq" firstAttribute="leading" secondItem="Tk6-zV-Aqh" secondAttribute="trailing" constant="10" id="x98-NM-5RM"/>

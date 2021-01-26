@@ -93,10 +93,9 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         imageBackground.image = appDelegate.selectedPlaceImage;
         
         venueName.text = place?.name;
-        reviewLabel.text = String((place?.user_ratings_total)!);
+        reviewLabel.text = String(place?.user_ratings_total ?? 0)
         
         venueStatus.text = place?.business_status;
-        
         
         address.text = place?.vicinity;
         
@@ -185,6 +184,7 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
                 let ClosingTime = responseDecode.result?.opening_hours?.periods![day!].close?.time
                 
                 let OpeningTime = responseDecode.result?.opening_hours?.periods![day!].open?.time
+                
                 DispatchQueue.main.async {
 
                 //First check if the area is open
