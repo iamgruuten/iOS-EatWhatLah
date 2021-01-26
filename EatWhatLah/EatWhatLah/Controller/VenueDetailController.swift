@@ -89,9 +89,10 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         //
         //        }
         
+        
         imageBackground.image = appDelegate.selectedPlaceImage;
         
-        venueName.text = place?.name;
+        venueName.text = place?.name!.trimmingCharacters(in: .whitespacesAndNewlines);
         reviewLabel.text = String(place?.user_ratings_total ?? 0)
         
         venueStatus.text = place?.business_status;

@@ -46,6 +46,7 @@
 		184EB21325C06B9F0098103A /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 184EB20725C06B9F0098103A /* SFProText-Bold.ttf */; };
 		184EB21425C06B9F0098103A /* SFProText-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 184EB20825C06B9F0098103A /* SFProText-Heavy.ttf */; };
 		184EB21525C06B9F0098103A /* SFProText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 184EB20925C06B9F0098103A /* SFProText-Light.ttf */; };
+		184EB22725C097870098103A /* ViewMoreVenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB22625C097870098103A /* ViewMoreVenueController.swift */; };
 		185DF98625B991F300B5929D /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF98525B991F300B5929D /* EmailViewController.swift */; };
 		185DF98B25B9955B00B5929D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF98A25B9955B00B5929D /* Validation.swift */; };
 		188D6F3625BA5FBC00061EEB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D6F3525BA5FBC00061EEB /* ImagePicker.swift */; };
@@ -108,6 +109,7 @@
 		184EB20725C06B9F0098103A /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Bold.ttf"; sourceTree = "<group>"; };
 		184EB20825C06B9F0098103A /* SFProText-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Heavy.ttf"; sourceTree = "<group>"; };
 		184EB20925C06B9F0098103A /* SFProText-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Light.ttf"; sourceTree = "<group>"; };
+		184EB22625C097870098103A /* ViewMoreVenueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreVenueController.swift; sourceTree = "<group>"; };
 		185DF98525B991F300B5929D /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		185DF98A25B9955B00B5929D /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		188D6F3525BA5FBC00061EEB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				183CFC2225BC365B00C07434 /* ExploreController.swift */,
 				184EB1C625BF03D10098103A /* VenueDetailController.swift */,
 				184EB1D625BFF6860098103A /* NearbyExtension.swift */,
+				184EB22625C097870098103A /* ViewMoreVenueController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				184EB1BE25BDA6040098103A /* PlaceModel.swift in Sources */,
 				183CFC3525BD302200C07434 /* Places.swift in Sources */,
 				184EB1C025BDA6040098103A /* Northeast.swift in Sources */,
+				184EB22725C097870098103A /* ViewMoreVenueController.swift in Sources */,
 				183CFC2325BC365B00C07434 /* ExploreController.swift in Sources */,
 				184EB1DA25C012710098103A /* UIExtension.swift in Sources */,
 				184EB1CA25BF247C0098103A /* LocationDelegate.swift in Sources */,
