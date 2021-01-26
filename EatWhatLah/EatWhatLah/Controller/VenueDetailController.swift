@@ -180,12 +180,13 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
                 
                 let day = self.getDayOfWeek(Date())
                 
-                let operatingNow = responseDecode.result?.openingHours?.openNow
-
-                let ClosingTime = responseDecode.result?.openingHours?.periods![day!].close?.time
+                let operatingNow = responseDecode.result?.opening_hours?.open_now
                 
-                let OpeningTime = responseDecode.result?.openingHours?.periods![day!].periodOpen?.time
-    
+                let ClosingTime = responseDecode.result?.opening_hours?.periods![day!].close?.time
+                
+                let OpeningTime = responseDecode.result?.opening_hours?.periods![day!].open?.time
+                DispatchQueue.main.async {
+
                 //First check if the area is open
                 if(operatingNow!){
                     self.businessStatusLabel.text = "It is open now"
@@ -198,7 +199,7 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
                     self.operatingHoursLabel.text = OpeningTime! + " - " + ClosingTime!;
                 }
                 
-
+                }
                 
                 //If yes, display closing time
             }catch{

@@ -27,7 +27,12 @@
 		184EB1D325BFB9430098103A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1D225BFB9430098103A /* UserController.swift */; };
 		184EB1D725BFF6860098103A /* NearbyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1D625BFF6860098103A /* NearbyExtension.swift */; };
 		184EB1DA25C012710098103A /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1D925C012710098103A /* UIExtension.swift */; };
-		184EB1E725C03C710098103A /* operatingHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1E625C03C710098103A /* operatingHours.swift */; };
+		184EB1F125C040320098103A /* Opening_hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1EB25C040320098103A /* Opening_hours.swift */; };
+		184EB1F225C040330098103A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1EC25C040320098103A /* Result.swift */; };
+		184EB1F325C040330098103A /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1ED25C040320098103A /* Open.swift */; };
+		184EB1F425C040330098103A /* Periods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1EE25C040320098103A /* Periods.swift */; };
+		184EB1F525C040330098103A /* Close.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1EF25C040320098103A /* Close.swift */; };
+		184EB1F625C040330098103A /* OperatingHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1F025C040320098103A /* OperatingHours.swift */; };
 		185DF98625B991F300B5929D /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF98525B991F300B5929D /* EmailViewController.swift */; };
 		185DF98B25B9955B00B5929D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF98A25B9955B00B5929D /* Validation.swift */; };
 		188D6F3625BA5FBC00061EEB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D6F3525BA5FBC00061EEB /* ImagePicker.swift */; };
@@ -80,7 +85,12 @@
 		184EB1D225BFB9430098103A /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		184EB1D625BFF6860098103A /* NearbyExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyExtension.swift; sourceTree = "<group>"; };
 		184EB1D925C012710098103A /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
-		184EB1E625C03C710098103A /* operatingHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = operatingHours.swift; sourceTree = "<group>"; };
+		184EB1EB25C040320098103A /* Opening_hours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opening_hours.swift; sourceTree = "<group>"; };
+		184EB1EC25C040320098103A /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		184EB1ED25C040320098103A /* Open.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
+		184EB1EE25C040320098103A /* Periods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Periods.swift; sourceTree = "<group>"; };
+		184EB1EF25C040320098103A /* Close.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Close.swift; sourceTree = "<group>"; };
+		184EB1F025C040320098103A /* OperatingHours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatingHours.swift; sourceTree = "<group>"; };
 		185DF98525B991F300B5929D /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		185DF98A25B9955B00B5929D /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		188D6F3525BA5FBC00061EEB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -142,6 +152,19 @@
 			path = PlacesModel;
 			sourceTree = "<group>";
 		};
+		184EB1EA25C040100098103A /* OperatingHoursModel */ = {
+			isa = PBXGroup;
+			children = (
+				184EB1EF25C040320098103A /* Close.swift */,
+				184EB1F025C040320098103A /* OperatingHours.swift */,
+				184EB1ED25C040320098103A /* Open.swift */,
+				184EB1EB25C040320098103A /* Opening_hours.swift */,
+				184EB1EE25C040320098103A /* Periods.swift */,
+				184EB1EC25C040320098103A /* Result.swift */,
+			);
+			path = OperatingHoursModel;
+			sourceTree = "<group>";
+		};
 		188D6F3925BBB4E800061EEB /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,12 +178,12 @@
 		188D6F3A25BBB4EE00061EEB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				184EB1EA25C040100098103A /* OperatingHoursModel */,
 				184EB1A725BDA4C80098103A /* PlacesModel */,
 				188D6F3525BA5FBC00061EEB /* ImagePicker.swift */,
 				18F8A0F325B9223200BF41C9 /* UserModel.swift */,
 				185DF98A25B9955B00B5929D /* Validation.swift */,
 				183CFC3425BD302200C07434 /* Places.swift */,
-				184EB1E625C03C710098103A /* operatingHours.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -409,7 +432,6 @@
 				185DF98625B991F300B5929D /* EmailViewController.swift in Sources */,
 				184EB1BF25BDA6040098103A /* Photos.swift in Sources */,
 				18F8A0B725B8802500BF41C9 /* EatWhatLah.xcdatamodeld in Sources */,
-				184EB1E725C03C710098103A /* operatingHours.swift in Sources */,
 				183CFC2725BC49D100C07434 /* nearbyCell.swift in Sources */,
 				184EB1BE25BDA6040098103A /* PlaceModel.swift in Sources */,
 				183CFC3525BD302200C07434 /* Places.swift in Sources */,
@@ -425,12 +447,18 @@
 				184EB1D325BFB9430098103A /* UserController.swift in Sources */,
 				18F8A0F425B9223200BF41C9 /* UserModel.swift in Sources */,
 				184EB1C725BF03D10098103A /* VenueDetailController.swift in Sources */,
+				184EB1F125C040320098103A /* Opening_hours.swift in Sources */,
+				184EB1F325C040330098103A /* Open.swift in Sources */,
+				184EB1F525C040330098103A /* Close.swift in Sources */,
+				184EB1F225C040330098103A /* Result.swift in Sources */,
 				18F8A0AF25B8802500BF41C9 /* SceneDelegate.swift in Sources */,
 				184EB1C425BDA6040098103A /* Results.swift in Sources */,
 				185DF98B25B9955B00B5929D /* Validation.swift in Sources */,
 				183CFC3125BD224F00C07434 /* nearbyCellCollectionViewCell.swift in Sources */,
 				184EB1C225BDA6040098103A /* Viewport.swift in Sources */,
 				5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */,
+				184EB1F425C040330098103A /* Periods.swift in Sources */,
+				184EB1F625C040330098103A /* OperatingHours.swift in Sources */,
 				188D6F5625BC025C00061EEB /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
