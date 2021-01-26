@@ -77,10 +77,9 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
     }
     
     override func viewDidLoad() {
-        
         let place = appDelegate.selectedPlace;
         getOperatingHours(placeID: (appDelegate.selectedPlace?.place_id)!)
-
+        
         //        if(appDelegate.user.favourite.contains(where: {$0.place_id == place?.place_id})) {
         //            favouriteImage.image = UIImage(systemName: "heart.fill")
         //            favouriteLabel.titleLabel?.text = "Added To Favourites"
@@ -168,7 +167,7 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
                                                     "&fields=name,opening_hours&key=AIzaSyDt0QPH_9Bl0h9xWLw2PIFLpnOrcDxGYII"))!)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
+        
         let session = URLSession.shared
         
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
@@ -181,24 +180,44 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
                 
                 let operatingNow = responseDecode.result?.opening_hours?.open_now
                 
-                let ClosingTime = responseDecode.result?.opening_hours?.periods![day!].close?.time
+                //Check if there are 7 if no then means its 24hrs
+                var ClosingTime = "";
+                var OpeningTime = "";
                 
-                let OpeningTime = responseDecode.result?.opening_hours?.periods![day!].open?.time
-                
-                DispatchQueue.main.async {
-
-                //First check if the area is open
-                if(operatingNow!){
-                    self.businessStatusLabel.text = "It is open now"
-                    self.businessStatusLabel.textColor = UIColor(red: 167, green: 207, blue: 183, alpha: 1)
+                if(responseDecode.result?.opening_hours?.periods?.count == 7){
+                    ClosingTime = (responseDecode.result?.opening_hours?.periods![day!].close?.time)!
                     
-                    self.operatingHoursLabel.text = "Closing at " + ClosingTime!;
+                    OpeningTime = (responseDecode.result?.opening_hours?.periods![day!].open?.time)!
                 }else{
-                    //If no, display closed now (operating hours)
-                    self.businessStatusLabel.text = "Closed, Come back tomorrow"
-                    self.operatingHoursLabel.text = OpeningTime! + " - " + ClosingTime!;
+                    ClosingTime = "24"
                 }
                 
+                DispatchQueue.main.async {
+                    
+                    //First check if the area is open
+                    
+                    if(operatingNow != nil){
+                        self.businessStatusLabel.isHidden = false;
+                        self.operatingHoursLabel.isHidden = false;
+                        if(operatingNow!){
+                            
+                            self.businessStatusLabel.text = "It is open now"
+                            self.businessStatusLabel.textColor = UIColor.systemGreen
+                            if(ClosingTime != "24"){
+                                self.operatingHoursLabel.text = "Closing at " + ClosingTime;
+                            }else{
+                                self.operatingHoursLabel.text = "Operating at 24 Hours";
+                                
+                            }
+                        }else{
+                            //If no, display closed now (operating hours)
+                            self.businessStatusLabel.text = "Closed, Come back tomorrow"
+                            self.operatingHoursLabel.text = "Hours " + OpeningTime + " - " + ClosingTime;
+                        }
+                    }else{
+                        self.businessStatusLabel.isHidden = true;
+                        self.operatingHoursLabel.isHidden = true;
+                    }
                 }
                 
                 //If yes, display closing time
@@ -206,7 +225,7 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
                 print(error)
             }
         })
-
+        
         task.resume()
         
     }
