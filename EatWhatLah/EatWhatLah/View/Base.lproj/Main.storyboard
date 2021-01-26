@@ -526,7 +526,7 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4q-Rw-EMn">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4q-Rw-EMn">
                                         <rect key="frame" x="129" y="57" width="116" height="29"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Mcdonald">
@@ -550,16 +550,15 @@
                                     <constraint firstItem="1p2-wV-Bpd" firstAttribute="centerX" secondItem="bEC-EK-ID0" secondAttribute="centerX" id="IQM-xQ-reu"/>
                                     <constraint firstItem="ckt-0Q-lht" firstAttribute="top" secondItem="Pi9-lH-U5Y" secondAttribute="bottom" constant="16" id="IcG-NV-7H0"/>
                                     <constraint firstItem="Pi9-lH-U5Y" firstAttribute="centerX" secondItem="bEC-EK-ID0" secondAttribute="centerX" id="JDK-XH-EWd"/>
-                                    <constraint firstItem="k4q-Rw-EMn" firstAttribute="centerX" secondItem="bEC-EK-ID0" secondAttribute="centerX" id="LBM-KH-PJZ"/>
                                     <constraint firstItem="73j-71-Rcj" firstAttribute="top" secondItem="rxj-2G-UnS" secondAttribute="bottom" constant="10" id="NNi-bu-X1b"/>
-                                    <constraint firstItem="k4q-Rw-EMn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bEC-EK-ID0" secondAttribute="leading" id="Oa6-JR-AUH"/>
+                                    <constraint firstItem="k4q-Rw-EMn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bEC-EK-ID0" secondAttribute="leading" constant="32" id="Oa6-JR-AUH"/>
                                     <constraint firstAttribute="trailing" secondItem="ckt-0Q-lht" secondAttribute="trailing" constant="20" id="Ohq-Et-2iC"/>
                                     <constraint firstItem="73j-71-Rcj" firstAttribute="leading" secondItem="bEC-EK-ID0" secondAttribute="leading" constant="22" id="Pww-58-1FC"/>
                                     <constraint firstItem="rxj-2G-UnS" firstAttribute="leading" secondItem="bEC-EK-ID0" secondAttribute="leading" constant="22" id="UUp-Yi-Oyj"/>
                                     <constraint firstItem="bU9-kd-rB9" firstAttribute="centerX" secondItem="bEC-EK-ID0" secondAttribute="centerX" id="Uab-cW-3QM"/>
                                     <constraint firstItem="rxj-2G-UnS" firstAttribute="top" secondItem="Mma-bh-n15" secondAttribute="bottom" constant="22" id="V1s-mS-Iw2"/>
                                     <constraint firstAttribute="bottom" secondItem="73j-71-Rcj" secondAttribute="bottom" constant="32" id="XZW-i7-1gR"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k4q-Rw-EMn" secondAttribute="trailing" id="Z98-ah-pKq"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k4q-Rw-EMn" secondAttribute="trailing" constant="32" id="Z98-ah-pKq"/>
                                     <constraint firstItem="ckt-0Q-lht" firstAttribute="top" secondItem="dpx-v1-knq" secondAttribute="bottom" constant="16" id="atg-rF-82M"/>
                                     <constraint firstItem="4hp-OD-hsP" firstAttribute="centerX" secondItem="bEC-EK-ID0" secondAttribute="centerX" id="bgX-ds-DTW"/>
                                     <constraint firstItem="Mma-bh-n15" firstAttribute="top" secondItem="SvH-Cb-yZq" secondAttribute="bottom" constant="14" id="dCW-m5-I1L"/>
