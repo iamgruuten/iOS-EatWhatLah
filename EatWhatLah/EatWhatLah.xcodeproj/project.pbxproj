@@ -62,6 +62,8 @@
 		3524AA7798A63906661003C8 /* Pods_EatWhatLah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */; };
 		5DC73B3E25C06C5D002C7132 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73B3D25C06C5D002C7132 /* ProfileController.swift */; };
 		5DC73B4C25C08529002C7132 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC73B4B25C08529002C7132 /* Profile.storyboard */; };
+		5DC73B5025C0872E002C7132 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73B4E25C0872E002C7132 /* ProfileCollectionViewCell.swift */; };
+		5DC73B5125C0872E002C7132 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC73B4F25C0872E002C7132 /* ProfileCollectionViewCell.xib */; };
 		5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD882225B88EA9006D6358 /* CommunityController.swift */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +126,8 @@
 		33113F49FB3C8F4775662E66 /* Pods-EatWhatLah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatWhatLah.release.xcconfig"; path = "Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah.release.xcconfig"; sourceTree = "<group>"; };
 		5DC73B3D25C06C5D002C7132 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		5DC73B4B25C08529002C7132 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		5DC73B4E25C0872E002C7132 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		5DC73B4F25C0872E002C7132 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
 		5DCD882225B88EA9006D6358 /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
 		92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatWhatLah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -261,6 +265,8 @@
 				183CFC2625BC49D100C07434 /* nearbyCell.swift */,
 				183CFC2F25BD224F00C07434 /* nearbyCellCollectionViewCell.swift */,
 				183CFC3025BD224F00C07434 /* nearbyCellCollectionViewCell.xib */,
+				5DC73B4E25C0872E002C7132 /* ProfileCollectionViewCell.swift */,
+				5DC73B4F25C0872E002C7132 /* ProfileCollectionViewCell.xib */,
 				184EB1D925C012710098103A /* UIExtension.swift */,
 			);
 			path = EatWhatLah;
@@ -375,6 +381,7 @@
 				18F8A0C525B884EE00BF41C9 /* onboard.storyboard in Resources */,
 				184EB21125C06B9F0098103A /* SFProText-MediumItalic.ttf in Resources */,
 				184EB21325C06B9F0098103A /* SFProText-Bold.ttf in Resources */,
+				5DC73B5125C0872E002C7132 /* ProfileCollectionViewCell.xib in Resources */,
 				184EB20A25C06B9F0098103A /* SFProText-LightItalic.ttf in Resources */,
 				184EB21425C06B9F0098103A /* SFProText-Heavy.ttf in Resources */,
 				18F8A0B425B8802500BF41C9 /* Main.storyboard in Resources */,
@@ -447,6 +454,7 @@
 				184EB1DA25C012710098103A /* UIExtension.swift in Sources */,
 				184EB1CA25BF247C0098103A /* LocationDelegate.swift in Sources */,
 				188D6F3625BA5FBC00061EEB /* ImagePicker.swift in Sources */,
+				5DC73B5025C0872E002C7132 /* ProfileCollectionViewCell.swift in Sources */,
 				184EB1D725BFF6860098103A /* NearbyExtension.swift in Sources */,
 				184EB1CE25BFA7850098103A /* FavouriteController.swift in Sources */,
 				184EB1C325BDA6040098103A /* Location.swift in Sources */,
