@@ -150,6 +150,17 @@ class ExploreController : UIViewController{
     }
     
     
+    @IBAction func viewMoreNearbyOnClick(_ sender: Any) {
+        appDelegate.ListOfPlaces = resultVenues;
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "viewMoreSB")
+        
+        nextViewController.modalPresentationStyle = .fullScreen
+        
+        self.present(nextViewController, animated:true, completion:nil)
+    }
     //Return distance from two pin location
     func getDistance(lat:String, long:String)->Double{
         

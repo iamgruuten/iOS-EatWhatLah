@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var user:User = User();
     var password:String?
     var selectedPlace:Results?;
+    var ListOfPlaces:[Results] = [];
+
     var selectedPlaceImage:UIImage?;
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

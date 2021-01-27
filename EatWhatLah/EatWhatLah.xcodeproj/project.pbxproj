@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		183CFC2325BC365B00C07434 /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFC2225BC365B00C07434 /* ExploreController.swift */; };
-		183CFC2725BC49D100C07434 /* nearbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFC2625BC49D100C07434 /* nearbyCell.swift */; };
 		183CFC3125BD224F00C07434 /* nearbyCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFC2F25BD224F00C07434 /* nearbyCellCollectionViewCell.swift */; };
 		183CFC3225BD224F00C07434 /* nearbyCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183CFC3025BD224F00C07434 /* nearbyCellCollectionViewCell.xib */; };
 		183CFC3525BD302200C07434 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CFC3425BD302200C07434 /* Places.swift */; };
+		18449DF825C1384700A07780 /* customCellVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18449DF725C1384700A07780 /* customCellVenue.swift */; };
+		18449DFF25C1B08E00A07780 /* colorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18449DFE25C1B08E00A07780 /* colorExtension.swift */; };
+		18449E1525C1E01000A07780 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18449E1425C1E01000A07780 /* iOSDropDown.framework */; };
 		184EB1BC25BDA6040098103A /* Southwest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1B325BDA6030098103A /* Southwest.swift */; };
 		184EB1BD25BDA6040098103A /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1B425BDA6030098103A /* Geometry.swift */; };
 		184EB1BE25BDA6040098103A /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1B525BDA6040098103A /* PlaceModel.swift */; };
@@ -71,10 +73,12 @@
 /* Begin PBXFileReference section */
 		1795CC35D3A281EF2DCDC854 /* Pods-EatWhatLah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatWhatLah.debug.xcconfig"; path = "Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah.debug.xcconfig"; sourceTree = "<group>"; };
 		183CFC2225BC365B00C07434 /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
-		183CFC2625BC49D100C07434 /* nearbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nearbyCell.swift; sourceTree = "<group>"; };
 		183CFC2F25BD224F00C07434 /* nearbyCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nearbyCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		183CFC3025BD224F00C07434 /* nearbyCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = nearbyCellCollectionViewCell.xib; sourceTree = "<group>"; };
 		183CFC3425BD302200C07434 /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		18449DF725C1384700A07780 /* customCellVenue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCellVenue.swift; sourceTree = "<group>"; };
+		18449DFE25C1B08E00A07780 /* colorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorExtension.swift; sourceTree = "<group>"; };
+		18449E1425C1E01000A07780 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		184EB1B325BDA6030098103A /* Southwest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Southwest.swift; sourceTree = "<group>"; };
 		184EB1B425BDA6030098103A /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		184EB1B525BDA6040098103A /* PlaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18449E1525C1E01000A07780 /* iOSDropDown.framework in Frameworks */,
 				3524AA7798A63906661003C8 /* Pods_EatWhatLah.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +151,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18449DFC25C1982300A07780 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				5DC73B4F25C0872E002C7132 /* ProfileCollectionViewCell.xib */,
+				183CFC3025BD224F00C07434 /* nearbyCellCollectionViewCell.xib */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
 		184EB1A725BDA4C80098103A /* PlacesModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +192,7 @@
 		188D6F3925BBB4E800061EEB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18449DFC25C1982300A07780 /* CustomCell */,
 				18F8A0B225B8802500BF41C9 /* Main.storyboard */,
 				18F8A0BA25B8802800BF41C9 /* LaunchScreen.storyboard */,
 				18F8A0C425B884EE00BF41C9 /* onboard.storyboard */,
@@ -265,12 +280,11 @@
 				188D6F3925BBB4E800061EEB /* View */,
 				18F8A0B825B8802800BF41C9 /* Assets.xcassets */,
 				18F8A0BD25B8802800BF41C9 /* Info.plist */,
-				183CFC2625BC49D100C07434 /* nearbyCell.swift */,
 				183CFC2F25BD224F00C07434 /* nearbyCellCollectionViewCell.swift */,
-				183CFC3025BD224F00C07434 /* nearbyCellCollectionViewCell.xib */,
 				5DC73B4E25C0872E002C7132 /* ProfileCollectionViewCell.swift */,
-				5DC73B4F25C0872E002C7132 /* ProfileCollectionViewCell.xib */,
 				184EB1D925C012710098103A /* UIExtension.swift */,
+				18449DF725C1384700A07780 /* customCellVenue.swift */,
+				18449DFE25C1B08E00A07780 /* colorExtension.swift */,
 			);
 			path = EatWhatLah;
 			sourceTree = "<group>";
@@ -306,6 +320,7 @@
 		9A8BF4FC7BF04EF1061FDA2C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18449E1425C1E01000A07780 /* iOSDropDown.framework */,
 				92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */,
 			);
 			name = Frameworks;
@@ -444,12 +459,12 @@
 			files = (
 				184EB1BD25BDA6040098103A /* Geometry.swift in Sources */,
 				184EB1BC25BDA6040098103A /* Southwest.swift in Sources */,
+				18449DF825C1384700A07780 /* customCellVenue.swift in Sources */,
 				18F8A0B125B8802500BF41C9 /* ViewController.swift in Sources */,
 				18F8A0AD25B8802500BF41C9 /* AppDelegate.swift in Sources */,
 				185DF98625B991F300B5929D /* EmailViewController.swift in Sources */,
 				184EB1BF25BDA6040098103A /* Photos.swift in Sources */,
 				18F8A0B725B8802500BF41C9 /* EatWhatLah.xcdatamodeld in Sources */,
-				183CFC2725BC49D100C07434 /* nearbyCell.swift in Sources */,
 				184EB1BE25BDA6040098103A /* PlaceModel.swift in Sources */,
 				183CFC3525BD302200C07434 /* Places.swift in Sources */,
 				184EB1C025BDA6040098103A /* Northeast.swift in Sources */,
@@ -463,6 +478,7 @@
 				184EB1CE25BFA7850098103A /* FavouriteController.swift in Sources */,
 				184EB1C325BDA6040098103A /* Location.swift in Sources */,
 				184EB1C125BDA6040098103A /* Plus_code.swift in Sources */,
+				18449DFF25C1B08E00A07780 /* colorExtension.swift in Sources */,
 				184EB1D325BFB9430098103A /* UserController.swift in Sources */,
 				18F8A0F425B9223200BF41C9 /* UserModel.swift in Sources */,
 				184EB1C725BF03D10098103A /* VenueDetailController.swift in Sources */,
