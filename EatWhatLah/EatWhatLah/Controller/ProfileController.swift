@@ -8,25 +8,43 @@
 import Foundation
 
 import UIKit
+import FirebaseAuth
 
 class ProfileController: UIViewController{
-    let screenWidth  = UIScreen.main.bounds.width - 20
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    let screenWidth  = UIScreen.main.bounds.width - 30
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var ProfileContent: UICollectionView!
     
     @IBOutlet weak var ProfileName: UILabel!
     @IBOutlet weak var ProfileMobile: UILabel!
     
+    @IBOutlet var biosTextView: UITextView!
     //let profile = ProfileModel.init()
     
+    @IBAction func logOutOnClick(_ sender: Any) {
+        do {
+            try Auth.auth().signOut();
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+    }
     var pictures:[String] = ["Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ProfileName.text = "Burger Man"
-        ProfileMobile.text = "999"
-        profilePicture.image = UIImage.init(named: "user")
+        ProfileName.text = appDelegate.user.name
+        ProfileMobile.text = appDelegate.user.email
+        profilePicture.image = appDelegate.user.profilePicture
+        
+        if(appDelegate.user.bio != "0"){
+        biosTextView.text = appDelegate.user.bio;
+        }else{
+            biosTextView.text = "Bio is not set"
+        }
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)

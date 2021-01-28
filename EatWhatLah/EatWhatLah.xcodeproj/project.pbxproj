@@ -16,6 +16,7 @@
 		18449E1525C1E01000A07780 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18449E1425C1E01000A07780 /* iOSDropDown.framework */; };
 		18449E1B25C2B57F00A07780 /* categoryCellcollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18449E1A25C2B57F00A07780 /* categoryCellcollectionViewCell.swift */; };
 		18449E5825C2BDA500A07780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0B825B8802800BF41C9 /* Assets.xcassets */; };
+		18449E5F25C33FFF00A07780 /* onBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18449E5E25C33FFF00A07780 /* onBoardController.swift */; };
 		184EB1BC25BDA6040098103A /* Southwest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1B325BDA6030098103A /* Southwest.swift */; };
 		184EB1BD25BDA6040098103A /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1B425BDA6030098103A /* Geometry.swift */; };
 		184EB1BE25BDA6040098103A /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1B525BDA6040098103A /* PlaceModel.swift */; };
@@ -90,6 +91,7 @@
 		18449DFE25C1B08E00A07780 /* colorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorExtension.swift; sourceTree = "<group>"; };
 		18449E1425C1E01000A07780 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18449E1A25C2B57F00A07780 /* categoryCellcollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryCellcollectionViewCell.swift; sourceTree = "<group>"; };
+		18449E5E25C33FFF00A07780 /* onBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardController.swift; sourceTree = "<group>"; };
 		184EB1B325BDA6030098103A /* Southwest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Southwest.swift; sourceTree = "<group>"; };
 		184EB1B425BDA6030098103A /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		184EB1B525BDA6040098103A /* PlaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				184EB1D625BFF6860098103A /* NearbyExtension.swift */,
 				184EB22625C097870098103A /* ViewMoreVenueController.swift */,
 				5DC73B9325C2B9DD002C7132 /* ContentController.swift */,
+				18449E5E25C33FFF00A07780 /* onBoardController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				184EB1DA25C012710098103A /* UIExtension.swift in Sources */,
 				5DC73BA125C305DE002C7132 /* ATFCollectionViewCell.swift in Sources */,
 				184EB1CA25BF247C0098103A /* LocationDelegate.swift in Sources */,
+				18449E5F25C33FFF00A07780 /* onBoardController.swift in Sources */,
 				188D6F3625BA5FBC00061EEB /* ImagePicker.swift in Sources */,
 				5DC73B5025C0872E002C7132 /* ProfileCollectionViewCell.swift in Sources */,
 				184EB1D725BFF6860098103A /* NearbyExtension.swift in Sources */,

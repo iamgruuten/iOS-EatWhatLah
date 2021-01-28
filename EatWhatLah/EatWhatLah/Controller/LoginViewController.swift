@@ -23,6 +23,7 @@ class LoginViewController:UIViewController{
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    let userController:UserController = UserController();
     
 
     override func viewDidLoad() {
@@ -84,39 +85,34 @@ class LoginViewController:UIViewController{
                     self.appDelegate.user.email = userDetails?["Email"] as! String
                     self.appDelegate.user.uid = userInfo!.uid
                     self.appDelegate.user.bio = userDetails?["Bio"] as! String
-
-                    // Get a reference to the storage service using the default Firebase App
+                    self.appDelegate.user.name = userDetails?["Name"] as! String
+                
                     let storage = Storage.storage()
 
-                    // Create a storage reference from firebase storage service
                     let gsReference = storage.reference(forURL:userDetails?["profileURL"] as! String)
                                             
-                    // Create local filesystem URL
-                    let localURL = URL(string: "profileImages/")!
-
-                    // Download to the local filesystem for later usage
-                    gsReference.write(toFile: localURL) { url, error in
-                      if let error = error {
-                            print("Failed to download image")
+                    gsReference.getData(maxSize: 10 * 1024 * 1024) { data, error in
+                        if let error = error {
+                          // Uh-oh, an error occurred!
                             print(error)
-                      } else {
-                        let uid = userDetails?["uid"] as! String;
-                        print("Downloaded Profile Image")
-                        self.appDelegate.user.profilePicture = self.loadImage(at: "profileImages/" + uid + ".png")!
+                        } else {
+                            self.appDelegate.user.profilePicture = UIImage(data: data!)!
+                            
+                          //Complete login
+
+                          SwiftSpinner.hide();
+                          
+                          self.userController.AddUser(user: self.appDelegate.user)
+                          
+                          let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                          
+                          let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainSB")
+                          
+                          nextViewController.modalPresentationStyle = .fullScreen
+                          
+                          self.present(nextViewController, animated:false, completion:nil)
+                        }
                       }
-                    }
-                
-                //Complete login
-
-                SwiftSpinner.hide();
-
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainSB")
-                
-                nextViewController.modalPresentationStyle = .fullScreen
-                
-                self.present(nextViewController, animated:false, completion:nil)
           })
         }
     }

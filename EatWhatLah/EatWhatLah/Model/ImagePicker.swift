@@ -59,7 +59,7 @@ extension ImagePicker {
         }
     }
 
-    func cameraAsscessRequest() {
+    func cameraAccessRequest() {
         if delegate == nil { return }
         let source = UIImagePickerController.SourceType.camera
         if AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {

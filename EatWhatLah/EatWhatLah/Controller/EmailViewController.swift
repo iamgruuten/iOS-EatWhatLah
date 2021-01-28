@@ -16,6 +16,18 @@ import CoreLocation
 
 class EmailViewController : UIViewController, UINavigationControllerDelegate, CLLocationManagerDelegate{
     
+    //AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var nextBtn: UIButton!
+    
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var confirmPasswordField: UITextField!
+    
+    @IBOutlet weak var username: UITextField!
     
     private lazy var imagePicker: ImagePicker = {
         let imagePicker = ImagePicker()
@@ -23,6 +35,8 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
         return imagePicker
     }()
     
+    let userController:UserController = UserController();
+
     //Location Services
     var locationManager: CLLocationManager?
 
@@ -34,6 +48,8 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
     }
     
     @IBAction func imageProfileOnClick(_ sender: Any) {
@@ -49,6 +65,8 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
         
         // Collect data from imageView
         let data = imageView.image?.pngData()
+        
+        appDelegate.user.profilePicture = imageView.image!;
         
         let metadata = StorageMetadata()
         metadata.contentType = "image/png"
@@ -93,6 +111,7 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
         
         
         uploadTask.observe(.success) { snapshot in
+            
             SwiftSpinner.hide()
             
             let storyBoard : UIStoryboard = UIStoryboard(name: "onboard", bundle:nil)
@@ -122,28 +141,17 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
         }
     }
     
-    //AppDelegate
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    @IBOutlet weak var imageView: UIImageView!
-    
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var nextBtn: UIButton!
-    
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var confirmPasswordField: UITextField!
-    
-    @IBOutlet weak var username: UITextField!
-    
     @IBAction func setProfileImageOnClick(_ sender: Any) {
         print("tapped on image vuew")
+        imagePicker.cameraAccessRequest();
         imagePicker.photoGalleryAccessRequest();
         
     }
     
     @IBAction func usernameOnClick(_ sender: Any) {
         if(username.text == ""){
-            confirmPasswordField.layer.borderColor = UIColor.red.cgColor
-            confirmPasswordField.layer.borderWidth = 1.0
+            username.layer.borderColor = UIColor.red.cgColor
+            username.layer.borderWidth = 1.0
         }else{
             // Create a root reference
             ref = Database.database().reference()
@@ -163,6 +171,8 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
                     "Venue":"Nothing here yet"
                 ]
             )
+            
+            appDelegate.user.name = username.text!;
             
             let storyBoard : UIStoryboard = UIStoryboard(name: "onboard", bundle:nil)
             
@@ -307,6 +317,8 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
                     //Proceed
                     
                     self.appDelegate.user.email = email;
+                    self.appDelegate.user.bio = "0";
+
                     print(self.appDelegate.user.email )
                     
                     let storyBoard : UIStoryboard = UIStoryboard(name: "onboard", bundle:nil)
@@ -371,6 +383,16 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
             if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
                 if CLLocationManager.isRangingAvailable() {
                     //Go to main page
+                    self.userController.AddUser(user: self.appDelegate.user)
+
+                    
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    
+                    let nextViewController = storyBoard.instantiateInitialViewController()!
+                    
+                    nextViewController.modalPresentationStyle = .fullScreen
+                    
+                    self.present(nextViewController, animated:false, completion:nil)
                 }
             }
         }else if status == .denied{
