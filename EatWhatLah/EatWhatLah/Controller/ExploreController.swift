@@ -111,7 +111,8 @@ class ExploreController : UIViewController{
                 self.resultVenues = responseDecode.results!
                 
                 for i in 0...placesResponse!.count-1{
-                    let distance:Double = self.getDistance(lat: String((placesResponse?[i].geometry?.location?.lat)!), long: String((placesResponse?[i].geometry?.location?.lng)!))
+                    let distance:Double = (placesResponse?[i].geometry?.location!.distance)!;
+                    
                     let name:String = (placesResponse?[i].name)!
                     var rating:String = "0"
                     
@@ -161,22 +162,7 @@ class ExploreController : UIViewController{
         
         self.present(nextViewController, animated:true, completion:nil)
     }
-    //Return distance from two pin location
-    func getDistance(lat:String, long:String)->Double{
-        
-        let pinLocation = CLLocation(latitude: CLLocationDegrees(lat)!, longitude: CLLocationDegrees(long)!)
-        
-        guard let currentLocation = locationManager.location else {
-            return 0.0
-        }
-                
-        let distance = pinLocation.distance(from: currentLocation)        
-        
-        print(String(format: "The distance to location is %.01fm", distance))
 
-        return Double(String(format: "%.0f", distance)) ?? 0.0;
-    }
-    
     
     //Register Nib of UI collecitonView
     func registerNib() {
