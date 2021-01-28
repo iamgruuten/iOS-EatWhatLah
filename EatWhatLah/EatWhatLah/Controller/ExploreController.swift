@@ -21,6 +21,12 @@ class ExploreController : UIViewController{
     
     var resultVenues = [Results]();
     
+    var resultCafe = [Results]();
+    var resultBuffet = [Results]();
+    var resultBakery = [Results]();
+    var resultBar = [Results]();
+    var resultHawker = [Results]();
+    
     let locationManager: CLLocationManager = {
         $0.requestWhenInUseAuthorization();
         $0.desiredAccuracy = kCLLocationAccuracyBest;
@@ -30,7 +36,7 @@ class ExploreController : UIViewController{
         
     }(CLLocationManager())
     
-    let categoriesList:[(String, UIImage?)] = [("Cafe", UIImage(named:"cafe")),("Hawker", UIImage(named:"hawker")),("Bakery", UIImage(named:"bakery")),("Bar", UIImage(named:"bar")),("Buffet", UIImage(named:"buffet"))]
+    let categoriesList:[(String, UIImage?, String)] = [("Cafe", UIImage(named:"cafe"), "#E63946"),("Hawker", UIImage(named:"hawker"), "#1D3557"),("Bakery", UIImage(named:"bakery"), "#457B9D"),("Bar", UIImage(named:"bar"), "#5C9D45"),("Buffet", UIImage(named:"buffet"), "#E63946")]
     
     
     @IBOutlet weak var profileBtn: UIButton!
@@ -44,10 +50,25 @@ class ExploreController : UIViewController{
     override func viewDidLoad() {
         self.registerNib();
         
+        let currentLat = String((locationManager.location?.coordinate.latitude)!);
+        let currentLng = String((locationManager.location?.coordinate.longitude)!);
+        
+        //Initialize all categories to reduce the spam of request quotas
+        resultCafe = appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "500", keyword: "", type: "Cafe")
+        resultBuffet = [Results]();
+        resultBakery = [Results]();
+        resultBar = [Results]();
+        resultHawker = [Results]();
+        
         let (lat, long) = getCurrentLocation();
         nearbyView.delegate = self;
         nearbyView.dataSource = self;
         nearbyView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10);
+        
+        categoryView.delegate = self;
+        categoryView.dataSource = self;
+        categoryView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10);
+
         
         requestPlacesNearby(lat: lat, long: long, radius: "500", keyword: "", type: "restaurant")
         
@@ -170,7 +191,6 @@ class ExploreController : UIViewController{
     
     //Register Nib of UI collecitonView
     func registerNib() {
-        
         print("Registering Nib")
         let nib = UINib(nibName: nearbyCellCollectionViewCell.nibName, bundle: nil)
         nearbyView.register(nib, forCellWithReuseIdentifier: nearbyCellCollectionViewCell.reuseIdentifier)
@@ -221,9 +241,9 @@ extension ExploreController: UICollectionViewDataSource {
         }else if collectionView == self.categoryView{
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryCellcollectionViewCell.reuseIdentifier, for: indexPath) as? categoryCellcollectionViewCell {
                 
-                let (name, image) = categoriesList[indexPath.row]
+                let (name, image, color) = categoriesList[indexPath.row]
                 
-                cell.configureCell(name: name, image: image!)
+                cell.configureCell(name: name, image: image!, color: UIColor.init(hex: color))
                 return cell
             }
             print("Return UICollectionViewCell")
@@ -250,6 +270,24 @@ extension ExploreController: UICollectionViewDataSource {
             
             self.present(nextViewController, animated:true, completion:nil)
         }else if collectionView == self.categoryView{
+
+            let (selectedCat , _ ,_) = categoriesList[indexPath.row]
+            
+            if(selectedCat == "Cafe" || selectedCat == "Bakery" || selectedCat == "Bar"){
+                    //Work on these 3
+                
+            }else{
+                //Work on these 2
+                
+            }
+            
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "viewMoreSB")
+            
+            nextViewController.modalPresentationStyle = .fullScreen
+            
+            self.present(nextViewController, animated:true, completion:nil)
         }else{
             
         }
@@ -267,24 +305,17 @@ extension ExploreController: UICollectionViewDelegateFlowLayout {
                 return CGSize(width: view.frame.width, height: 240)
             }
             print("Configuring cell")
-            print(dataNearByVenue[indexPath.row])
             cell.configureCell(place: dataNearByVenue[indexPath.row])
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
             return CGSize(width: view.frame.width, height: 240)
+        }else if collectionView == self.categoryView{
+            return CGSize(width: view.frame.width / 3, height: 100)
+            
         }else{
-            guard let cell: categoryCellcollectionViewCell = Bundle.main.loadNibNamed("categoryCellcollectionViewCell", owner: self, options: nil)?.first as? categoryCellcollectionViewCell else {
-                return CGSize(width: view.frame.width, height: 240)
-            }
-            
-            
-            let (name, image) = categoriesList[indexPath.row]
-            
-            cell.configureCell(name: name, image: image!)
-
-            cell.setNeedsLayout()
-            cell.layoutIfNeeded()
-            return CGSize(width: view.frame.width, height: 240)
+            return CGSize(width: view.frame.width / 3, height: 100)
         }
+        
     }
 }
+

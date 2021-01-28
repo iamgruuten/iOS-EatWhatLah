@@ -39,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vs-iW-qcu">
-                                <rect key="frame" x="57.5" y="78" width="256.5" height="17"/>
+                                <rect key="frame" x="57.5" y="78" width="278.5" height="17"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Don't know what to choose? Try Shaking">
                                         <attributes>
@@ -76,7 +76,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZs-wm-Ua7">
-                                                    <rect key="frame" x="115" y="20" width="34.5" height="4"/>
+                                                    <rect key="frame" x="115" y="20" width="37.5" height="3.5"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Label">
                                                             <attributes>
@@ -87,7 +87,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFJ-HW-X31">
-                                                    <rect key="frame" x="115" y="25" width="279" height="26"/>
+                                                    <rect key="frame" x="115" y="24.5" width="279" height="26.5"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Labels sdsdsd">
                                                             <attributes>
@@ -99,10 +99,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFD-Yg-0ts">
-                                                    <rect key="frame" x="348.5" y="63" width="60.5" height="26"/>
+                                                    <rect key="frame" x="345.5" y="63" width="63.5" height="26"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuP-E7-qNa">
-                                                            <rect key="frame" x="32" y="2" width="19.5" height="22"/>
+                                                            <rect key="frame" x="32" y="2" width="22.5" height="22"/>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="4.5">
                                                                     <attributes>
@@ -138,10 +138,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3e-HJ-ju4">
-                                                    <rect key="frame" x="270" y="63" width="73.5" height="26"/>
+                                                    <rect key="frame" x="264.5" y="63" width="76" height="26"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SK6-dZ-IpU">
-                                                            <rect key="frame" x="29" y="2" width="35.5" height="22"/>
+                                                            <rect key="frame" x="29" y="2" width="38" height="22"/>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="123m">
                                                                     <attributes>
@@ -176,10 +176,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxa-Bh-DyH">
-                                                    <rect key="frame" x="150" y="63" width="115" height="26"/>
+                                                    <rect key="frame" x="150" y="63" width="109.5" height="26"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJw-iu-DTS">
-                                                            <rect key="frame" x="53.5" y="3" width="8" height="20"/>
+                                                            <rect key="frame" x="50" y="3" width="9.5" height="20"/>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="$">
                                                                     <attributes>
@@ -254,7 +254,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lsz-8C-5VX">
-                                <rect key="frame" x="84" y="115" width="52" height="27"/>
+                                <rect key="frame" x="84" y="115" width="59" height="27"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="All Types">
@@ -270,7 +270,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2K9-Q2-j6n">
-                                <rect key="frame" x="166" y="115" width="71" height="27"/>
+                                <rect key="frame" x="173" y="115" width="71" height="27"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Vegeterain">
@@ -285,7 +285,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BU0-nB-7Ry">
-                                <rect key="frame" x="267" y="115" width="59" height="27"/>
+                                <rect key="frame" x="274" y="115" width="59" height="27"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Halal">
@@ -299,8 +299,8 @@
                                     <action selector="HalalOnClick:" destination="JAr-vw-F6y" eventType="touchUpInside" id="qox-ix-w63"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezH-tI-TWZ">
-                                <rect key="frame" x="103" y="117" width="14" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezH-tI-TWZ">
+                                <rect key="frame" x="103" y="117" width="55" height="29"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <attributedString key="attributedText">
                                     <fragment content="_">
@@ -315,7 +315,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQf-6G-6zG">
-                                <rect key="frame" x="195" y="117" width="13" height="29"/>
+                                <rect key="frame" x="202" y="117" width="13" height="29"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <attributedString key="attributedText">
                                     <fragment content="_">
@@ -329,7 +329,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBn-Wh-AiN">
-                                <rect key="frame" x="290" y="117" width="13" height="29"/>
+                                <rect key="frame" x="297" y="117" width="13" height="29"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <attributedString key="attributedText">
                                     <fragment content="_">
@@ -632,64 +632,6 @@
                                     <outlet property="delegate" destination="nsu-gz-uee" id="Fmp-dc-rLN"/>
                                 </connections>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qUL-Rl-dTd">
-                                <rect key="frame" x="5" y="456" width="404" height="200"/>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="VAs-jK-k0i"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vFc-uL-IJV">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCell" id="OuF-fo-cju" customClass="categoryCellcollectionViewCell" customModule="EatWhatLah" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="36" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9j7-qt-Mf6">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TA-pk-Wym">
-                                                    <rect key="frame" x="48" y="88" width="32.5" height="15"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Label">
-                                                            <attributes>
-                                                                <font key="NSFont" size="12" name="SFProText-Semibold"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x76-on-9ED">
-                                                    <rect key="frame" x="39" y="19" width="50" height="50"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="4TA-pk-Wym" firstAttribute="centerX" secondItem="9j7-qt-Mf6" secondAttribute="centerX" id="R1e-jw-e6r"/>
-                                                <constraint firstItem="x76-on-9ED" firstAttribute="centerX" secondItem="9j7-qt-Mf6" secondAttribute="centerX" id="sc3-Xg-fy1"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="10"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </collectionViewCellContentView>
-                                        <connections>
-                                            <outlet property="categoryNameLabel" destination="4TA-pk-Wym" id="Zmo-ic-BjR"/>
-                                            <outlet property="imageCategory" destination="x76-on-9ED" id="4lV-Ra-fHw"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="nsu-gz-uee" id="yil-fO-HZa"/>
-                                    <outlet property="delegate" destination="nsu-gz-uee" id="O2H-Ue-pbV"/>
-                                </connections>
-                            </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inb-p2-YjA">
                                 <rect key="frame" x="31" y="438" width="212" height="18"/>
                                 <attributedString key="attributedText">
@@ -702,12 +644,74 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qUL-Rl-dTd">
+                                <rect key="frame" x="5" y="473" width="404" height="137"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="VAs-jK-k0i"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vFc-uL-IJV">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCell" id="OuF-fo-cju" customClass="categoryCellcollectionViewCell" customModule="EatWhatLah" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="4.5" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9j7-qt-Mf6">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TA-pk-Wym">
+                                                    <rect key="frame" x="48" y="88" width="32.5" height="15"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="12" name="SFProText-Semibold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <color key="highlightedColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x76-on-9ED">
+                                                    <rect key="frame" x="39" y="19" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="4TA-pk-Wym" firstAttribute="top" secondItem="x76-on-9ED" secondAttribute="bottom" constant="12" id="Fxh-li-Dqf"/>
+                                                <constraint firstItem="4TA-pk-Wym" firstAttribute="centerX" secondItem="9j7-qt-Mf6" secondAttribute="centerX" id="R1e-jw-e6r"/>
+                                                <constraint firstItem="x76-on-9ED" firstAttribute="top" secondItem="9j7-qt-Mf6" secondAttribute="top" constant="15" id="nBZ-50-qW8"/>
+                                                <constraint firstItem="x76-on-9ED" firstAttribute="centerX" secondItem="9j7-qt-Mf6" secondAttribute="centerX" id="sc3-Xg-fy1"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryNameLabel" destination="4TA-pk-Wym" id="Zmo-ic-BjR"/>
+                                            <outlet property="cell" destination="9j7-qt-Mf6" id="GJO-EG-wCj"/>
+                                            <outlet property="imageCategory" destination="x76-on-9ED" id="4lV-Ra-fHw"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="nsu-gz-uee" id="yil-fO-HZa"/>
+                                    <outlet property="delegate" destination="nsu-gz-uee" id="O2H-Ue-pbV"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rJr-er-Xom"/>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="qUL-Rl-dTd" firstAttribute="leading" secondItem="rJr-er-Xom" secondAttribute="leading" constant="5" id="013-Cc-ypQ"/>
-                            <constraint firstItem="qUL-Rl-dTd" firstAttribute="top" secondItem="inb-p2-YjA" secondAttribute="bottom" id="2Th-Vc-9cH"/>
+                            <constraint firstItem="qUL-Rl-dTd" firstAttribute="top" secondItem="inb-p2-YjA" secondAttribute="bottom" constant="10" id="2Th-Vc-9cH"/>
                             <constraint firstItem="DyD-Ti-0wE" firstAttribute="leading" secondItem="rJr-er-Xom" secondAttribute="leading" constant="31" id="3lv-0D-JLK"/>
                             <constraint firstItem="tdY-C6-n9J" firstAttribute="leading" secondItem="rJr-er-Xom" secondAttribute="leading" constant="29" id="5Qq-Az-5pV"/>
                             <constraint firstItem="rJr-er-Xom" firstAttribute="trailing" secondItem="Lmz-BN-GqW" secondAttribute="trailing" constant="27" id="9ej-Ld-lUb"/>
@@ -743,7 +747,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikb-e4-rte" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984" y="-1530"/>
+            <point key="canvasLocation" x="982.60869565217399" y="-1530.1339285714284"/>
         </scene>
         <!--Profile-->
         <scene sceneID="1zR-hE-vem">

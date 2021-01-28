@@ -19,6 +19,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var selectedPlaceImage:UIImage?;
     
+    //API Rquest based on filter, duplicate found in main but will reformat in the future
+    func requestPlacesNearby(lat:String, long:String, radius:String, keyword:String, type:String)->[Results]{
+        
+        //Api key
+        let apiKey = "AIzaSyDt0QPH_9Bl0h9xWLw2PIFLpnOrcDxGYII"
+        
+        let place : String = "https://maps.googleapis.com/maps/api/place/nearbysearch/"
+        
+        //lat and long
+        var url:String = place + "json?location=" + lat + "," + long;
+        
+        //radius
+        url = url + "&radius="+radius;
+        
+        //type
+        url = url + "&type="+type;
+        
+        //keyword
+        url = url + "&keyword=" + keyword;
+        
+        //key
+        url = url + "&key=" + apiKey;
+        
+        //Get Request for nearby restaurant
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        var resultsVenues = [Results]();
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            do {
+                let decoder = JSONDecoder()
+                
+                let responseDecode = try decoder.decode(PlaceModel.self, from: data!)
+                resultsVenues = responseDecode.results!
+                print("Completed")
+            } catch {
+                print("error, unable to request data")
+            }
+        })
+        
+        task.resume()
+        return resultsVenues;
+        
+    }
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
