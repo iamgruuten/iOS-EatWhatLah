@@ -71,6 +71,10 @@
 		5DC73B7925C2A17C002C7132 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73B7725C2A17C002C7132 /* CommentTableViewCell.swift */; };
 		5DC73B7A25C2A17C002C7132 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC73B7825C2A17C002C7132 /* CommentTableViewCell.xib */; };
 		5DC73B9425C2B9DD002C7132 /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73B9325C2B9DD002C7132 /* ContentController.swift */; };
+		5DC73BA125C305DE002C7132 /* ATFCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73B9F25C305DE002C7132 /* ATFCollectionViewCell.swift */; };
+		5DC73BA225C305DE002C7132 /* ATFCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC73BA025C305DE002C7132 /* ATFCollectionViewCell.xib */; };
+		5DC73BA725C30601002C7132 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73BA525C30601002C7132 /* FeedTableViewCell.swift */; };
+		5DC73BA825C30601002C7132 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC73BA625C30601002C7132 /* FeedTableViewCell.xib */; };
 		5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD882225B88EA9006D6358 /* CommunityController.swift */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +146,10 @@
 		5DC73B7725C2A17C002C7132 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		5DC73B7825C2A17C002C7132 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		5DC73B9325C2B9DD002C7132 /* ContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
+		5DC73B9F25C305DE002C7132 /* ATFCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATFCollectionViewCell.swift; sourceTree = "<group>"; };
+		5DC73BA025C305DE002C7132 /* ATFCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ATFCollectionViewCell.xib; sourceTree = "<group>"; };
+		5DC73BA525C30601002C7132 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		5DC73BA625C30601002C7132 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
 		5DCD882225B88EA9006D6358 /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
 		92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatWhatLah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -165,6 +173,8 @@
 				5DC73B4F25C0872E002C7132 /* ProfileCollectionViewCell.xib */,
 				183CFC3025BD224F00C07434 /* nearbyCellCollectionViewCell.xib */,
 				5DC73B7825C2A17C002C7132 /* CommentTableViewCell.xib */,
+				5DC73BA025C305DE002C7132 /* ATFCollectionViewCell.xib */,
+				5DC73BA625C30601002C7132 /* FeedTableViewCell.xib */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -301,6 +311,8 @@
 				18F8A0B825B8802800BF41C9 /* Assets.xcassets */,
 				18F8A0BD25B8802800BF41C9 /* Info.plist */,
 				183CFC2F25BD224F00C07434 /* nearbyCellCollectionViewCell.swift */,
+				5DC73B9F25C305DE002C7132 /* ATFCollectionViewCell.swift */,
+				5DC73BA525C30601002C7132 /* FeedTableViewCell.swift */,
 				5DC73B4E25C0872E002C7132 /* ProfileCollectionViewCell.swift */,
 				18449DF725C1384700A07780 /* customCellVenue.swift */,
 				5DC73B7725C2A17C002C7132 /* CommentTableViewCell.swift */,
@@ -407,11 +419,13 @@
 			files = (
 				184EB20E25C06B9F0098103A /* SFProText-HeavyItalic.ttf in Resources */,
 				5DC73B4C25C08529002C7132 /* Profile.storyboard in Resources */,
+				5DC73BA225C305DE002C7132 /* ATFCollectionViewCell.xib in Resources */,
 				184EB20C25C06B9F0098103A /* SFProText-Medium.ttf in Resources */,
 				18F8A0BC25B8802800BF41C9 /* LaunchScreen.storyboard in Resources */,
 				18449E5825C2BDA500A07780 /* Assets.xcassets in Resources */,
 				184EB20F25C06B9F0098103A /* SFProText-RegularItalic.ttf in Resources */,
 				184EB21025C06B9F0098103A /* SFProText-SemiBold.ttf in Resources */,
+				5DC73BA825C30601002C7132 /* FeedTableViewCell.xib in Resources */,
 				184EB20B25C06B9F0098103A /* SFProText-SemiBoldItalic.ttf in Resources */,
 				184EB20D25C06B9F0098103A /* SFProText-Regular.ttf in Resources */,
 				184EB21225C06B9F0098103A /* SFProText-BoldItalic.ttf in Resources */,
@@ -493,11 +507,13 @@
 				184EB22725C097870098103A /* ViewMoreVenueController.swift in Sources */,
 				183CFC2325BC365B00C07434 /* ExploreController.swift in Sources */,
 				184EB1DA25C012710098103A /* UIExtension.swift in Sources */,
+				5DC73BA125C305DE002C7132 /* ATFCollectionViewCell.swift in Sources */,
 				184EB1CA25BF247C0098103A /* LocationDelegate.swift in Sources */,
 				188D6F3625BA5FBC00061EEB /* ImagePicker.swift in Sources */,
 				5DC73B5025C0872E002C7132 /* ProfileCollectionViewCell.swift in Sources */,
 				184EB1D725BFF6860098103A /* NearbyExtension.swift in Sources */,
 				184EB1CE25BFA7850098103A /* FavouriteController.swift in Sources */,
+				5DC73BA725C30601002C7132 /* FeedTableViewCell.swift in Sources */,
 				184EB1C325BDA6040098103A /* Location.swift in Sources */,
 				184EB1C125BDA6040098103A /* Plus_code.swift in Sources */,
 				18449DFF25C1B08E00A07780 /* colorExtension.swift in Sources */,
