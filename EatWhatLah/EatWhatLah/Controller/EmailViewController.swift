@@ -142,10 +142,8 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
     }
     
     @IBAction func setProfileImageOnClick(_ sender: Any) {
-        print("tapped on image vuew")
-        imagePicker.cameraAccessRequest();
-        imagePicker.photoGalleryAccessRequest();
-        
+        print("tapped on image view to set users image")
+        showOptionsForProfilePicture()
     }
     
     @IBAction func usernameOnClick(_ sender: Any) {
@@ -405,6 +403,34 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
             // show the alert
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    //Action Sheet
+    @IBAction func showOptionsForProfilePicture() {
+        let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Take a picture", style: .default , handler:{ (UIAlertAction)in
+            print("User click picture button")
+            self.imagePicker.cameraAccessRequest();
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Select photo from album", style: .default , handler:{ (UIAlertAction)in
+            print("User click album button")
+            self.imagePicker.photoGalleryAccessRequest();
+
+        }))
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+            print("User click Dismiss button")
+            
+        }))
+
+        
+        //uncomment for iPad Support
+        //alert.popoverPresentationController?.sourceView = self.view
+
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
     }
 }
 

@@ -90,6 +90,7 @@ class ExploreController : UIViewController{
         requestPlacesNearby(lat: lat, long: long, radius: "500", keyword: "", type: "restaurant")
         
         profileBtn.layer.cornerRadius = 45
+        profileBtn.imageView?.layer.cornerRadius = 45
         profileBtn.layer.shadowColor = UIColor.lightGray.cgColor
         profileBtn.layer.shadowOffset = CGSize(width: 1, height: 1)
         profileBtn.layer.shadowRadius = 5
