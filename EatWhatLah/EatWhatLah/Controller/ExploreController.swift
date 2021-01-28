@@ -50,6 +50,9 @@ class ExploreController : UIViewController{
     override func viewDidLoad() {
         self.registerNib();
         
+        //initialize user info
+        profileBtn.setBackgroundImage(appDelegate.user.profilePicture, for: .normal)
+        
         let currentLat = String((locationManager.location?.coordinate.latitude)!);
         let currentLng = String((locationManager.location?.coordinate.longitude)!);
         

@@ -7,11 +7,16 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProText-SemiBold.ttf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Onboard Controller-->
+        <!--On Board Controller-->
         <scene sceneID="09W-PF-1cC">
             <objects>
-                <viewController id="b9C-i6-JjU" customClass="onboardController" customModule="EatWhatLah" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="b9C-i6-JjU" customClass="onBoardController" customModule="EatWhatLah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vuv-Ey-Yom">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,10 +168,10 @@
             </objects>
             <point key="canvasLocation" x="600" y="-264.50892857142856"/>
         </scene>
-        <!--Onboard Controller-->
+        <!--On Board Controller-->
         <scene sceneID="7Ma-IN-nuK">
             <objects>
-                <viewController id="xcd-hC-QvQ" customClass="onboardController" customModule="EatWhatLah" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xcd-hC-QvQ" customClass="onBoardController" customModule="EatWhatLah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uA1-hR-IrR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,7 +190,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QO-8N-Z1e">
-                                <rect key="frame" x="111.5" y="589" width="191" height="28"/>
+                                <rect key="frame" x="112" y="589" width="190.5" height="28"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Click and Choose">
                                         <attributes>
@@ -318,10 +323,10 @@
             </objects>
             <point key="canvasLocation" x="-310.14492753623193" y="-264.50892857142856"/>
         </scene>
-        <!--Onboard Controller-->
+        <!--On Board Controller-->
         <scene sceneID="Yis-VK-tIP">
             <objects>
-                <viewController id="eWC-4C-1Ti" customClass="onboardController" customModule="EatWhatLah" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eWC-4C-1Ti" customClass="onBoardController" customModule="EatWhatLah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="igq-pR-7Hp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -340,7 +345,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7I-Bi-pph">
-                                <rect key="frame" x="93" y="589" width="228" height="28"/>
+                                <rect key="frame" x="93.5" y="589" width="227.5" height="28"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Discover New Places">
                                         <attributes>
@@ -476,7 +481,7 @@
                                 <rect key="frame" x="0.0" y="529" width="414" height="367"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZc-Nx-m0t">
-                                        <rect key="frame" x="40" y="43" width="146" height="21"/>
+                                        <rect key="frame" x="40" y="43" width="159" height="21"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Eat What Lah... :D">
                                                 <attributes>
@@ -489,7 +494,7 @@
                                         <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgs-Ab-emf">
-                                        <rect key="frame" x="40" y="73" width="229" height="28"/>
+                                        <rect key="frame" x="40" y="73" width="248.5" height="29"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Login To Get Started ">
                                                 <attributes>
@@ -502,10 +507,10 @@
                                         <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </label>
                                     <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uoQ-6H-nHZ">
-                                        <rect key="frame" x="36" y="123" width="342" height="53"/>
+                                        <rect key="frame" x="36" y="124" width="342" height="54"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1q4-MH-oiK">
-                                                <rect key="frame" x="0.0" y="10" width="342" height="33"/>
+                                                <rect key="frame" x="0.0" y="10" width="342" height="34"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                                 <state key="normal" title="Login with Email">
                                                     <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -515,7 +520,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail" translatesAutoresizingMaskIntoConstraints="NO" id="bzJ-SX-wmq">
-                                                <rect key="frame" x="22" y="10" width="28" height="33"/>
+                                                <rect key="frame" x="22" y="10" width="28" height="34"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.89677762989999998" green="0.22354340549999999" blue="0.27447029950000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -538,10 +543,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XdJ-gb-T85">
-                                        <rect key="frame" x="36" y="186" width="342" height="53"/>
+                                        <rect key="frame" x="36" y="188" width="342" height="54"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gg-7G-jyh">
-                                                <rect key="frame" x="0.0" y="10" width="342" height="33"/>
+                                                <rect key="frame" x="0.0" y="10" width="342" height="34"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                                 <state key="normal" title="Create New Account">
                                                     <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -645,7 +650,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTH-e9-bzb">
-                                <rect key="frame" x="30" y="206" width="222" height="23.5"/>
+                                <rect key="frame" x="30" y="206" width="243.5" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Enter your email address">
                                         <attributes>
@@ -658,7 +663,7 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXh-1h-YKt">
-                                <rect key="frame" x="30" y="243.5" width="262.5" height="42"/>
+                                <rect key="frame" x="30" y="244" width="282" height="43"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Please enter your email address  to start">
                                         <attributes>
@@ -671,15 +676,15 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LB4-OA-R2K">
-                                <rect key="frame" x="30" y="315.5" width="354" height="34"/>
+                                <rect key="frame" x="30" y="317" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rQq-Eg-ca2">
-                                <rect key="frame" x="30" y="378.5" width="354" height="53"/>
+                                <rect key="frame" x="30" y="380" width="354" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyt-bE-4GM">
-                                        <rect key="frame" x="0.0" y="10" width="354" height="33"/>
+                                        <rect key="frame" x="0.0" y="10" width="354" height="34"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                         <state key="normal" title="Next">
                                             <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -706,7 +711,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pkq-Xc-4iE">
-                                <rect key="frame" x="30" y="441.5" width="354" height="53"/>
+                                <rect key="frame" x="30" y="444" width="354" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRa-pY-YKm">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="54"/>
@@ -807,7 +812,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucy-fc-oc6">
-                                <rect key="frame" x="30" y="206" width="157" height="24"/>
+                                <rect key="frame" x="30" y="206" width="175.5" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Welcome! [Name]">
                                         <attributes>
@@ -820,7 +825,7 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvn-aa-iFO">
-                                <rect key="frame" x="30" y="244" width="245" height="42"/>
+                                <rect key="frame" x="30" y="244" width="262.5" height="43"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Please enter your password to continue">
                                         <attributes>
@@ -833,12 +838,12 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7TX-7L-D7G">
-                                <rect key="frame" x="30" y="316" width="354" height="34"/>
+                                <rect key="frame" x="30" y="317" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fus-Tb-Hia">
-                                <rect key="frame" x="30" y="379" width="354" height="53"/>
+                                <rect key="frame" x="30" y="380" width="354" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGB-Fa-Fh3">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="54"/>
@@ -868,7 +873,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1uT-mX-UIn">
-                                <rect key="frame" x="30" y="442" width="354" height="53"/>
+                                <rect key="frame" x="30" y="444" width="354" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmQ-Rz-M4k">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="54"/>
@@ -967,7 +972,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3O2-0F-T5F">
-                                <rect key="frame" x="30" y="206" width="154.5" height="24"/>
+                                <rect key="frame" x="30" y="206" width="169" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Register Account">
                                         <attributes>
@@ -980,7 +985,7 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJf-tB-sdO">
-                                <rect key="frame" x="30" y="244" width="262.5" height="42"/>
+                                <rect key="frame" x="30" y="244" width="282" height="43"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Please enter your email address  to start">
                                         <attributes>
@@ -993,7 +998,7 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j7r-da-zdi">
-                                <rect key="frame" x="30" y="316" width="354" height="34"/>
+                                <rect key="frame" x="30" y="317" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                                 <connections>
@@ -1001,10 +1006,10 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sKN-1h-PJs">
-                                <rect key="frame" x="30" y="379" width="354" height="53"/>
+                                <rect key="frame" x="30" y="380" width="354" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2Z-2u-j7b">
-                                        <rect key="frame" x="0.0" y="10" width="354" height="33"/>
+                                        <rect key="frame" x="0.0" y="10" width="354" height="34"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                         <state key="normal" title="Next">
                                             <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1031,10 +1036,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j08-BN-c4S">
-                                <rect key="frame" x="30" y="442" width="354" height="53"/>
+                                <rect key="frame" x="30" y="444" width="354" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye8-Vn-KYE">
-                                        <rect key="frame" x="0.0" y="10" width="354" height="33"/>
+                                        <rect key="frame" x="0.0" y="10" width="354" height="34"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                         <state key="normal" title="Go Back">
                                             <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1130,7 +1135,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phh-li-16p">
-                                <rect key="frame" x="30" y="206" width="125" height="24"/>
+                                <rect key="frame" x="30" y="206" width="133.5" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Set Password">
                                         <attributes>
@@ -1143,7 +1148,7 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zT-W5-UqW">
-                                <rect key="frame" x="30" y="244" width="205" height="42"/>
+                                <rect key="frame" x="30" y="244" width="217.5" height="43"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Give your new account a  password">
                                         <attributes>
@@ -1156,15 +1161,15 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kdj-Ma-N4e">
-                                <rect key="frame" x="30" y="316" width="354" height="34"/>
+                                <rect key="frame" x="30" y="317" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sh-1D-i8F">
-                                <rect key="frame" x="30" y="379" width="354" height="53"/>
+                                <rect key="frame" x="30" y="380" width="354" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7Q-98-y5F">
-                                        <rect key="frame" x="0.0" y="10" width="354" height="33"/>
+                                        <rect key="frame" x="0.0" y="10" width="354" height="34"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                         <state key="normal" title="Next">
                                             <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1191,10 +1196,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rps-XD-Lur">
-                                <rect key="frame" x="30" y="442" width="354" height="53"/>
+                                <rect key="frame" x="30" y="444" width="354" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yay-qe-xvm">
-                                        <rect key="frame" x="0.0" y="10" width="354" height="33"/>
+                                        <rect key="frame" x="0.0" y="10" width="354" height="34"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                         <state key="normal" title="Go Back">
                                             <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1288,7 +1293,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAy-8E-wvq">
-                                <rect key="frame" x="30" y="206" width="203" height="24"/>
+                                <rect key="frame" x="30" y="206" width="218.5" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Retype your Password">
                                         <attributes>
@@ -1301,7 +1306,7 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wh-a4-e84">
-                                <rect key="frame" x="30" y="244" width="205" height="42"/>
+                                <rect key="frame" x="30" y="244" width="217.5" height="43"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Give your new account a  password">
                                         <attributes>
@@ -1314,15 +1319,15 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pop-NK-L34">
-                                <rect key="frame" x="30" y="316" width="354" height="34"/>
+                                <rect key="frame" x="30" y="317" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zdp-PI-ux7">
-                                <rect key="frame" x="30" y="379" width="354" height="53"/>
+                                <rect key="frame" x="30" y="380" width="354" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1V-aD-AfK">
-                                        <rect key="frame" x="0.0" y="10" width="354" height="33"/>
+                                        <rect key="frame" x="0.0" y="10" width="354" height="34"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                         <state key="normal" title="Next">
                                             <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1349,10 +1354,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H3e-EH-3l8">
-                                <rect key="frame" x="30" y="442" width="354" height="53"/>
+                                <rect key="frame" x="30" y="444" width="354" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejt-WR-1EG">
-                                        <rect key="frame" x="0.0" y="10" width="354" height="33"/>
+                                        <rect key="frame" x="0.0" y="10" width="354" height="34"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                         <state key="normal" title="Go Back">
                                             <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1446,7 +1451,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7y-jl-Bsf">
-                                <rect key="frame" x="30" y="206" width="176" height="24"/>
+                                <rect key="frame" x="30" y="206" width="195" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Before we started...">
                                         <attributes>
@@ -1459,7 +1464,7 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JH-X5-B5a">
-                                <rect key="frame" x="30" y="244" width="205" height="42"/>
+                                <rect key="frame" x="30" y="244" width="217.5" height="43"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Give your new account a  username">
                                         <attributes>
@@ -1472,7 +1477,7 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTH-Kf-8Ee">
-                                <rect key="frame" x="30" y="316" width="354" height="34"/>
+                                <rect key="frame" x="30" y="317" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
@@ -1480,7 +1485,7 @@
                                 <rect key="frame" x="30" y="379" width="354" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cml-w7-xgh">
-                                        <rect key="frame" x="0.0" y="10" width="354" height="33"/>
+                                        <rect key="frame" x="0.0" y="10" width="354" height="34"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                         <state key="normal" title="Next">
                                             <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1546,7 +1551,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJZ-kU-tnr">
-                                <rect key="frame" x="30" y="372" width="354" height="53"/>
+                                <rect key="frame" x="30" y="372" width="354" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzJ-nc-sd6">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="54"/>
@@ -1609,10 +1614,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TFC-mU-kBr">
-                                <rect key="frame" x="30" y="435" width="354" height="53"/>
+                                <rect key="frame" x="30" y="436" width="354" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zC4-Xb-lcm">
-                                        <rect key="frame" x="0.0" y="10" width="354" height="33"/>
+                                        <rect key="frame" x="0.0" y="10" width="354" height="34"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                         <state key="normal" title="Go Back">
                                             <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1718,7 +1723,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6T-rS-BUy">
-                                <rect key="frame" x="108" y="205" width="198" height="47"/>
+                                <rect key="frame" x="98.5" y="205" width="217" height="48"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Account Successfully  Created">
                                         <attributes>
@@ -1731,10 +1736,10 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SSF-uH-t0w" customClass="emai">
-                                <rect key="frame" x="30" y="366" width="354" height="53"/>
+                                <rect key="frame" x="30" y="367" width="354" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KT9-Vy-6tP">
-                                        <rect key="frame" x="0.0" y="10" width="354" height="33"/>
+                                        <rect key="frame" x="0.0" y="10" width="354" height="34"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                         <state key="normal" title="Done">
                                             <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1790,7 +1795,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxK-KF-zvu">
-                                <rect key="frame" x="55" y="631" width="304" height="33"/>
+                                <rect key="frame" x="39" y="632" width="336.5" height="33.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="To get started, we will need your current location to have the best recommendation for you">
                                         <attributes>
@@ -1803,7 +1808,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtr-LE-DLs">
-                                <rect key="frame" x="93" y="589" width="228" height="28"/>
+                                <rect key="frame" x="83.5" y="589" width="247" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Enable Your Location">
                                         <attributes>
@@ -1816,10 +1821,10 @@
                                 <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o2V-ir-80G">
-                                <rect key="frame" x="28" y="788" width="358" height="53"/>
+                                <rect key="frame" x="28" y="789.5" width="358" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9g-0g-uEP">
-                                        <rect key="frame" x="0.0" y="10" width="358" height="33"/>
+                                        <rect key="frame" x="0.0" y="10" width="358" height="34"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                         <state key="normal" title="Enable Location">
                                             <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1849,7 +1854,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="522"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VsW-Xo-cOl">
-                                        <rect key="frame" x="185.5" y="78" width="103" height="21"/>
+                                        <rect key="frame" x="177" y="78" width="120" height="21"/>
                                         <attributedString key="attributedText">
                                             <fragment content="EatWhatLah!">
                                                 <attributes>
@@ -1861,7 +1866,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uK6-r8-oCg">
-                                        <rect key="frame" x="117.5" y="62" width="54" height="54"/>
+                                        <rect key="frame" x="109" y="62" width="54" height="54"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oj8-Ld-8uM">
                                                 <rect key="frame" x="-3" y="11" width="60" height="32"/>
@@ -1941,9 +1946,9 @@
     <resources>
         <image name="Image" width="46" height="32"/>
         <image name="mail" width="28" height="22"/>
-        <image name="onboard1" width="375" height="472"/>
-        <image name="onboard2" width="375" height="472"/>
-        <image name="onboard3" width="375" height="472"/>
+        <image name="onboard1" width="125" height="157.33332824707031"/>
+        <image name="onboard2" width="125" height="157.33332824707031"/>
+        <image name="onboard3" width="125" height="157.33332824707031"/>
         <image name="user" width="478.02398681640625" height="478.02398681640625"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
