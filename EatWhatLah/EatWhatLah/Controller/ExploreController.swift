@@ -54,11 +54,25 @@ class ExploreController : UIViewController{
         let currentLng = String((locationManager.location?.coordinate.longitude)!);
         
         //Initialize all categories to reduce the spam of request quotas
-        resultCafe = appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "500", keyword: "", type: "Cafe")
-        resultBuffet = [Results]();
-        resultBakery = [Results]();
-        resultBar = [Results]();
-        resultHawker = [Results]();
+        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "500", keyword: "", type: "cafe", completion: { (results) in
+            self.resultCafe = results;
+        })
+        
+        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "500", keyword: "buffet", type: "restaurant", completion: { (results) in
+            self.resultBuffet = results;
+        });
+        
+        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "500", keyword: "", type: "bakery", completion: { (results) in
+        self.resultBakery = results;
+        });
+        
+        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "500", keyword: "", type: "bar", completion: { (results) in
+        self.resultBar = results;
+        });
+        
+        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "500", keyword: "hawker", type: "restaurant", completion: { (results) in
+        self.resultHawker = results;
+        });
         
         let (lat, long) = getCurrentLocation();
         nearbyView.delegate = self;
@@ -273,12 +287,25 @@ extension ExploreController: UICollectionViewDataSource {
 
             let (selectedCat , _ ,_) = categoriesList[indexPath.row]
             
-            if(selectedCat == "Cafe" || selectedCat == "Bakery" || selectedCat == "Bar"){
-                    //Work on these 3
-                
-            }else{
-                //Work on these 2
-                
+            print(selectedCat)
+            switch selectedCat {
+            case "Bakery":
+                appDelegate.ListOfPlaces = resultBakery;
+                break
+            case "Cafe":
+                appDelegate.ListOfPlaces = resultCafe;
+                break
+            case "Bar":
+                appDelegate.ListOfPlaces = resultBar;
+                break
+            case "Hawker":
+                appDelegate.ListOfPlaces = resultHawker;
+                break
+            case "Buffet":
+                appDelegate.ListOfPlaces = resultBuffet;
+                break
+            default:
+                break;
             }
             
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

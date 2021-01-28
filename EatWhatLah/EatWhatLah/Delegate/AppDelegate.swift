@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var selectedPlaceImage:UIImage?;
     
     //API Rquest based on filter, duplicate found in main but will reformat in the future
-    func requestPlacesNearby(lat:String, long:String, radius:String, keyword:String, type:String)->[Results]{
+    func requestPlacesNearby(lat:String, long:String, radius:String, keyword:String, type:String, completion: @escaping (([Results]) -> Void)){
         
         //Api key
         let apiKey = "AIzaSyDt0QPH_9Bl0h9xWLw2PIFLpnOrcDxGYII"
@@ -48,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         var resultsVenues = [Results]();
         let session = URLSession.shared
-        
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             do {
                 let decoder = JSONDecoder()
@@ -56,13 +55,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let responseDecode = try decoder.decode(PlaceModel.self, from: data!)
                 resultsVenues = responseDecode.results!
                 print("Completed")
+                
+                completion(resultsVenues)
+
             } catch {
                 print("error, unable to request data")
             }
         })
         
         task.resume()
-        return resultsVenues;
+        print("Reloaded Data")
         
     }
     
