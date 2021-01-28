@@ -26,9 +26,6 @@ class CommunityController:UIViewController{
         profilePicture.setImage(UIImage(named:"users"), for: .normal)
         
         //initializing ATF
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 130, height: 130)
-        atfCollectionView.collectionViewLayout = layout
         atfCollectionView.register(ATFCollectionViewCell.nib(), forCellWithReuseIdentifier: ATFCollectionViewCell.identifier)
         
         atfCollectionView.delegate = self
@@ -47,7 +44,7 @@ class CommunityController:UIViewController{
 }
 
 //ATF Controller
-extension CommunityController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension CommunityController:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         atfImages.count
     }
