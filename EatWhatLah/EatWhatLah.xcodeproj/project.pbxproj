@@ -69,6 +69,7 @@
 		5DC73B5125C0872E002C7132 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC73B4F25C0872E002C7132 /* ProfileCollectionViewCell.xib */; };
 		5DC73B7925C2A17C002C7132 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73B7725C2A17C002C7132 /* CommentTableViewCell.swift */; };
 		5DC73B7A25C2A17C002C7132 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC73B7825C2A17C002C7132 /* CommentTableViewCell.xib */; };
+		5DC73B9425C2B9DD002C7132 /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73B9325C2B9DD002C7132 /* ContentController.swift */; };
 		5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD882225B88EA9006D6358 /* CommunityController.swift */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +139,7 @@
 		5DC73B4F25C0872E002C7132 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
 		5DC73B7725C2A17C002C7132 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		5DC73B7825C2A17C002C7132 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		5DC73B9325C2B9DD002C7132 /* ContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
 		5DCD882225B88EA9006D6358 /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
 		92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatWhatLah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -240,6 +242,7 @@
 				184EB1C625BF03D10098103A /* VenueDetailController.swift */,
 				184EB1D625BFF6860098103A /* NearbyExtension.swift */,
 				184EB22625C097870098103A /* ViewMoreVenueController.swift */,
+				5DC73B9325C2B9DD002C7132 /* ContentController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				184EB1C425BDA6040098103A /* Results.swift in Sources */,
 				185DF98B25B9955B00B5929D /* Validation.swift in Sources */,
 				183CFC3125BD224F00C07434 /* nearbyCellCollectionViewCell.swift in Sources */,
+				5DC73B9425C2B9DD002C7132 /* ContentController.swift in Sources */,
 				184EB1C225BDA6040098103A /* Viewport.swift in Sources */,
 				5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */,
 				184EB1F425C040330098103A /* Periods.swift in Sources */,
