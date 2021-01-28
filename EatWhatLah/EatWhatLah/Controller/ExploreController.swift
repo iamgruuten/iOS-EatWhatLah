@@ -54,23 +54,23 @@ class ExploreController : UIViewController{
         let currentLng = String((locationManager.location?.coordinate.longitude)!);
         
         //Initialize all categories to reduce the spam of request quotas
-        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "500", keyword: "", type: "cafe", completion: { (results) in
+        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "400", keyword: "", type: "cafe", completion: { (results) in
             self.resultCafe = results;
         })
         
-        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "500", keyword: "buffet", type: "restaurant", completion: { (results) in
+        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "400", keyword: "buffet", type: "restaurant", completion: { (results) in
             self.resultBuffet = results;
         });
         
-        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "500", keyword: "", type: "bakery", completion: { (results) in
+        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "400", keyword: "", type: "bakery", completion: { (results) in
         self.resultBakery = results;
         });
         
-        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "500", keyword: "", type: "bar", completion: { (results) in
+        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "400", keyword: "", type: "bar", completion: { (results) in
         self.resultBar = results;
         });
         
-        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "500", keyword: "hawker", type: "restaurant", completion: { (results) in
+        appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "400", keyword: "hawker", type: "restaurant", completion: { (results) in
         self.resultHawker = results;
         });
         
@@ -279,7 +279,7 @@ extension ExploreController: UICollectionViewDataSource {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "venueDetailview")
-            
+            appDelegate.selectedCategory = "";
             nextViewController.modalPresentationStyle = .fullScreen
             
             self.present(nextViewController, animated:true, completion:nil)
@@ -308,6 +308,8 @@ extension ExploreController: UICollectionViewDataSource {
                 break;
             }
             
+            appDelegate.selectedCategory = selectedCat;
+
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "viewMoreSB")

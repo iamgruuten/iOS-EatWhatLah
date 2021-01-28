@@ -11,6 +11,7 @@ import iOSDropDown
 
 class ViewMoreVenueController:ViewController, UITableViewDelegate{
     
+    @IBOutlet var noItemsView: UIView!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var listOfPlaces:[Results] = [];
     let locationManager: CLLocationManager = {
@@ -35,8 +36,12 @@ class ViewMoreVenueController:ViewController, UITableViewDelegate{
     @IBOutlet var VenuesTableView: UITableView!
     var radius:String = "500";
     var selectedPreference = "All";
+    var selectedCategory = "";
     
     override func viewDidLoad() {
+        
+        //selected category
+        selectedCategory = appDelegate.selectedCategory.lowercased();
         
         //This is a dropdown array for distance
         dropDown.optionArray = ["500m", "1km", "1.5km", "2km", "2.5km", "3km", "5km"]
@@ -48,6 +53,7 @@ class ViewMoreVenueController:ViewController, UITableViewDelegate{
         dropDown.didSelect{(selectedText , index ,id) in
             self.radius = String(id);
             print("Radius Selected: " + String(id))
+            
             if(self.selectedPreference == "Halal"){
                 self.HalalOnClick((Any).self);
             }else if(self.selectedPreference == "All"){
@@ -96,7 +102,15 @@ class ViewMoreVenueController:ViewController, UITableViewDelegate{
         let (lat, lng) = getLatLng()
         selectedPreference = "All";
         
-        requestPlacesNearby(lat: lat, long: lng, radius: radius, keyword: "", type: "restaurant")
+        print(selectedCategory)
+        if(selectedCategory == ""){
+            requestPlacesNearby(lat: lat, long: lng, radius: radius, keyword: "", type: "restaurant")
+        }
+        else if(selectedCategory != "hawker" && selectedCategory != "buffet"){
+            requestPlacesNearby(lat: lat, long: lng, radius: radius, keyword: "", type: selectedCategory)
+        }else{
+            requestPlacesNearby(lat: lat, long: lng, radius: radius, keyword: selectedCategory, type: "restaurant")
+        }
     }
     
     @IBAction func VegeterainOnClick(_ sender: Any) {
@@ -109,7 +123,14 @@ class ViewMoreVenueController:ViewController, UITableViewDelegate{
         let (lat, lng) = getLatLng()
         selectedPreference = "Vegan";
         
-        requestPlacesNearby(lat: lat, long: lng, radius: radius, keyword: "vegan", type: "restaurant")
+        if(selectedCategory == ""){
+            requestPlacesNearby(lat: lat, long: lng, radius: radius, keyword: "vegan", type: "restaurant")
+        }
+        else if(selectedCategory != "hawker" && selectedCategory != "buffet"){
+            requestPlacesNearby(lat: lat, long: lng, radius: radius, keyword: "vegan", type: selectedCategory)
+        }else{
+            requestPlacesNearby(lat: lat, long: lng, radius: radius, keyword: selectedCategory + ",vegan", type: "restaurant")
+        }
         
     }
     
@@ -122,7 +143,14 @@ class ViewMoreVenueController:ViewController, UITableViewDelegate{
         let (lat, lng) = getLatLng()
         
         //Filter based on halal
-        requestPlacesNearby(lat: lat, long: lng, radius: radius, keyword: "halal", type: "restaurant")
+        if(selectedCategory == ""){
+            requestPlacesNearby(lat: lat, long: lng, radius: radius, keyword: "halal", type: "restaurant")
+        }
+        else if(selectedCategory != "hawker" && selectedCategory != "buffet"){
+            requestPlacesNearby(lat: lat, long: lng, radius: radius, keyword: "halal", type: selectedCategory)
+        }else{
+            requestPlacesNearby(lat: lat, long: lng, radius: radius, keyword: selectedCategory + ",halal", type: "restaurant")
+        }
         
     }
     
@@ -229,17 +257,17 @@ class ViewMoreVenueController:ViewController, UITableViewDelegate{
     func sortedList(sortedString:String){
         if(sortedString == "Distance"){
             //omg idk... let me think again tmr :D
-            self.listOfPlaces.sort(by: {$0.geometry?.location?.distance ?? 1000 > $1.geometry?.location?.distance ?? 1000})
+            self.listOfPlaces.sort(by: {$0.geometry?.location?.distance ?? 1000 < $1.geometry?.location?.distance ?? 1000})
             
         }else if(sortedString == "Price"){
             self.listOfPlaces.sort(by: {$0.price_level ?? 10 < $1.price_level ?? 10})
             
 
         }else if(sortedString == "Popularity"){
-            self.listOfPlaces.sort(by: {$0.user_ratings_total ?? 0 < $1.user_ratings_total ?? 0})
+            self.listOfPlaces.sort(by: {$0.user_ratings_total ?? 0 > $1.user_ratings_total ?? 0})
 
         }else if(sortedString == "Rating"){
-            self.listOfPlaces.sort(by: {$0.rating ?? 0 < $1.rating ?? 0})
+            self.listOfPlaces.sort(by: {$0.rating ?? 0 > $1.rating ?? 0})
 
         }
         self.VenuesTableView.reloadData()
@@ -250,6 +278,12 @@ class ViewMoreVenueController:ViewController, UITableViewDelegate{
 
 extension ViewMoreVenueController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(listOfPlaces.count == 0){
+            tableView.backgroundView = noItemsView;
+        }else{
+            tableView.backgroundView = nil;
+        }
+        
         return listOfPlaces.count
     }
     
@@ -260,6 +294,7 @@ extension ViewMoreVenueController:UITableViewDataSource{
         cell.venueName.text = place.name
         cell.addressLabel.text = place.vicinity
         cell.venueImageView.image = #imageLiteral(resourceName: "noResult")
+        cell.ratingLabel.text = String(place.rating ?? 0)
         
         if(place.photos != nil){
             let url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + (place.photos?[0].photo_reference)! + "&sensor=true&key=AIzaSyDt0QPH_9Bl0h9xWLw2PIFLpnOrcDxGYII"
@@ -277,9 +312,14 @@ extension ViewMoreVenueController:UITableViewDataSource{
             cell.priceLabel.text = "??"
         }
         
-        let distance:Double = (place.geometry?.location!.distance)!;
+        var distance:Double = (place.geometry?.location!.distance)!;
         
+        if(distance.isLess(than: 1000)){
         cell.distanceLabel.text =  String(format: "%.0f", distance) + " m"
+        }else{
+            distance = distance / 1000;
+            cell.distanceLabel.text =  String(format: "%.0f", distance) + " km"
+        }
         
         return cell
     }
