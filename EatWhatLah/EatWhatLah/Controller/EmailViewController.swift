@@ -143,6 +143,7 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
     
     @IBAction func setProfileImageOnClick(_ sender: Any) {
         print("tapped on image vuew")
+        imagePicker.cameraAccessRequest();
         imagePicker.photoGalleryAccessRequest();
         
     }

@@ -87,19 +87,15 @@ class LoginViewController:UIViewController{
                     self.appDelegate.user.bio = userDetails?["Bio"] as! String
                     self.appDelegate.user.name = userDetails?["Name"] as! String
                 
-                    // Get a reference to the storage service using the default Firebase App
                     let storage = Storage.storage()
 
-                    // Create a storage reference from firebase storage service
                     let gsReference = storage.reference(forURL:userDetails?["profileURL"] as! String)
                                             
-                    // Download to the local filesystem for later usage
                     gsReference.getData(maxSize: 10 * 1024 * 1024) { data, error in
                         if let error = error {
                           // Uh-oh, an error occurred!
                             print(error)
                         } else {
-                          // Data for "images/island.jpg" is returned
                             self.appDelegate.user.profilePicture = UIImage(data: data!)!
                             
                           //Complete login

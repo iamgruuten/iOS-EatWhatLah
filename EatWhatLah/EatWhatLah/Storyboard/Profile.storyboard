@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oyb-PC-pbk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lc5-MR-d1r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -93,6 +93,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="logOutOnClick:" destination="lc5-MR-d1r" eventType="touchUpInside" id="w15-XH-RhT"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YNL-X1-f5n">
                                 <rect key="frame" x="158" y="158" width="243" height="101"/>
@@ -138,6 +141,7 @@
                         <outlet property="ProfileContent" destination="BTx-wa-xoc" id="GbQ-Nw-8C5"/>
                         <outlet property="ProfileMobile" destination="WNA-y1-K2n" id="VRU-Xn-rDC"/>
                         <outlet property="ProfileName" destination="pLa-tG-0kt" id="nWM-Ii-W8N"/>
+                        <outlet property="biosTextView" destination="YNL-X1-f5n" id="sx4-8j-rpJ"/>
                         <outlet property="profilePicture" destination="Jfw-If-SB6" id="0pF-NU-b2R"/>
                     </connections>
                 </viewController>
