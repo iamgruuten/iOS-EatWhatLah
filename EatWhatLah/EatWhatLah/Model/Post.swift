@@ -14,13 +14,17 @@ class Post{
     var postImage:UIImage!
     var topComUser:String!
     var topComment:String!
+    var allComment:[Comment]!
     
-    init(pUsername:String,pUserImage:UIImage,pImage:UIImage,topCommentUser:String,TopCom:String){
+    init(pUsername:String,pUserImage:UIImage,pImage:UIImage,topCommentUser:String,TopCom:String, AllComment:[Comment]){
         postUser = pUsername
         postUserImage = pUserImage
         postImage = pImage
         topComUser = topCommentUser
         topComment = TopCom
+        allComment = AllComment
     }
+    
+    init(){}
 }
 

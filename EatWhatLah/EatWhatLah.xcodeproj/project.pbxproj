@@ -65,6 +65,7 @@
 		18F8A0F425B9223200BF41C9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0F325B9223200BF41C9 /* UserModel.swift */; };
 		3524AA7798A63906661003C8 /* Pods_EatWhatLah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */; };
 		5D28336E25C3284E00AD6C81 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D28336D25C3284E00AD6C81 /* Post.swift */; };
+		5D28337125C3560400AD6C81 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D28337025C3560400AD6C81 /* Comment.swift */; };
 		5DC73B3E25C06C5D002C7132 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73B3D25C06C5D002C7132 /* ProfileController.swift */; };
 		5DC73B4C25C08529002C7132 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC73B4B25C08529002C7132 /* Profile.storyboard */; };
 		5DC73B5025C0872E002C7132 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73B4E25C0872E002C7132 /* ProfileCollectionViewCell.swift */; };
@@ -141,6 +142,7 @@
 		18F8A0F325B9223200BF41C9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		33113F49FB3C8F4775662E66 /* Pods-EatWhatLah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatWhatLah.release.xcconfig"; path = "Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah.release.xcconfig"; sourceTree = "<group>"; };
 		5D28336D25C3284E00AD6C81 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		5D28337025C3560400AD6C81 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		5DC73B3D25C06C5D002C7132 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		5DC73B4B25C08529002C7132 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		5DC73B4E25C0872E002C7132 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				185DF98A25B9955B00B5929D /* Validation.swift */,
 				183CFC3425BD302200C07434 /* Places.swift */,
 				5D28336D25C3284E00AD6C81 /* Post.swift */,
+				5D28337025C3560400AD6C81 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				184EB1BD25BDA6040098103A /* Geometry.swift in Sources */,
+				5D28337125C3560400AD6C81 /* Comment.swift in Sources */,
 				184EB1BC25BDA6040098103A /* Southwest.swift in Sources */,
 				18449DF825C1384700A07780 /* customCellVenue.swift in Sources */,
 				18F8A0B125B8802500BF41C9 /* ViewController.swift in Sources */,
