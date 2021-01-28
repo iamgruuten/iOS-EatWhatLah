@@ -10,6 +10,10 @@ import UIKit
 class FeedTableViewCell: UITableViewCell {
     
     @IBOutlet var contentImage:UIImageView!
+    @IBOutlet var userImage:UIImageView!
+    @IBOutlet var username:UIButton!
+    @IBOutlet var comUser:UILabel!
+    @IBOutlet var topComment:UILabel!
     
     static let identifier = "FeedTableViewCell"
     
@@ -24,8 +28,14 @@ class FeedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func configure(with image:UIImage){
-        contentImage.image = image
+    public func configure(with post:Post){
+        contentImage.image = post.postImage
+        userImage.image = post.postUserImage
+        username.setTitle(post.postUser, for: .normal)
+        username.setTitleColor(UIColor(hex: "#FFFFFF"), for: .normal)
+        comUser.text = post.topComUser
+        topComment.text = post.topComment
+        topComment.textColor = UIColor(hex: "#FFFFFF")
     }
     
     static func nib() -> UINib{

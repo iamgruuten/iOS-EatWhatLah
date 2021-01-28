@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,20 +22,110 @@
                         <constraints>
                             <constraint firstAttribute="width" secondItem="WE3-au-qLN" secondAttribute="height" multiplier="1:1" id="4kb-ak-RYg"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9gc-a4-usl">
+                        <rect key="frame" x="12" y="11" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="0vX-cu-ASf"/>
+                            <constraint firstAttribute="height" constant="32" id="fDe-P6-aLG"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jX1-aE-nBt">
+                        <rect key="frame" x="52" y="13" width="265" height="28"/>
+                        <state key="normal">
+                            <attributedString key="attributedTitle"/>
+                        </state>
+                    </button>
+                    <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdx-JN-qFB">
+                        <rect key="frame" x="3" y="275" width="325" height="53"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97x-7A-C9U">
+                                <rect key="frame" x="5" y="4" width="315" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="315" id="Q1b-4L-Il9"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="commentName">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="16" name="SFProText-Semibold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn2-BP-Lc0">
+                                <rect key="frame" x="5" y="15" width="312" height="35"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="SFProText-Semibold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" systemColor="labelColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="xn2-BP-Lc0" secondAttribute="bottom" constant="3" id="7u5-OG-SeZ"/>
+                            <constraint firstAttribute="trailing" secondItem="xn2-BP-Lc0" secondAttribute="trailing" constant="8" id="92k-U0-S9K"/>
+                            <constraint firstItem="xn2-BP-Lc0" firstAttribute="leading" secondItem="hdx-JN-qFB" secondAttribute="leading" constant="5" id="Eel-2i-Ina"/>
+                            <constraint firstItem="xn2-BP-Lc0" firstAttribute="top" secondItem="97x-7A-C9U" secondAttribute="bottom" constant="-8.5" id="MKm-7v-dNk"/>
+                            <constraint firstItem="xn2-BP-Lc0" firstAttribute="top" secondItem="97x-7A-C9U" secondAttribute="bottom" constant="-8.5" id="jaQ-A7-hhk"/>
+                            <constraint firstItem="97x-7A-C9U" firstAttribute="top" secondItem="hdx-JN-qFB" secondAttribute="top" constant="4" id="lWw-DC-Cwi"/>
+                            <constraint firstAttribute="trailing" secondItem="97x-7A-C9U" secondAttribute="trailing" constant="5" id="mbU-G2-H6j"/>
+                            <constraint firstItem="97x-7A-C9U" firstAttribute="leading" secondItem="hdx-JN-qFB" secondAttribute="leading" constant="5" id="pzY-an-bf9"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="jX1-aE-nBt" secondAttribute="trailing" constant="13" id="0bg-3f-ym0"/>
+                    <constraint firstItem="jX1-aE-nBt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="1LC-00-WFg"/>
+                    <constraint firstItem="9gc-a4-usl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="4rP-PS-BTZ"/>
+                    <constraint firstAttribute="bottom" secondItem="hdx-JN-qFB" secondAttribute="bottom" constant="2" id="6DI-y6-0nN"/>
+                    <constraint firstAttribute="trailing" secondItem="hdx-JN-qFB" secondAttribute="trailing" constant="2" id="9IH-US-noc"/>
+                    <constraint firstItem="9gc-a4-usl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="9vh-2j-Jru"/>
                     <constraint firstAttribute="bottom" secondItem="WE3-au-qLN" secondAttribute="bottom" constant="2" id="D4r-3I-STv"/>
+                    <constraint firstItem="hdx-JN-qFB" firstAttribute="top" secondItem="jX1-aE-nBt" secondAttribute="bottom" constant="234" id="Evh-nG-LOR"/>
+                    <constraint firstItem="hdx-JN-qFB" firstAttribute="top" secondItem="9gc-a4-usl" secondAttribute="bottom" constant="232" id="KL6-SS-mcI"/>
+                    <constraint firstItem="hdx-JN-qFB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="RLq-gN-4zN"/>
                     <constraint firstItem="WE3-au-qLN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="Rww-dB-ePj"/>
+                    <constraint firstItem="jX1-aE-nBt" firstAttribute="leading" secondItem="9gc-a4-usl" secondAttribute="trailing" constant="8" symbolic="YES" id="k6x-TO-NqB"/>
                     <constraint firstAttribute="trailing" secondItem="WE3-au-qLN" secondAttribute="trailing" constant="2" id="wON-jE-nvr"/>
                     <constraint firstItem="WE3-au-qLN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="x7x-u4-Vaw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="comUser" destination="97x-7A-C9U" id="CvV-Ee-MdV"/>
                 <outlet property="contentImage" destination="WE3-au-qLN" id="gLo-dE-v4n"/>
+                <outlet property="topComment" destination="xn2-BP-Lc0" id="Jiv-dU-4f4"/>
+                <outlet property="userImage" destination="9gc-a4-usl" id="saB-uf-Zph"/>
+                <outlet property="username" destination="jX1-aE-nBt" id="Mtl-Nl-zeV"/>
             </connections>
-            <point key="canvasLocation" x="142" y="125"/>
+            <point key="canvasLocation" x="140.57971014492756" y="124.55357142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

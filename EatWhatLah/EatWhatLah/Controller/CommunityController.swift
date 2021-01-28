@@ -17,7 +17,8 @@ class CommunityController:UIViewController{
     
     //data
     let atfImages:[String] = ["Burgers","Burgers","Burgers"]
-    let feedImages:[String] = ["Burgers","Burgers", "Burgers"]
+    let feedImages:[Post] = [Post.init(pUsername: "Jason", pUserImage: UIImage(named: "user")!, pImage: UIImage(named: "Burgers")!, topCommentUser: "Quan Sheng", TopCom: "cool this is a sentence. cool this is a sentence. cool this is a sentence. cool this is a sentence. cool this is a sentence. cool this is a sentence. cool this is a sentence.coolasdhdkashdkjhajkdhajkdhashdah"),Post.init(pUsername: "Jason", pUserImage: UIImage(named: "user")!, pImage: UIImage(named: "Burgers")!, topCommentUser: "Quan Sheng", TopCom: "cool"),Post.init(pUsername: "Jason", pUserImage: UIImage(named: "user")!, pImage: UIImage(named: "Burgers")!, topCommentUser: "Quan Sheng", TopCom: "cool"),Post.init(pUsername: "Jason", pUserImage: UIImage(named: "user")!, pImage: UIImage(named: "Burgers")!, topCommentUser: "Quan Sheng", TopCom: "cool")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +68,7 @@ extension CommunityController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = feedTableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as! FeedTableViewCell
-        cell.configure(with: UIImage(named: feedImages[indexPath.row])!)
+        cell.configure(with: feedImages[indexPath.row])
         
         return cell
     }
