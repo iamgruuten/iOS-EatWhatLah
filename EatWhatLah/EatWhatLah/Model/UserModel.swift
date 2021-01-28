@@ -17,6 +17,7 @@ class User{
     var password:String = "";
     var profilePicture:UIImage = UIImage();
     var preference:[String] = []
+    var posts:[Post]!
     
     init(){
         name = "";
