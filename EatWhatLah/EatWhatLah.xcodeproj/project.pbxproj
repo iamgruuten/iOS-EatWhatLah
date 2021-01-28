@@ -14,6 +14,8 @@
 		18449DF825C1384700A07780 /* customCellVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18449DF725C1384700A07780 /* customCellVenue.swift */; };
 		18449DFF25C1B08E00A07780 /* colorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18449DFE25C1B08E00A07780 /* colorExtension.swift */; };
 		18449E1525C1E01000A07780 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18449E1425C1E01000A07780 /* iOSDropDown.framework */; };
+		18449E1B25C2B57F00A07780 /* categoryCellcollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18449E1A25C2B57F00A07780 /* categoryCellcollectionViewCell.swift */; };
+		18449E5825C2BDA500A07780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0B825B8802800BF41C9 /* Assets.xcassets */; };
 		184EB1BC25BDA6040098103A /* Southwest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1B325BDA6030098103A /* Southwest.swift */; };
 		184EB1BD25BDA6040098103A /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1B425BDA6030098103A /* Geometry.swift */; };
 		184EB1BE25BDA6040098103A /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1B525BDA6040098103A /* PlaceModel.swift */; };
@@ -58,7 +60,6 @@
 		18F8A0B125B8802500BF41C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0B025B8802500BF41C9 /* ViewController.swift */; };
 		18F8A0B425B8802500BF41C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0B225B8802500BF41C9 /* Main.storyboard */; };
 		18F8A0B725B8802500BF41C9 /* EatWhatLah.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0B525B8802500BF41C9 /* EatWhatLah.xcdatamodeld */; };
-		18F8A0B925B8802800BF41C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0B825B8802800BF41C9 /* Assets.xcassets */; };
 		18F8A0BC25B8802800BF41C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0BA25B8802800BF41C9 /* LaunchScreen.storyboard */; };
 		18F8A0C525B884EE00BF41C9 /* onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0C425B884EE00BF41C9 /* onboard.storyboard */; };
 		18F8A0F425B9223200BF41C9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0F325B9223200BF41C9 /* UserModel.swift */; };
@@ -81,6 +82,7 @@
 		18449DF725C1384700A07780 /* customCellVenue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCellVenue.swift; sourceTree = "<group>"; };
 		18449DFE25C1B08E00A07780 /* colorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorExtension.swift; sourceTree = "<group>"; };
 		18449E1425C1E01000A07780 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18449E1A25C2B57F00A07780 /* categoryCellcollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryCellcollectionViewCell.swift; sourceTree = "<group>"; };
 		184EB1B325BDA6030098103A /* Southwest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Southwest.swift; sourceTree = "<group>"; };
 		184EB1B425BDA6030098103A /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		184EB1B525BDA6040098103A /* PlaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				5DC73B4E25C0872E002C7132 /* ProfileCollectionViewCell.swift */,
 				18449DF725C1384700A07780 /* customCellVenue.swift */,
 				5DC73B7725C2A17C002C7132 /* CommentTableViewCell.swift */,
+				18449E1A25C2B57F00A07780 /* categoryCellcollectionViewCell.swift */,
 			);
 			path = EatWhatLah;
 			sourceTree = "<group>";
@@ -403,12 +406,12 @@
 				5DC73B4C25C08529002C7132 /* Profile.storyboard in Resources */,
 				184EB20C25C06B9F0098103A /* SFProText-Medium.ttf in Resources */,
 				18F8A0BC25B8802800BF41C9 /* LaunchScreen.storyboard in Resources */,
+				18449E5825C2BDA500A07780 /* Assets.xcassets in Resources */,
 				184EB20F25C06B9F0098103A /* SFProText-RegularItalic.ttf in Resources */,
 				184EB21025C06B9F0098103A /* SFProText-SemiBold.ttf in Resources */,
 				184EB20B25C06B9F0098103A /* SFProText-SemiBoldItalic.ttf in Resources */,
 				184EB20D25C06B9F0098103A /* SFProText-Regular.ttf in Resources */,
 				184EB21225C06B9F0098103A /* SFProText-BoldItalic.ttf in Resources */,
-				18F8A0B925B8802800BF41C9 /* Assets.xcassets in Resources */,
 				184EB21525C06B9F0098103A /* SFProText-Light.ttf in Resources */,
 				18F8A0C525B884EE00BF41C9 /* onboard.storyboard in Resources */,
 				184EB21125C06B9F0098103A /* SFProText-MediumItalic.ttf in Resources */,
@@ -476,6 +479,7 @@
 				184EB1BC25BDA6040098103A /* Southwest.swift in Sources */,
 				18449DF825C1384700A07780 /* customCellVenue.swift in Sources */,
 				18F8A0B125B8802500BF41C9 /* ViewController.swift in Sources */,
+				18449E1B25C2B57F00A07780 /* categoryCellcollectionViewCell.swift in Sources */,
 				18F8A0AD25B8802500BF41C9 /* AppDelegate.swift in Sources */,
 				185DF98625B991F300B5929D /* EmailViewController.swift in Sources */,
 				184EB1BF25BDA6040098103A /* Photos.swift in Sources */,
