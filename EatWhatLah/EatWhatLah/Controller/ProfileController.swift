@@ -17,6 +17,8 @@ class ProfileController: UIViewController{
     @IBOutlet weak var ProfileName: UILabel!
     @IBOutlet weak var ProfileMobile: UILabel!
     
+    //let profile = ProfileModel.init()
+    
     var pictures:[String] = ["Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers"]
     
     override func viewDidLoad() {
