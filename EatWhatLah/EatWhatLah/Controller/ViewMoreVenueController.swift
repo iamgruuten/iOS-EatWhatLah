@@ -66,7 +66,7 @@ class ViewMoreVenueController:ViewController, UITableViewDelegate{
         sortDropDown.text = "Distance"
         
         sortDropDown.didSelect{(selectedText , index ,id) in
-            print(selectedText)
+            self.sortedList(sortedString: selectedText)
         }
         
         
@@ -164,22 +164,6 @@ class ViewMoreVenueController:ViewController, UITableViewDelegate{
         }
     }
     
-    //Return distance from two pin location
-    func getDistance(lat:String, long:String)->String{
-        
-        let pinLocation = CLLocation(latitude: CLLocationDegrees(lat)!, longitude: CLLocationDegrees(long)!)
-        
-        guard let currentLocation = locationManager.location else {
-            return "0.0"
-        }
-        
-        let distance = pinLocation.distance(from: currentLocation)
-        
-        print(String(format: "The distance to location is %.01fm", distance))
-        
-        return String(format: "%.0f", distance);
-    }
-    
     //Get lat, lng - This can be deployed to appDelegate where it can be used
     func getLatLng()->(String, String){
         let lat = String((locationManager.location?.coordinate.latitude)!)
@@ -245,8 +229,11 @@ class ViewMoreVenueController:ViewController, UITableViewDelegate{
     func sortedList(sortedString:String){
         if(sortedString == "Distance"){
             //omg idk... let me think again tmr :D
+            self.listOfPlaces.sort(by: {$0.geometry?.location?.distance ?? 1000 > $1.geometry?.location?.distance ?? 1000})
+            
         }else if(sortedString == "Price"){
             self.listOfPlaces.sort(by: {$0.price_level ?? 10 < $1.price_level ?? 10})
+            
 
         }else if(sortedString == "Popularity"){
             self.listOfPlaces.sort(by: {$0.user_ratings_total ?? 0 < $1.user_ratings_total ?? 0})
@@ -255,6 +242,7 @@ class ViewMoreVenueController:ViewController, UITableViewDelegate{
             self.listOfPlaces.sort(by: {$0.rating ?? 0 < $1.rating ?? 0})
 
         }
+        self.VenuesTableView.reloadData()
         
     }
 }
@@ -289,7 +277,10 @@ extension ViewMoreVenueController:UITableViewDataSource{
             cell.priceLabel.text = "??"
         }
         
-        cell.distanceLabel.text = self.getDistance(lat: String((place.geometry?.location?.lat)!), long: String((place.geometry?.location?.lng)!)) + " m"
+        let distance:Double = (place.geometry?.location!.distance)!;
+        
+        cell.distanceLabel.text =  String(format: "%.0f", distance) + " m"
+        
         return cell
     }
     
