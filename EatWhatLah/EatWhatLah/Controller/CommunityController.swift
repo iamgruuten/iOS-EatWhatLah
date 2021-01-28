@@ -15,6 +15,7 @@ class CommunityController:UIViewController{
     @IBOutlet var feedTableView:UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     //data
     let atfImages:[String] = ["Burgers","Burgers","Burgers"]
     let feedImages:[Post] = [Post.init(pUsername: "Jason", pUserImage: UIImage(named: "user")!, pImage: UIImage(named: "Burgers")!, topCommentUser: "Quan Sheng", TopCom: "cool this is a sentence. cool this is a sentence. cool this is a sentence. cool this is a sentence. cool this is a sentence. cool this is a sentence. cool this is a sentence.coolasdhdkashdkjhajkdhajkdhashdah"),Post.init(pUsername: "Jason", pUserImage: UIImage(named: "user")!, pImage: UIImage(named: "Burgers")!, topCommentUser: "Quan Sheng", TopCom: "cool"),Post.init(pUsername: "Jason", pUserImage: UIImage(named: "user")!, pImage: UIImage(named: "Burgers")!, topCommentUser: "Quan Sheng", TopCom: "cool"),Post.init(pUsername: "Jason", pUserImage: UIImage(named: "user")!, pImage: UIImage(named: "Burgers")!, topCommentUser: "Quan Sheng", TopCom: "cool")
@@ -24,7 +25,7 @@ class CommunityController:UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //set profile image
-        profilePicture.setImage(UIImage(named:"users"), for: .normal)
+        profilePicture.setImage(appDelegate.user.profilePicture, for: .normal)
         
         //initializing ATF
         atfCollectionView.register(ATFCollectionViewCell.nib(), forCellWithReuseIdentifier: ATFCollectionViewCell.identifier)
