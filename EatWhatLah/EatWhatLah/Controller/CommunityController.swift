@@ -8,30 +8,20 @@
 import Foundation
 import UIKit
 
-struct CellData {
-    let image:UIImage?
-    let message : String?
-    
-}
 class CommunityController:UITableViewController{
-//    var data = [CellData]()
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Do any additional setup after loading the view.
-//        data = [CellData.init(image: Burger, message: <#T##String?#>)]
-//    }
-//
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//    }
-//
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
+
+    @IBOutlet var profilePicture:UIButton!
+    @IBOutlet var atfCollectionView:UICollectionView!
+    @IBOutlet var feedTableView:UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+    }
+
+    @IBAction func profilePicture(_ sender: Any) {
+    }
     
 }
