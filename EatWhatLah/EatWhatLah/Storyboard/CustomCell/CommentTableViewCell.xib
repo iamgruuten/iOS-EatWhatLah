@@ -20,7 +20,9 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2t6-ei-QQw">
                         <rect key="frame" x="5" y="7" width="32" height="32"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="32" id="20c-AG-esK"/>
                             <constraint firstAttribute="width" secondItem="2t6-ei-QQw" secondAttribute="height" multiplier="1:1" id="9VW-xb-Lux"/>
+                            <constraint firstAttribute="width" constant="32" id="gxm-N9-wVY"/>
                         </constraints>
                         <state key="normal" title="profilepic" backgroundImage="user">
                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,7 +40,7 @@
                             <action selector="username:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jV2-aS-lXy"/>
                         </connections>
                     </button>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comment" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eJP-5I-sku">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Comment" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eJP-5I-sku">
                         <rect key="frame" x="40" y="40" width="320" height="49"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="textColor" systemColor="labelColor"/>
@@ -48,7 +50,8 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdd-5m-jcY">
                         <rect key="frame" x="362.5" y="31.5" width="32.5" height="26"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="qdd-5m-jcY" secondAttribute="height" multiplier="8:7" id="FB5-Ls-4o6"/>
+                            <constraint firstAttribute="height" constant="28.5" id="EL1-xe-1WI"/>
+                            <constraint firstAttribute="width" constant="32.5" id="bBc-zL-hYS"/>
                         </constraints>
                         <state key="normal" title="like" backgroundImage="heart" catalog="system">
                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
