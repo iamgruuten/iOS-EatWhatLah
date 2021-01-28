@@ -165,6 +165,15 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
+		18449E1825C2B4B400A07780 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				184EB1D925C012710098103A /* UIExtension.swift */,
+				18449DFE25C1B08E00A07780 /* colorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		184EB1A725BDA4C80098103A /* PlacesModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +203,7 @@
 			path = OperatingHoursModel;
 			sourceTree = "<group>";
 		};
-		188D6F3925BBB4E800061EEB /* View */ = {
+		188D6F3925BBB4E800061EEB /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				18449DFC25C1982300A07780 /* CustomCell */,
@@ -203,7 +212,7 @@
 				18F8A0C425B884EE00BF41C9 /* onboard.storyboard */,
 				5DC73B4B25C08529002C7132 /* Profile.storyboard */,
 			);
-			path = View;
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		188D6F3A25BBB4EE00061EEB /* Model */ = {
@@ -278,18 +287,17 @@
 		18F8A0AB25B8802500BF41C9 /* EatWhatLah */ = {
 			isa = PBXGroup;
 			children = (
+				18449E1825C2B4B400A07780 /* Extensions */,
 				188D6F5825BC0F0900061EEB /* Databse */,
 				188D6F3E25BBB52C00061EEB /* Delegate */,
 				188D6F3B25BBB4F300061EEB /* Controller */,
 				188D6F3A25BBB4EE00061EEB /* Model */,
-				188D6F3925BBB4E800061EEB /* View */,
+				188D6F3925BBB4E800061EEB /* Storyboard */,
 				18F8A0B825B8802800BF41C9 /* Assets.xcassets */,
 				18F8A0BD25B8802800BF41C9 /* Info.plist */,
 				183CFC2F25BD224F00C07434 /* nearbyCellCollectionViewCell.swift */,
 				5DC73B4E25C0872E002C7132 /* ProfileCollectionViewCell.swift */,
-				184EB1D925C012710098103A /* UIExtension.swift */,
 				18449DF725C1384700A07780 /* customCellVenue.swift */,
-				18449DFE25C1B08E00A07780 /* colorExtension.swift */,
 				5DC73B7725C2A17C002C7132 /* CommentTableViewCell.swift */,
 			);
 			path = EatWhatLah;
