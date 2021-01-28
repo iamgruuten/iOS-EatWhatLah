@@ -107,13 +107,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mqq-LF-adA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mqq-LF-adA">
                                 <rect key="frame" x="20" y="139" width="374" height="374"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mqq-LF-adA" secondAttribute="height" multiplier="1:1" id="xMD-yZ-W0M"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnq-71-LEF">
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnq-71-LEF">
                                 <rect key="frame" x="31" y="521.5" width="32" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="RkO-Ku-Lza"/>
+                                    <constraint firstAttribute="width" constant="32" id="Zna-Bx-CdT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Location" backgroundImage="location.circle" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -122,9 +127,12 @@
                                     <action selector="navigationButton:" destination="Oyb-PC-pbk" eventType="touchUpInside" id="xUN-9r-SGd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-zB-iqC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-zB-iqC">
                                 <rect key="frame" x="356" y="521.5" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="E8N-CD-sQ9"/>
+                                    <constraint firstAttribute="height" constant="32.5" id="Zog-ue-McK"/>
+                                </constraints>
                                 <state key="normal" title="LikeButton" backgroundImage="heart" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -132,42 +140,47 @@
                                     <action selector="likeButton:" destination="Oyb-PC-pbk" eventType="touchUpInside" id="i4X-UK-xsU"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="3zE-Qb-lPn">
-                                <rect key="frame" x="20" y="561" width="370" height="112"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="3zE-Qb-lPn">
+                                <rect key="frame" x="20" y="561" width="374" height="112"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="EuC-E0-CcA"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1oK-HG-jAk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1oK-HG-jAk">
                                 <rect key="frame" x="20" y="681" width="370" height="181"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2c3-sz-6hl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="2c3-sz-6hl">
                                 <rect key="frame" x="20" y="99" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="3p0-iF-wcq"/>
+                                    <constraint firstAttribute="width" constant="32" id="qmi-1p-BZG"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgN-xm-zLR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgN-xm-zLR">
                                 <rect key="frame" x="60" y="101" width="78" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Usernames"/>
                                 <connections>
                                     <action selector="ownerUsername:" destination="Oyb-PC-pbk" eventType="touchUpInside" id="FkA-OI-1uM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWi-9Q-6Bz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWi-9Q-6Bz">
                                 <rect key="frame" x="20" y="44" width="47" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&lt; Back"/>
                                 <connections>
                                     <action selector="backButton:" destination="Oyb-PC-pbk" eventType="touchUpInside" id="tgF-i7-Jw3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orb-tB-H6x">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orb-tB-H6x">
                                 <rect key="frame" x="358" y="43" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="TD5-GR-QMG"/>
+                                    <constraint firstAttribute="height" constant="32" id="Z4o-IV-8EF"/>
+                                </constraints>
                                 <state key="normal" title="ProfilePicture" backgroundImage="user">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -178,6 +191,32 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fgo-Q0-GaD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fgo-Q0-GaD" firstAttribute="trailing" secondItem="Mqq-LF-adA" secondAttribute="trailing" constant="20" id="0RX-ez-JUZ"/>
+                            <constraint firstItem="UgN-xm-zLR" firstAttribute="top" secondItem="mWi-9Q-6Bz" secondAttribute="bottom" constant="27" id="0Y0-tT-j8m"/>
+                            <constraint firstItem="Mqq-LF-adA" firstAttribute="top" secondItem="2c3-sz-6hl" secondAttribute="bottom" constant="8" symbolic="YES" id="403-cY-nwm"/>
+                            <constraint firstItem="fgo-Q0-GaD" firstAttribute="trailing" secondItem="orb-tB-H6x" secondAttribute="trailing" constant="24" id="5cL-ew-rHk"/>
+                            <constraint firstItem="3zE-Qb-lPn" firstAttribute="top" secondItem="nnq-71-LEF" secondAttribute="bottom" constant="8" symbolic="YES" id="6fP-fK-2Lo"/>
+                            <constraint firstItem="2c3-sz-6hl" firstAttribute="leading" secondItem="fgo-Q0-GaD" secondAttribute="leading" constant="20" id="7lJ-sR-571"/>
+                            <constraint firstItem="mWi-9Q-6Bz" firstAttribute="top" secondItem="fgo-Q0-GaD" secondAttribute="top" id="Fht-1N-zag"/>
+                            <constraint firstItem="1oK-HG-jAk" firstAttribute="leading" secondItem="fgo-Q0-GaD" secondAttribute="leading" constant="20" id="G6q-Ak-PfP"/>
+                            <constraint firstItem="Mqq-LF-adA" firstAttribute="top" secondItem="UgN-xm-zLR" secondAttribute="bottom" constant="8" symbolic="YES" id="HE0-jX-sh3"/>
+                            <constraint firstItem="2c3-sz-6hl" firstAttribute="top" secondItem="mWi-9Q-6Bz" secondAttribute="bottom" constant="25" id="NNE-78-2K5"/>
+                            <constraint firstItem="nnq-71-LEF" firstAttribute="leading" secondItem="fgo-Q0-GaD" secondAttribute="leading" constant="31" id="NxW-eF-0Yv"/>
+                            <constraint firstItem="fgo-Q0-GaD" firstAttribute="trailing" secondItem="nh0-zB-iqC" secondAttribute="trailing" constant="24" id="Soa-ya-8nN"/>
+                            <constraint firstItem="fgo-Q0-GaD" firstAttribute="trailing" secondItem="1oK-HG-jAk" secondAttribute="trailing" constant="24" id="UYc-7m-uTo"/>
+                            <constraint firstItem="3zE-Qb-lPn" firstAttribute="leading" secondItem="fgo-Q0-GaD" secondAttribute="leading" constant="20" id="WC1-Yz-rfg"/>
+                            <constraint firstItem="1oK-HG-jAk" firstAttribute="top" secondItem="3zE-Qb-lPn" secondAttribute="bottom" constant="8" symbolic="YES" id="XxN-SP-7rO"/>
+                            <constraint firstItem="fgo-Q0-GaD" firstAttribute="trailing" secondItem="UgN-xm-zLR" secondAttribute="trailing" constant="276" id="bXb-ot-fQL"/>
+                            <constraint firstItem="orb-tB-H6x" firstAttribute="top" secondItem="ghf-z8-oAO" secondAttribute="top" constant="43" id="bZ7-ba-Epg"/>
+                            <constraint firstItem="nnq-71-LEF" firstAttribute="top" secondItem="Mqq-LF-adA" secondAttribute="bottom" constant="8" symbolic="YES" id="cpf-Is-Ie0"/>
+                            <constraint firstItem="mWi-9Q-6Bz" firstAttribute="leading" secondItem="fgo-Q0-GaD" secondAttribute="leading" constant="20" id="d1z-eZ-XSz"/>
+                            <constraint firstItem="1oK-HG-jAk" firstAttribute="bottom" secondItem="fgo-Q0-GaD" secondAttribute="bottom" id="f2k-pY-5Fz"/>
+                            <constraint firstItem="Mqq-LF-adA" firstAttribute="leading" secondItem="fgo-Q0-GaD" secondAttribute="leading" constant="20" id="qIw-5u-Ify"/>
+                            <constraint firstItem="fgo-Q0-GaD" firstAttribute="trailing" secondItem="3zE-Qb-lPn" secondAttribute="trailing" constant="20" id="qZS-Ii-418"/>
+                            <constraint firstItem="UgN-xm-zLR" firstAttribute="leading" secondItem="2c3-sz-6hl" secondAttribute="trailing" constant="8" symbolic="YES" id="v24-Mj-WzI"/>
+                            <constraint firstItem="nh0-zB-iqC" firstAttribute="top" secondItem="Mqq-LF-adA" secondAttribute="bottom" constant="7" id="y3r-23-BSQ"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="commentTableView" destination="1oK-HG-jAk" id="8HA-A7-QCh"/>
