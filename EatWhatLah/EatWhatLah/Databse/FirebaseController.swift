@@ -26,28 +26,29 @@ class FirebaseController{
 
 
 //Get Favourites
-    func getFavourites(uid:String) {
-        //Retrieve user data
-        let ref = Database.database().reference().child("favourite").child(uid)
+func getAllFavourites(uid:String){
+    //Retrieve user data
+    let ref = Database.database().reference().child("favourite").child(uid)
 
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                let userDetails = snapshot.value as? NSDictionary
-            
-      })
+    ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            let favouritePlaces = snapshot.value as? NSDictionary
+            print(favouritePlaces)
+        
+  })
 }
 
 //Add Favourite
-    func addFavourite(uid:String, place:Result) {
-        //Retrieve user data
-        let ref = Database.database().reference().child("favourite").child(uid)
+func addFavourite(uid:String, place:Places) {
+    //Retrieve user data
+    let ref = Database.database().reference().child("favourite").child(uid)
 
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                let userDetails = snapshot.value as? NSDictionary
-                let storage = Storage.storage()
-
-                let gsReference = storage.reference(forURL:userDetails?["profileURL"] as! String)
-                                    
-      })
+    ref.child("favourite").child(uid).child(place.place_id).updateChildValues(
+        ["lat":place.lat,
+         "lng":place.long,
+         "VenueName":place.venueName,
+         "ImageData":place.venueImageData
+        ]
+    )
 }
     
 //Remove Favourite

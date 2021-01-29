@@ -155,8 +155,14 @@ class ExploreController : UIViewController{
                 self.resultVenues = responseDecode.results!
                 
                 for i in 0...placesResponse!.count-1{
+                    
+                    //Distance
                     let distance:Double = (placesResponse?[i].geometry?.location!.distance)!;
                     
+                    //Lat and long
+                    let lat:String = String((placesResponse?[i].geometry?.location?.lat)!);
+                    let long:String = String((placesResponse?[i].geometry?.location?.lng)!);
+
                     let name:String = (placesResponse?[i].name)!
                     var rating:String = "0"
                     
@@ -172,7 +178,7 @@ class ExploreController : UIViewController{
                     }
                     
                     
-                    let place = Places(venueName: name, rating: rating, venueImage: venueImageURL, distance: distance, place_id: placeID)
+                    let place = Places(venueName: name, rating: rating, venueImage: venueImageURL, distance: distance, place_id: placeID, lat: lat, long: long)
                     
                     self.dataNearByVenue.append(place)
                     

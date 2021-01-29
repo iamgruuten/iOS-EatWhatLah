@@ -163,12 +163,12 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
                 ]
             )
             
-            //Initialize user favourite places
-            ref.child("favourite").child(appDelegate.user.uid).setValue(
-                [
-                    "Venue":"Nothing here yet"
-                ]
-            )
+//            //Initialize user favourite places
+//            ref.child("favourite").child(appDelegate.user.uid).setValue(
+//                [
+//                   
+//                ]
+//            )
             
             appDelegate.user.name = username.text!;
             
