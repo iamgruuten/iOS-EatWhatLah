@@ -6,13 +6,9 @@
         <relationship name="userID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUserModel" inverseName="savedPreferences" inverseEntity="CDUserModel"/>
     </entity>
     <entity name="CDSavedLocation" representedClassName="CDSavedLocation" syncable="YES" codeGenerationType="class">
-        <attribute name="closing_time" optional="YES" attributeType="String"/>
         <attribute name="lat" optional="YES" attributeType="String"/>
         <attribute name="long" optional="YES" attributeType="String"/>
-        <attribute name="opening_time" optional="YES" attributeType="String"/>
         <attribute name="placeID" optional="YES" attributeType="String"/>
-        <attribute name="popularity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="rating" optional="YES" attributeType="String"/>
         <attribute name="venueImage" optional="YES" attributeType="Binary"/>
         <attribute name="venueName" optional="YES" attributeType="String"/>
         <relationship name="userID" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDUserModel" inverseName="savedLocations" inverseEntity="CDUserModel"/>
@@ -28,7 +24,7 @@
     </entity>
     <elements>
         <element name="CDPreference" positionX="63" positionY="63" width="128" height="88"/>
-        <element name="CDSavedLocation" positionX="181.53515625" positionY="26.5234375" width="128" height="193"/>
+        <element name="CDSavedLocation" positionX="181.53515625" positionY="26.5234375" width="128" height="133"/>
         <element name="CDUserModel" positionX="-63" positionY="-18" width="128" height="148"/>
     </elements>
 </model>
