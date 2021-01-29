@@ -9,12 +9,15 @@ import Foundation
 import UIKit
 
 class Post{
+    var postID:String!
     var postUser:String!
     var postUserImage:UIImage!
     var postImage:UIImage!
     var topComUser:String!
     var topComment:String!
     var allComment:[Comment]!
+    var likes:Int!
+    var location:Places!
     
     init(pUsername:String,pUserImage:UIImage,pImage:UIImage,topCommentUser:String,TopCom:String){
         postUser = pUsername
@@ -23,6 +26,8 @@ class Post{
         topComUser = topCommentUser
         topComment = TopCom
         //allComment = AllComment
+        //likes = Likes
+        //location = Location
     }
     
     init(){}

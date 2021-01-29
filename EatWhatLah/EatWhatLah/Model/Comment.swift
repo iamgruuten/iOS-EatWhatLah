@@ -8,6 +8,7 @@
 import Foundation
 
 class Comment{
+    var commentID:String!
     var comment:String!
     var commentor:String!
     var likes:Int!

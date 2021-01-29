@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDComments" representedClassName="CDComments" syncable="YES" codeGenerationType="class">
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="commentID" optional="YES" attributeType="String"/>
+        <attribute name="commentorID" optional="YES" attributeType="String"/>
+        <relationship name="postID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPost" inverseName="comments" inverseEntity="CDPost"/>
+    </entity>
+    <entity name="CDPost" representedClassName="CDPost" syncable="YES" codeGenerationType="class">
+        <attribute name="postID" optional="YES" attributeType="String"/>
+        <attribute name="postImage" optional="YES" attributeType="Binary"/>
+        <relationship name="comments" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDComments" inverseName="postID" inverseEntity="CDComments"/>
+        <relationship name="userID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUserModel" inverseName="post" inverseEntity="CDUserModel"/>
+    </entity>
     <entity name="CDPreference" representedClassName="CDPreference" syncable="YES" codeGenerationType="class">
         <attribute name="preferenceID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="preferenceName" optional="YES" attributeType="String"/>
@@ -20,12 +32,15 @@
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="uid" optional="YES" attributeType="String"/>
+        <relationship name="post" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPost" inverseName="userID" inverseEntity="CDPost"/>
         <relationship name="savedLocations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDSavedLocation" inverseName="userID" inverseEntity="CDSavedLocation"/>
         <relationship name="savedPreferences" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPreference" inverseName="userID" inverseEntity="CDPreference"/>
     </entity>
     <elements>
-        <element name="CDSavedLocation" positionX="181.53515625" positionY="26.5234375" width="128" height="148"/>
-        <element name="CDUserModel" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="CDComments" positionX="72" positionY="72" width="128" height="103"/>
+        <element name="CDPost" positionX="63" positionY="63" width="128" height="103"/>
         <element name="CDPreference" positionX="63" positionY="63" width="128" height="88"/>
+        <element name="CDSavedLocation" positionX="181.53515625" positionY="26.5234375" width="128" height="148"/>
+        <element name="CDUserModel" positionX="-63" positionY="-18" width="128" height="163"/>
     </elements>
 </model>
