@@ -17,6 +17,7 @@ class Post{
     var topComment:String!
     var allComment:[Comment]!
     var likes:Int!
+    var usersWhoLiked:[String]!
     var location:Places!
     
     init(pUsername:String,pUserImage:UIImage,pImage:UIImage,topCommentUser:String,TopCom:String){

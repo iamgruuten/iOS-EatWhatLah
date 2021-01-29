@@ -67,6 +67,8 @@
 		3524AA7798A63906661003C8 /* Pods_EatWhatLah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */; };
 		5D28336E25C3284E00AD6C81 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D28336D25C3284E00AD6C81 /* Post.swift */; };
 		5D28337125C3560400AD6C81 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D28337025C3560400AD6C81 /* Comment.swift */; };
+		5D49D90425C3AD82005879B8 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D49D90325C3AD82005879B8 /* PostController.swift */; };
+		5D49D90725C3AE0E005879B8 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D49D90625C3AE0E005879B8 /* CommentController.swift */; };
 		5DC73B3E25C06C5D002C7132 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73B3D25C06C5D002C7132 /* ProfileController.swift */; };
 		5DC73B4C25C08529002C7132 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC73B4B25C08529002C7132 /* Profile.storyboard */; };
 		5DC73B5025C0872E002C7132 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC73B4E25C0872E002C7132 /* ProfileCollectionViewCell.swift */; };
@@ -145,6 +147,8 @@
 		33113F49FB3C8F4775662E66 /* Pods-EatWhatLah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatWhatLah.release.xcconfig"; path = "Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah.release.xcconfig"; sourceTree = "<group>"; };
 		5D28336D25C3284E00AD6C81 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		5D28337025C3560400AD6C81 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		5D49D90325C3AD82005879B8 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		5D49D90625C3AE0E005879B8 /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
 		5DC73B3D25C06C5D002C7132 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		5DC73B4B25C08529002C7132 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		5DC73B4E25C0872E002C7132 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 				18F8A0B525B8802500BF41C9 /* EatWhatLah.xcdatamodeld */,
 				184EB1CD25BFA7850098103A /* FavouriteController.swift */,
 				184EB1D225BFB9430098103A /* UserController.swift */,
+				5D49D90325C3AD82005879B8 /* PostController.swift */,
+				5D49D90625C3AE0E005879B8 /* CommentController.swift */,
 			);
 			path = Databse;
 			sourceTree = "<group>";
@@ -536,12 +542,14 @@
 				5DC73B3E25C06C5D002C7132 /* ProfileController.swift in Sources */,
 				5DC73B7925C2A17C002C7132 /* CommentTableViewCell.swift in Sources */,
 				184EB1F325C040330098103A /* Open.swift in Sources */,
+				5D49D90725C3AE0E005879B8 /* CommentController.swift in Sources */,
 				184EB1F525C040330098103A /* Close.swift in Sources */,
 				184EB1F225C040330098103A /* Result.swift in Sources */,
 				18F8A0AF25B8802500BF41C9 /* SceneDelegate.swift in Sources */,
 				184EB1C425BDA6040098103A /* Results.swift in Sources */,
 				185DF98B25B9955B00B5929D /* Validation.swift in Sources */,
 				183CFC3125BD224F00C07434 /* nearbyCellCollectionViewCell.swift in Sources */,
+				5D49D90425C3AD82005879B8 /* PostController.swift in Sources */,
 				5DC73B9425C2B9DD002C7132 /* ContentController.swift in Sources */,
 				184EB1C225BDA6040098103A /* Viewport.swift in Sources */,
 				5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */,
