@@ -35,12 +35,6 @@ class FavouriteController{
             placeObject.placeID = place.place_id;
             placeObject.lat = place.lat;
             placeObject.long = place.long;
-            placeObject.rating = place.rating;
-            placeObject.venueImage = place.venueImageData.pngData()
-            placeObject.closing_time = place.close;
-            placeObject.opening_time = place.open;
-            placeObject.popularity = Int32(place.popularity);
-            
             try context.save()
             
             
@@ -112,11 +106,7 @@ class FavouriteController{
                         place.lat = favourite.lat!;
                         place.long = favourite.long!;
                         place.place_id = favourite.placeID!;
-                        place.rating = favourite.rating!;
                         place.venueName = favourite.venueName!;
-                        place.open = favourite.closing_time ?? "0";
-                        place.close = favourite.opening_time ?? "0";
-                        place.popularity = Int(favourite.popularity);
                         place.venueImageData = UIImage(data: favourite.venueImage!)!
                         favouriteList.append(place)
                     }
@@ -150,11 +140,7 @@ class FavouriteController{
                     place.lat = favourite.lat!;
                     place.long = favourite.long!;
                     place.place_id = favourite.placeID!;
-                    place.rating = favourite.rating!;
                     place.venueName = favourite.venueName!;
-                    place.open = favourite.closing_time ?? "0";
-                    place.close = favourite.opening_time ?? "0";
-                    place.popularity = Int(favourite.popularity);
                     place.venueImageData = UIImage(data: favourite.venueImage!)!
 
                     favouriteListUser.append(place)
