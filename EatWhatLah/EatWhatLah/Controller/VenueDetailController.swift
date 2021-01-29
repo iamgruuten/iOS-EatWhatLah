@@ -76,6 +76,10 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         
     }
     
+    @IBAction func favouriteButton(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         let place = appDelegate.selectedPlace;
         getOperatingHours(placeID: (appDelegate.selectedPlace?.place_id)!)

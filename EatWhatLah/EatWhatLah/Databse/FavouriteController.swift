@@ -35,9 +35,6 @@ class FavouriteController{
             placeObject.placeID = place.place_id;
             placeObject.lat = place.lat;
             placeObject.long = place.long;
-            placeObject.distance = place.distance;
-            placeObject.rating = place.rating;
-            
             try context.save()
             
             
@@ -106,13 +103,11 @@ class FavouriteController{
                     for favourite in favourites{
                         
                         let place:Places = Places();
-                        place.distance = favourite.distance;
                         place.lat = favourite.lat!;
                         place.long = favourite.long!;
                         place.place_id = favourite.placeID!;
-                        place.rating = favourite.rating!;
                         place.venueName = favourite.venueName!;
-                        
+                        place.venueImageData = UIImage(data: favourite.venueImage!)!
                         favouriteList.append(place)
                     }
                 }
@@ -126,8 +121,8 @@ class FavouriteController{
         return favouriteList
     }
     
-    //retrieve ingredients based on title
-    func retrieveIngredientsbyName(uid:String) -> [Places]{
+    //retrieve venues based on uid
+    func retrieveFavouriteByUID(uid:String) -> [Places]{
         var favouriteListUser:[Places] = [Places]();
         
         let fetchRequestUser = NSFetchRequest<CDUserModel>(entityName:"CDUserModel")
@@ -142,13 +137,12 @@ class FavouriteController{
                 
                 for favourite in favouriteList{
                     let place:Places = Places();
-                    place.distance = favourite.distance;
                     place.lat = favourite.lat!;
                     place.long = favourite.long!;
                     place.place_id = favourite.placeID!;
-                    place.rating = favourite.rating!;
                     place.venueName = favourite.venueName!;
-                    
+                    place.venueImageData = UIImage(data: favourite.venueImage!)!
+
                     favouriteListUser.append(place)
                     
                 }

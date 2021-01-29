@@ -74,7 +74,7 @@ class UserController{
                 let userObject = results[0] as! CDUserModel;
                 user.name = userObject.name!;
                 user.bio = userObject.bio!;
-                user.favourite = favouriteController.retrieveIngredientsbyName(uid: user.uid)
+                user.favourite = favouriteController.retrieveFavouriteByUID(uid: <#T##String#>)(uid: user.uid)
                 user.email = userObject.email!;
                 user.profilePicture = UIImage(data: userObject.image!)!
 
