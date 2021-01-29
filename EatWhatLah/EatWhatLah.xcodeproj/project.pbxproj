@@ -17,6 +17,7 @@
 		18449E1B25C2B57F00A07780 /* categoryCellcollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18449E1A25C2B57F00A07780 /* categoryCellcollectionViewCell.swift */; };
 		18449E5825C2BDA500A07780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F8A0B825B8802800BF41C9 /* Assets.xcassets */; };
 		18449E5F25C33FFF00A07780 /* onBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18449E5E25C33FFF00A07780 /* onBoardController.swift */; };
+		18449E6325C392EB00A07780 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18449E6225C392EB00A07780 /* FirebaseController.swift */; };
 		184EB1BC25BDA6040098103A /* Southwest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1B325BDA6030098103A /* Southwest.swift */; };
 		184EB1BD25BDA6040098103A /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1B425BDA6030098103A /* Geometry.swift */; };
 		184EB1BE25BDA6040098103A /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB1B525BDA6040098103A /* PlaceModel.swift */; };
@@ -92,6 +93,7 @@
 		18449E1425C1E01000A07780 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18449E1A25C2B57F00A07780 /* categoryCellcollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryCellcollectionViewCell.swift; sourceTree = "<group>"; };
 		18449E5E25C33FFF00A07780 /* onBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardController.swift; sourceTree = "<group>"; };
+		18449E6225C392EB00A07780 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		184EB1B325BDA6030098103A /* Southwest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Southwest.swift; sourceTree = "<group>"; };
 		184EB1B425BDA6030098103A /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		184EB1B525BDA6040098103A /* PlaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				18F8A0B525B8802500BF41C9 /* EatWhatLah.xcdatamodeld */,
 				184EB1CD25BFA7850098103A /* FavouriteController.swift */,
 				184EB1D225BFB9430098103A /* UserController.swift */,
+				18449E6225C392EB00A07780 /* FirebaseController.swift */,
 			);
 			path = Databse;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				184EB1D725BFF6860098103A /* NearbyExtension.swift in Sources */,
 				184EB1CE25BFA7850098103A /* FavouriteController.swift in Sources */,
 				5DC73BA725C30601002C7132 /* FeedTableViewCell.swift in Sources */,
+				18449E6325C392EB00A07780 /* FirebaseController.swift in Sources */,
 				184EB1C325BDA6040098103A /* Location.swift in Sources */,
 				184EB1C125BDA6040098103A /* Plus_code.swift in Sources */,
 				5D28336E25C3284E00AD6C81 /* Post.swift in Sources */,

@@ -525,11 +525,6 @@
                                     <color key="titleColor" systemColor="opaqueSeparatorColor"/>
                                     <color key="titleShadowColor" systemColor="opaqueSeparatorColor"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="45"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="PdU-cP-wji" kind="show" id="0K6-80-tXW"/>
                                 </connections>
@@ -856,7 +851,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ckt-0Q-lht">
+                                    <mapView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ckt-0Q-lht">
                                         <rect key="frame" x="15" y="179" width="344" height="155.5"/>
                                         <connections>
                                             <outlet property="delegate" destination="W3P-DU-1Zd" id="tXb-W7-exf"/>
@@ -886,6 +881,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="favouriteButton:" destination="W3P-DU-1Zd" eventType="touchUpInside" id="DDl-0p-K86"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Tk6-zV-Aqh">
                                         <rect key="frame" x="113" y="380.5" width="20.5" height="17.5"/>
@@ -1064,7 +1062,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGg-DR-4Pi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2592.753623188406" y="-1235.4910714285713"/>
+            <point key="canvasLocation" x="2513" y="-1433"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Gx2-Ue-dvH">

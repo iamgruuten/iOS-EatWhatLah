@@ -51,7 +51,6 @@ class ExploreController : UIViewController{
         self.registerNib();
         
         //initialize user info
-        profileBtn.setBackgroundImage(appDelegate.user.profilePicture, for: .normal)
         
         let currentLat = String((locationManager.location?.coordinate.latitude)!);
         let currentLng = String((locationManager.location?.coordinate.longitude)!);
@@ -89,13 +88,15 @@ class ExploreController : UIViewController{
         
         requestPlacesNearby(lat: lat, long: long, radius: "500", keyword: "", type: "restaurant")
         
-        profileBtn.layer.cornerRadius = 45
-        profileBtn.imageView?.layer.cornerRadius = 45
+        profileBtn.layer.cornerRadius = 25.5
+        profileBtn.imageView?.layer.cornerRadius = 25.5
         profileBtn.layer.shadowColor = UIColor.lightGray.cgColor
         profileBtn.layer.shadowOffset = CGSize(width: 1, height: 1)
         profileBtn.layer.shadowRadius = 5
         profileBtn.layer.shadowOpacity = 1.0
         
+        profileBtn.setImage(appDelegate.user.profilePicture, for: .normal)
+
         let imageView = UIImageView();
         let image = UIImage(systemName: "search")
         imageView.image = image;

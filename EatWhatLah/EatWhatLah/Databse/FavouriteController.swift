@@ -35,8 +35,11 @@ class FavouriteController{
             placeObject.placeID = place.place_id;
             placeObject.lat = place.lat;
             placeObject.long = place.long;
-            placeObject.distance = place.distance;
             placeObject.rating = place.rating;
+            placeObject.venueImage = place.venueImageData.pngData()
+            placeObject.closing_time = place.close;
+            placeObject.opening_time = place.open;
+            placeObject.popularity = Int32(place.popularity);
             
             try context.save()
             
@@ -106,13 +109,15 @@ class FavouriteController{
                     for favourite in favourites{
                         
                         let place:Places = Places();
-                        place.distance = favourite.distance;
                         place.lat = favourite.lat!;
                         place.long = favourite.long!;
                         place.place_id = favourite.placeID!;
                         place.rating = favourite.rating!;
                         place.venueName = favourite.venueName!;
-                        
+                        place.open = favourite.closing_time ?? "0";
+                        place.close = favourite.opening_time ?? "0";
+                        place.popularity = Int(favourite.popularity);
+                        place.venueImageData = UIImage(data: favourite.venueImage!)!
                         favouriteList.append(place)
                     }
                 }
@@ -126,8 +131,8 @@ class FavouriteController{
         return favouriteList
     }
     
-    //retrieve ingredients based on title
-    func retrieveIngredientsbyName(uid:String) -> [Places]{
+    //retrieve venues based on uid
+    func retrieveFavouriteByUID(uid:String) -> [Places]{
         var favouriteListUser:[Places] = [Places]();
         
         let fetchRequestUser = NSFetchRequest<CDUserModel>(entityName:"CDUserModel")
@@ -142,13 +147,16 @@ class FavouriteController{
                 
                 for favourite in favouriteList{
                     let place:Places = Places();
-                    place.distance = favourite.distance;
                     place.lat = favourite.lat!;
                     place.long = favourite.long!;
                     place.place_id = favourite.placeID!;
                     place.rating = favourite.rating!;
                     place.venueName = favourite.venueName!;
-                    
+                    place.open = favourite.closing_time ?? "0";
+                    place.close = favourite.opening_time ?? "0";
+                    place.popularity = Int(favourite.popularity);
+                    place.venueImageData = UIImage(data: favourite.venueImage!)!
+
                     favouriteListUser.append(place)
                     
                 }
