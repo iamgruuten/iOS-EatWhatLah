@@ -13,6 +13,7 @@ class Post{
     var postUser:String!
     var postUserImage:UIImage!
     var postImage:UIImage!
+    var postImageURL:URL! 
     var topComUser:String!
     var topComment:String!
     var allComment:[Comment]!
