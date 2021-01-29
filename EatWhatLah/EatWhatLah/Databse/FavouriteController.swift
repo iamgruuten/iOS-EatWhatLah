@@ -107,7 +107,7 @@ class FavouriteController{
                         place.long = favourite.long!;
                         place.place_id = favourite.placeID!;
                         place.venueName = favourite.venueName!;
-                        place.venueImageData = UIImage(data: favourite.venueImage!)!
+                        place.venueImageData = favourite.venueImage!;
                         favouriteList.append(place)
                     }
                 }
@@ -141,7 +141,7 @@ class FavouriteController{
                     place.long = favourite.long!;
                     place.place_id = favourite.placeID!;
                     place.venueName = favourite.venueName!;
-                    place.venueImageData = UIImage(data: favourite.venueImage!)!
+                    place.venueImageData = favourite.venueImage!
 
                     favouriteListUser.append(place)
                     
