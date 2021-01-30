@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var password:String?
     var selectedPlace:Results?;
     var ListOfPlaces:[Results] = [];
+    var ListOfFavourite:[Places] = [];
+    
     var selectedCategory:String = "";
 
     var selectedPlaceImage:UIImage?;

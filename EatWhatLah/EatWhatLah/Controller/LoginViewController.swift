@@ -24,8 +24,10 @@ class LoginViewController:UIViewController{
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     let userController:UserController = UserController();
+    let favouriteController:FavouriteController = FavouriteController();
+    let firebaseController:FirebaseController = FirebaseController();
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,11 +43,11 @@ class LoginViewController:UIViewController{
     
     @IBAction func loginBtnOnClick(_ sender: Any) {
         self.view.endEditing(true)
-
+        
         SwiftSpinner.show("We are logging you in...")
-
+        
         SwiftSpinner.show(delay: 2.0, title: "It's taking longer than expected")
-
+        
         let password = userPasswordField.text;
         let email = appDelegate.user.email;
         
@@ -55,30 +57,30 @@ class LoginViewController:UIViewController{
                 var errorMessage:String = "Unknown error has occured";
                 
                 switch AuthErrorCode(rawValue: error.code) {
-                    case .operationNotAllowed:
-                        errorMessage = "Operation not allowed";
-                    case .userDisabled:
-                        errorMessage = "Your account has been disabled"
-                    case .wrongPassword:
-                        errorMessage = "Wrong Password"
-                    default:
-                        print("Error: \(error.localizedDescription)")
+                case .operationNotAllowed:
+                    errorMessage = "Operation not allowed";
+                case .userDisabled:
+                    errorMessage = "Your account has been disabled"
+                case .wrongPassword:
+                    errorMessage = "Wrong Password"
+                default:
+                    print("Error: \(error.localizedDescription)")
                 }
                 let alert = UIAlertController(title: "Oh no! An error has occured", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
-            
-            // add the actions (buttons)
-            alert.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default))
-            
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-          } else {
-            print("User signs in successfully")
-            let userInfo = Auth.auth().currentUser
-            
-            //Retrieve user data
-            let ref = Database.database().reference().child("users").child(userInfo!.uid)
-
-            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                // add the actions (buttons)
+                alert.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default))
+                
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                print("User signs in successfully")
+                let userInfo = Auth.auth().currentUser
+                
+                //Retrieve user data
+                let ref = Database.database().reference().child("users").child(userInfo!.uid)
+                
+                ref.observeSingleEvent(of: .value, with: { (snapshot) in
                     let userDetails = snapshot.value as? NSDictionary
                     
                     //Storing users data in appDelegate
@@ -86,39 +88,47 @@ class LoginViewController:UIViewController{
                     self.appDelegate.user.uid = userInfo!.uid
                     self.appDelegate.user.bio = userDetails?["Bio"] as! String
                     self.appDelegate.user.name = userDetails?["Name"] as! String
-                
+                    
                     let storage = Storage.storage()
-
+                    
                     let gsReference = storage.reference(forURL:userDetails?["profileURL"] as! String)
-                                            
+                    
                     gsReference.getData(maxSize: 10 * 1024 * 1024) { data, error in
                         if let error = error {
-                          // Uh-oh, an error occurred!
+                            // Uh-oh, an error occurred!
                             print(error)
                         } else {
                             self.appDelegate.user.profilePicture = UIImage(data: data!)!
                             
-                          //Complete login
-
-                          SwiftSpinner.hide();
-                          
-                          self.userController.AddUser(user: self.appDelegate.user)
-                          
-                          let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                          
-                          let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainSB")
-                          
-                          nextViewController.modalPresentationStyle = .fullScreen
-                          
-                          self.present(nextViewController, animated:false, completion:nil)
+                            //Complete login
+                            
+                            SwiftSpinner.hide();
+                            
+                            self.userController.AddUser(user: self.appDelegate.user)
+                            
+                            //Retrieve All Favourite from Firebase
+                            let listOfPlaceFB = self.firebaseController.getAllFavourites(uid: userInfo!.uid)
+                            
+                            //Adding each favourite from firebase to local core data
+                            for place in listOfPlaceFB {
+                                self.favouriteController.addFavouriteToUser(user: self.appDelegate.user, place: place)
+                            }
+                            
+                            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                            
+                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainSB")
+                            
+                            nextViewController.modalPresentationStyle = .fullScreen
+                            
+                            self.present(nextViewController, animated:false, completion:nil)
                         }
-                      }
-          })
+                    }
+                })
+            }
         }
     }
-    }
     
-
+    
     //Back Button On Click
     @IBAction func backBtnOnClick(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -127,7 +137,7 @@ class LoginViewController:UIViewController{
     //Get email user input
     @IBAction func nextOnClick(_ sender: Any) {
         self.view.endEditing(true)
-
+        
         SwiftSpinner.show("Retrieving Details...")
         let email:String = emailField.text!;
         
@@ -139,9 +149,9 @@ class LoginViewController:UIViewController{
         }else{
             //Look for email exist
             let ref = Database.database().reference().child("users")
-
+            
             ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                 if let userDict = snapshot.value as? [String:Any] {
+                if let userDict = snapshot.value as? [String:Any] {
                     for user in userDict {
                         let userDetails = user.value as? NSDictionary
                         let emaildata = userDetails?["Email"] as? String ?? ""
@@ -179,7 +189,7 @@ class LoginViewController:UIViewController{
                     // show the alert
                     self.present(alert, animated: true, completion: nil)
                     
-                 }
+                }
             })
             
         }
@@ -199,7 +209,7 @@ class LoginViewController:UIViewController{
         }
         return image
     }
-
+    
     func fileExists(at path: String) -> Bool {
         return FileManager.default.fileExists(atPath: path)
     }

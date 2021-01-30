@@ -1,13 +1,13 @@
 //
-//  categoryCellcollectionViewCell.swift
+//  FavouriteCollectionViewCell.swift
 //  EatWhatLah
 //
-//  Created by Apple on 28/1/21.
+//  Created by Apple on 30/1/21.
 //
 
 import UIKit
 
-class categoryCellcollectionViewCell: UICollectionViewCell {
+class FavouriteCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var cell: UIView!
     @IBOutlet var imageCategory: UIImageView!
@@ -22,6 +22,7 @@ class categoryCellcollectionViewCell: UICollectionViewCell {
         categoryNameLabel.text = name;
         imageCategory.image = image;
         cell.backgroundColor = color;
+        
     }
     class var reuseIdentifier: String {
         return "categoryCell"

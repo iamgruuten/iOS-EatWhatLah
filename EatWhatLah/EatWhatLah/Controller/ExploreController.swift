@@ -17,6 +17,10 @@ class ExploreController : UIViewController{
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    let firebaseController:FirebaseController = FirebaseController();
+    let userController:UserController = UserController();
+    let favouriteController:FavouriteController = FavouriteController();
+    
     var dataNearByVenue = [Places]()
     
     var resultVenues = [Results]();
@@ -48,6 +52,7 @@ class ExploreController : UIViewController{
     
     
     override func viewDidLoad() {
+        appDelegate.ListOfFavourite = favouriteController.retrieveFavouriteByUID(uid: appDelegate.user.uid)
         self.registerNib();
         
         //initialize user info
@@ -221,7 +226,7 @@ class ExploreController : UIViewController{
         nearbyView.register(nib, forCellWithReuseIdentifier: nearbyCellCollectionViewCell.reuseIdentifier)
         
         if let flowLayout = nearbyView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: view.frame.width, height: 230)
+            flowLayout.estimatedItemSize = CGSize(width: view.frame.width, height: 290)
             
             
             print("Registering item size")
@@ -340,15 +345,8 @@ extension ExploreController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.nearbyView {
+            return CGSize(width: view.frame.width, height: 220)
             
-            guard let cell: nearbyCellCollectionViewCell = Bundle.main.loadNibNamed(nearbyCellCollectionViewCell.nibName, owner: self, options: nil)?.first as? nearbyCellCollectionViewCell else {
-                return CGSize(width: view.frame.width, height: 240)
-            }
-            print("Configuring cell")
-            cell.configureCell(place: dataNearByVenue[indexPath.row])
-            cell.setNeedsLayout()
-            cell.layoutIfNeeded()
-            return CGSize(width: view.frame.width, height: 240)
         }else if collectionView == self.categoryView{
             return CGSize(width: view.frame.width / 3, height: 100)
             

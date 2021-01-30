@@ -7,15 +7,13 @@
 
 import UIKit
 
-//add drop shadow to system
 extension UIView {
-    func dropShadow(scale: Bool = true) {
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.2
-        layer.shadowOffset = .zero
-        layer.shadowRadius = 5
-        layer.shouldRasterize = true
-        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-    }
-}
+
+       public func addShadowToView(shadow_color: UIColor,offset: CGSize,shadow_radius: CGFloat,shadow_opacity: Float,corner_radius: CGFloat) {
+           self.layer.shadowColor = shadow_color.cgColor
+           self.layer.shadowOpacity = shadow_opacity
+           self.layer.shadowOffset = offset
+           self.layer.shadowRadius = shadow_radius
+           self.layer.cornerRadius = corner_radius
+       }
+   }

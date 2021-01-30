@@ -11,7 +11,7 @@ class Places{
     var venueName:String = "";
     var rating:String = "";
     var venueImage:String = "";
-    var venueImageData:Data = UIImage().pngData()!;
+    var venueImageData:Data = Data();
     var distance:Double = 0;
     var lat:String = "";
     var long:String = "";
