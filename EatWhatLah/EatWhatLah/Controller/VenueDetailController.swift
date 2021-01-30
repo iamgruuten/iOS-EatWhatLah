@@ -190,7 +190,8 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
                 var OpeningTime = "";
                 
                 if(responseDecode.result?.opening_hours?.periods?.count == 7){
-                    ClosingTime = (responseDecode.result?.opening_hours?.periods![day!].close?.time)!
+                    ClosingTime = (responseDecode.result?.opening_hours?.periods![day! - 1].close?.time)!
+                    
                     
                     OpeningTime = (responseDecode.result?.opening_hours?.periods![day!].open?.time)!
                 }else{

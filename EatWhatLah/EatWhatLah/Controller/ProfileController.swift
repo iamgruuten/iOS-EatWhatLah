@@ -40,7 +40,10 @@ class ProfileController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        listOfPost = firebase.getAllPost(uid: appDelegate.user.uid)
+        firebase.getAllPost(uid: Auth.auth().currentUser!.uid) { postRetrieve in
+            self.listOfPost = postRetrieve;
+            self.ProfileContent.reloadData()
+        }
         
         ProfileName.text = appDelegate.user.name
         ProfileMobile.text = appDelegate.user.email
@@ -72,7 +75,9 @@ extension ProfileController:UICollectionViewDelegate{
 }
 extension ProfileController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(listOfPost.count)
         return listOfPost.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

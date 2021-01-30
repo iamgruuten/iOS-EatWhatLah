@@ -17,10 +17,19 @@ class onBoardController:UIViewController{
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     let userController:UserController = UserController();
-
+    let firebaseController:FirebaseController = FirebaseController();
+    
     override func viewDidLoad() {
+                
         if Auth.auth().currentUser != nil {
-            appDelegate.user = userController.retrieveUser(uid: Auth.auth().currentUser!.uid)
+            var user = userController.retrieveUser(uid: Auth.auth().currentUser!.uid)
+            if(user.uid == ""){
+                //Means not inside database
+                user = firebaseController.getUserData(uid:  Auth.auth().currentUser!.uid)
+            }
+            
+            appDelegate.user = user;
+            
             print(Auth.auth().currentUser!.uid)
             
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -30,6 +39,7 @@ class onBoardController:UIViewController{
             nextViewController.modalPresentationStyle = .fullScreen
             
             self.present(nextViewController, animated:false, completion:nil)
+                
         }
     }
 }

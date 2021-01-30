@@ -16,7 +16,7 @@ class User{
     var uid:String = "";
     var password:String = "";
     var profilePicture:UIImage = UIImage();
-    var preference:[String] = []
+    var preference:String = ""
     var posts:[Post]!
     
     init(){
