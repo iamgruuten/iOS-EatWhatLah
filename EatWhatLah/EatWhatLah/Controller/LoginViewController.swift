@@ -106,21 +106,28 @@ class LoginViewController:UIViewController{
                             
                             self.userController.AddUser(user: self.appDelegate.user)
                             
-                            //Retrieve All Favourite from Firebase
-                            let listOfPlaceFB = self.firebaseController.getAllFavourites(uid: userInfo!.uid)
                             
-                            //Adding each favourite from firebase to local core data
-                            for place in listOfPlaceFB {
-                                self.favouriteController.addFavouriteToUser(user: self.appDelegate.user, place: place)
+                            
+                            //Retrieve All Favourite from Firebase
+                            self.firebaseController.getAllFavourites(uid: userInfo!.uid){
+                                favourites in
+                                
+                                let listOfPlaceFB = favourites;
+                                
+                                //Adding each favourite from firebase to local core data
+                                for place in listOfPlaceFB {
+                                    self.favouriteController.addFavouriteToUser(user: self.appDelegate.user, place: place)
+                                }
+                                
+                                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                                
+                                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainSB")
+                                
+                                nextViewController.modalPresentationStyle = .fullScreen
+                                
+                                self.present(nextViewController, animated:false, completion:nil)
                             }
                             
-                            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                            
-                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainSB")
-                            
-                            nextViewController.modalPresentationStyle = .fullScreen
-                            
-                            self.present(nextViewController, animated:false, completion:nil)
                         }
                     }
                 })

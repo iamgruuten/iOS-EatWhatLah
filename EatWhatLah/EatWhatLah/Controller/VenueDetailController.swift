@@ -27,6 +27,9 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
     @IBOutlet weak var favouriteImage: UIImageView!
     @IBOutlet weak var favouriteLabel: UIButton!
     
+    let firebaseController:FirebaseController = FirebaseController();
+    let favouriteController:FavouriteController = FavouriteController();
+    
     
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -36,6 +39,10 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
     @IBOutlet weak var ratingLabel: UILabel!
     let locationDelegate = LocationDelegate()
     var latestLocation: CLLocation? = nil
+    
+    var added:Int = 0;
+    //1 - Added
+    //0 - Not Added
     
     let locationManager: CLLocationManager = {
         $0.requestWhenInUseAuthorization();
@@ -51,6 +58,7 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         self.dismiss(animated: true, completion: nil)
     }
     
+    //Redirects user to map to navigate to the area
     @IBAction func exploreOnClick(_ sender: Any) {
         
         //Open in map for directions
@@ -82,16 +90,17 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
     
     override func viewDidLoad() {
         let place = appDelegate.selectedPlace;
+                
         getOperatingHours(placeID: (appDelegate.selectedPlace?.place_id)!)
         
-        //        if(appDelegate.user.favourite.contains(where: {$0.place_id == place?.place_id})) {
-        //            favouriteImage.image = UIImage(systemName: "heart.fill")
-        //            favouriteLabel.titleLabel?.text = "Added To Favourites"
-        //        }else{
-        //            favouriteImage.image = UIImage(systemName: "heart")
-        //            favouriteLabel.titleLabel?.text = "Add To Favourites"
-        //
-        //        }
+        if(appDelegate.user.favourite.contains(where: {$0.place_id == place?.place_id})) {
+            favouriteImage.image = UIImage(systemName: "heart.fill")
+            favouriteLabel.titleLabel?.text = "Added To Favourites"
+        }else{
+            favouriteImage.image = UIImage(systemName: "heart")
+            favouriteLabel.titleLabel?.text = "Add To Favourites"
+            
+        }
         
         
         imageBackground.image = appDelegate.selectedPlaceImage;
@@ -106,7 +115,7 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         //Get Distance of two points
         let distance:Double = getDistance(lat: String((place?.geometry?.location?.lat)!), long: String((place?.geometry?.location?.lng)!))
         
-        distanceLabel.text = String(distance) + "m away from you"
+        distanceLabel.text = String(format: "%.2f",distance) + "m away from you"
         
         detailView.layer.shadowColor = UIColor.lightGray.cgColor
         detailView.layer.shadowOffset = CGSize(width: 1, height: 1)
@@ -119,8 +128,7 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         
         let lat:CLLocationDegrees = (place?.geometry?.location?.lat)!
         let lng:CLLocationDegrees = (place?.geometry?.location?.lng)!
-        print(lat)
-        print(lng)
+        
         let venueCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
         annotation.coordinate = venueCoordinate
         annotation.title = place?.name
@@ -146,22 +154,6 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         )
         
         mapView.setRegion(coordinateRegion, animated: true);
-    }
-    
-    //Return distance from two pin location
-    func getDistance(lat:String, long:String)->Double{
-        
-        let pinLocation = CLLocation(latitude: CLLocationDegrees(lat)!, longitude: CLLocationDegrees(long)!)
-        
-        guard let currentLocation = locationManager.location else {
-            return 0.0
-        }
-        
-        let distance = pinLocation.distance(from: currentLocation)
-        
-        print(String(format: "The distance to location is %.01fm", distance))
-        
-        return Double(String(format: "%.0f", distance)) ?? 0.0;
     }
     
     func getOperatingHours(placeID:String)->Void{
@@ -236,11 +228,35 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         
     }
     
+    @IBAction func addOnClick(_ sender: Any) {
+        //Add to firebase
+        let place:Places = Places();
+        place.venueName = (appDelegate.selectedPlace?.name)!;
+        place.lat = String((appDelegate.selectedPlace?.geometry?.location?.lat)!)
+        place.long = String((appDelegate.selectedPlace?.geometry?.location?.lng)!)
+        place.place_id = (appDelegate.selectedPlace?.place_id)!;
+        place.venueImageData = imageBackground.image!;
+        place.venueAddress = (appDelegate.selectedPlace?.vicinity!)!;
+        
+        if (added == 0) {
+            
+            favouriteController.addFavouriteToUser(user: appDelegate.user, place: place)
+            
+            firebaseController.addFavourite(uid: appDelegate.user.uid, place: place)
+        }else{
+            firebaseController.removeFavourite(uid: appDelegate.user.uid, place_id: place.place_id)
+            
+            favouriteController.removeFavouriteFromUser(user: appDelegate.user, place: place)
+        }
+        
+    }
+    
     //This function is used to get the date of the week
     func getDayOfWeek(_ todayDate:Date) -> Int? {
         let myCalendar = Calendar(identifier: .gregorian)
         let weekDay = myCalendar.component(.weekday, from: todayDate)
         return weekDay
     }
+    
     
 }

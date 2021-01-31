@@ -18,6 +18,7 @@
         <relationship name="userID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUserModel" inverseName="savedPreferences" inverseEntity="CDUserModel"/>
     </entity>
     <entity name="CDSavedLocation" representedClassName="CDSavedLocation" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="lat" optional="YES" attributeType="String"/>
         <attribute name="long" optional="YES" attributeType="String"/>
         <attribute name="placeID" optional="YES" attributeType="String"/>

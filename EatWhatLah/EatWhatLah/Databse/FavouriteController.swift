@@ -35,6 +35,9 @@ class FavouriteController{
             placeObject.placeID = place.place_id;
             placeObject.lat = place.lat;
             placeObject.long = place.long;
+            placeObject.venueImage = place.venueImageData.pngData()
+            placeObject.address = place.venueAddress;
+            
             try context.save()
             
             
@@ -51,7 +54,7 @@ class FavouriteController{
         //check if got duplicate, so that can be reused to link to place
         let fetchVenueRequest = NSFetchRequest<CDSavedLocation>(entityName: "CDSavedLocation")
         
-        fetchVenueRequest.predicate = NSPredicate(format: "PlaceID = %@", place.place_id)
+        fetchVenueRequest.predicate = NSPredicate(format: "placeID = %@", place.place_id)
         
         do{
             let cdVenue = try context.fetch(fetchVenueRequest)
@@ -107,7 +110,10 @@ class FavouriteController{
                         place.long = favourite.long!;
                         place.place_id = favourite.placeID!;
                         place.venueName = favourite.venueName!;
-                        place.venueImageData = favourite.venueImage!;
+                        place.venueImageData = UIImage(data: favourite.venueImage!)!;
+                        place.distance = appDelegate.getDistance(lat: place.lat, long: place.long)
+                        place.venueAddress = favourite.address!;
+                        
                         favouriteList.append(place)
                     }
                 }
@@ -122,7 +128,7 @@ class FavouriteController{
     }
     
     //retrieve venues based on uid
-    func retrieveFavouriteByUID(uid:String) -> [Places]{
+    func retrieveFavouriteByUID(uid:String, completionHandler:@escaping (_ postArray: [Places])->Void){
         var favouriteListUser:[Places] = [Places]();
         
         let fetchRequestUser = NSFetchRequest<CDUserModel>(entityName:"CDUserModel")
@@ -141,19 +147,55 @@ class FavouriteController{
                     place.long = favourite.long!;
                     place.place_id = favourite.placeID!;
                     place.venueName = favourite.venueName!;
-                    place.venueImageData = favourite.venueImage!
-
+                    place.venueImageData = UIImage(data: favourite.venueImage!)!
+                    place.distance = self.appDelegate.getDistance(lat: favourite.lat!, long: favourite.long!)
+                    place.venueAddress = favourite.address!;
+                    
                     favouriteListUser.append(place)
                     
                 }
                 
             }
             
+            print("Loaded Favourites...")
+            completionHandler(favouriteListUser)
+
+            
         }catch let error as NSError{
             print(error)
         }
         
-        return favouriteListUser;
+    }
+    
+    //Remove user to place - Many to Many
+    func removeFavouriteFromUser(user:User, place:Places) {
+        
+        //check if got duplicate, so that can be reused to link to place
+        let fetchVenueRequest = NSFetchRequest<CDSavedLocation>(entityName: "CDSavedLocation")
+        
+        fetchVenueRequest.predicate = NSPredicate(format: "placeID = %@", place.place_id)
+        
+        do{
+            let cdVenue = try context.fetch(fetchVenueRequest)
+            
+            //Get user object to add the favourite in
+            
+            let fetchRequest = NSFetchRequest<CDUserModel>(entityName: "CDUserModel")
+            fetchRequest.predicate = NSPredicate(format: "uid = %@", user.uid)
+            
+            let cdUser = try context.fetch(fetchRequest)
+            let userObject = cdUser[0]
+            
+            if cdVenue.count > 0{
+                let venue = cdVenue[0]
+                venue.removeFromUserID(userObject)
+            }
+            
+            try context.save()
+            
+        }catch let error as NSError{
+            print(error)
+        }
     }
     
     

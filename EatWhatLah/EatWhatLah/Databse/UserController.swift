@@ -28,7 +28,6 @@ class UserController{
             fetchRequest.predicate = NSPredicate(format: "uid = %@", user.uid)
         
             let results = try context.fetch(fetchRequest)
-            
             if results.count == 0 {
                 
                 //add Users
@@ -48,6 +47,9 @@ class UserController{
                 
                 
                 try context.save()
+                
+                print("saved record, added")
+
             }else{
                 print("duplicate record, therefore not added")
             }
@@ -58,33 +60,45 @@ class UserController{
     }
     
     
-    func retrieveUser(uid:String)->User{
+    func retrieveUser(uid:String, completionHandler:@escaping (_ postArray: User)->Void){
         
         let user:User = User();
         do{
             //Check if user exist before creating new row
-            
+            print("Loading Users...")
+
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUserModel")
             
             fetchRequest.predicate = NSPredicate(format: "uid = %@", uid)
         
             let results = try context.fetch(fetchRequest)
-            
+            print("Account is ", results.count)
+
             if results.count != 0 {
                 let userObject = results[0] as! CDUserModel;
                 user.name = userObject.name!;
+                user.uid = userObject.uid!;
                 user.bio = userObject.bio!;
-                user.favourite = favouriteController.retrieveFavouriteByUID(uid: user.uid)
+                
                 user.email = userObject.email!;
                 user.profilePicture = UIImage(data: userObject.image!)!
+                
+                favouriteController.retrieveFavouriteByUID(uid: user.uid){
+                    favList in
+                    print("Loaded Users...")
 
-            }else{
-                print("duplicate record, therefore not added")
+                    user.favourite = favList
+                    completionHandler(user)
+
+                }
+
             }
+            
+            completionHandler(user)
+            
         }catch let error as NSError{
             print(error)
         }
         
-        return user;
     }
 }
