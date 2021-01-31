@@ -352,7 +352,7 @@ extension ExploreController: UICollectionViewDataSource {
             let cell = collectionView.cellForItem(at: indexPath) as? FavouriteCollectionViewCell
             
             appDelegate.selectedPlaceImage = cell?.venueImage.image
-            getPlaceDetails(placeID: appDelegate.user.favourite[indexPath.row].place_id){
+            appDelegate.getPlaceDetails(placeID: appDelegate.user.favourite[indexPath.row].place_id){
                 placeObj in
                 
                 let place = placeObj;

@@ -74,6 +74,14 @@ class onBoardController:UIViewController{
                     self.favouriteController.retrieveFavouriteByUID(uid: self.appDelegate.user.uid){ list in
                         
                         print("Loaded fav list in Controller: ", list.count)
+                        
+                        for place in list{
+                            self.appDelegate.getPlaceDetails(placeID: place.place_id){
+                                details in
+                                
+                                self.appDelegate.favouriteList?.append(details)
+                            }
+                        }
                         self.appDelegate.user = user;
 
                         self.appDelegate.user.favourite = list;
