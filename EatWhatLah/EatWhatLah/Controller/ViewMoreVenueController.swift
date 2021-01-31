@@ -36,6 +36,7 @@ class ViewMoreVenueController:ViewController, UITableViewDelegate{
     @IBOutlet var VenuesTableView: UITableView!
     var radius:String = "500";
     var selectedPreference = "All";
+    var favouriteController:FavouriteController = FavouriteController();
     var selectedCategory = "";
     
     override func viewDidLoad() {
@@ -333,8 +334,9 @@ extension ViewMoreVenueController:UITableViewDataSource{
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "venueDetailview")
-        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "venueDetailview") as! VenueDetailController
+        nextViewController.updateFavDelegate = self;
+
         nextViewController.modalPresentationStyle = .fullScreen
         
         self.present(nextViewController, animated:true, completion:nil)
@@ -345,4 +347,21 @@ extension ViewMoreVenueController:UITableViewDataSource{
     
     
 }
+
+//Create a protocol to know if there is any changes to the database
+extension ViewMoreVenueController : updateFavouriteDelegate{
+    func didSendMessage(_ message:String) {
+        print("Im reloading my data")
+
+        favouriteController.retrieveFavouriteByUID(uid: appDelegate.user.uid){
+            favouriteList in
+            
+            self.appDelegate.user.favourite = favouriteList
+            self.favouriteCollection.reloadData();
+            
+            print("Im reloading my data")
+        }
+    }
+}
+
 

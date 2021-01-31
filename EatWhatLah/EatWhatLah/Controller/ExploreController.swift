@@ -13,6 +13,7 @@ import FirebaseStorage
 import SwiftSpinner
 import CoreLocation
 
+
 class ExploreController : UIViewController{
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -21,7 +22,6 @@ class ExploreController : UIViewController{
     let userController:UserController = UserController();
     let favouriteController:FavouriteController = FavouriteController();
     
-    @IBOutlet var favouriteCollection: UICollectionView!
     var dataNearByVenue = [Places]()
     
     var resultVenues = [Results]();
@@ -31,7 +31,6 @@ class ExploreController : UIViewController{
     var resultBakery = [Results]();
     var resultBar = [Results]();
     var resultHawker = [Results]();
-    var favouriteList = [Places]();
     
     
     let locationManager: CLLocationManager = {
@@ -50,6 +49,7 @@ class ExploreController : UIViewController{
     
     @IBOutlet weak var nearbyView: UICollectionView!
     @IBOutlet var categoryView: UICollectionView!
+    @IBOutlet var favouriteCollection: UICollectionView!
     
     @IBOutlet weak var rngFoodTextField: UITextField!
     
@@ -95,7 +95,8 @@ class ExploreController : UIViewController{
         categoryView.dataSource = self;
         categoryView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10);
         
-        
+        favouriteCollection.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10);
+
         requestPlacesNearby(lat: lat, long: long, radius: "500", keyword: "", type: "restaurant")
         
         profileBtn.layer.cornerRadius = 25.5
@@ -239,35 +240,6 @@ class ExploreController : UIViewController{
         }
     }
     
-    func getPlaceDetails(placeID:String, completionHandler:@escaping (_ postArray: Results)->Void){
-        
-        var request = URLRequest(url: URL(string: ("https://maps.googleapis.com/maps/api/place/details/json?place_id="
-                                                    + placeID +
-                                                    "&fields=business_status,geometry,icon,name,opening_hours,place_id,plus_code,rating,reference,scope,types,user_ratings_total,vicinity&key=AIzaSyDt0QPH_9Bl0h9xWLw2PIFLpnOrcDxGYII"))!)
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let session = URLSession.shared
-        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-            do {
-                let decoder = JSONDecoder()
-                
-                let responseDecode = try decoder.decode(PlaceModel.self, from: data!)
-                
-                let placesResponse = responseDecode.results
-                            
-                completionHandler(placesResponse![0])
-                
-                print("Completed")
-            } catch {
-                print("error, unable to request data")
-            }
-        })
-        
-        task.resume()
-        print("Reloaded Data")
-        
-    }
     
 }
 
@@ -284,7 +256,8 @@ extension ExploreController: UICollectionViewDataSource {
         }else if collectionView == self.categoryView{
             return categoriesList.count
         }else{
-            return favouriteList.count
+            print("Fav List: ", appDelegate.user.favourite.count)
+            return appDelegate.user.favourite.count
         }
         
     }
@@ -317,7 +290,7 @@ extension ExploreController: UICollectionViewDataSource {
         }else{
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavouriteCollectionViewCell.reuseIdentifier, for: indexPath) as? FavouriteCollectionViewCell {
                 
-                let place = favouriteList[indexPath.row]
+                let place = appDelegate.user.favourite[indexPath.row]
                 
                 cell.configureCell(place: place)
                 return cell
@@ -338,7 +311,9 @@ extension ExploreController: UICollectionViewDataSource {
             
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "venueDetailview")
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "venueDetailview") as! VenueDetailController
+            nextViewController.updateFavDelegate = self;
+
             appDelegate.selectedCategory = "";
             nextViewController.modalPresentationStyle = .fullScreen
             
@@ -376,27 +351,33 @@ extension ExploreController: UICollectionViewDataSource {
             
             nextViewController.modalPresentationStyle = .fullScreen
             
+            
             self.present(nextViewController, animated:true, completion:nil)
         }else{
             let cell = collectionView.cellForItem(at: indexPath) as? FavouriteCollectionViewCell
             
             appDelegate.selectedPlaceImage = cell?.venueImage.image
-            getPlaceDetails(placeID: favouriteList[indexPath.row].place_id){
+            
+            appDelegate.getPlaceDetails(placeID: appDelegate.user.favourite[indexPath.row].place_id){
                 placeObj in
                 
-                let place = placeObj;
-                self.appDelegate.selectedPlaceImage = cell?.venueImage.image
+                self.appDelegate.selectedPlace = placeObj;
                 
-                self.appDelegate.selectedPlace = place;
-                
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "favouriteCell")
-                self.appDelegate.selectedCategory = "";
-                
-                nextViewController.modalPresentationStyle = .fullScreen
-                
-                self.present(nextViewController, animated:true, completion:nil)
+                DispatchQueue.main.async {
+                    
+                    
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "venueDetailview") as! VenueDetailController
+                    self.appDelegate.selectedCategory = "";
+                    
+                    nextViewController.modalPresentationStyle = .fullScreen
+                    nextViewController.updateFavDelegate = self;
+
+                    self.present(nextViewController, animated:true, completion:nil)
+                    
+
+                }
             }
             
             
@@ -416,9 +397,25 @@ extension ExploreController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: view.frame.width / 3, height: 100)
             
         }else{
-            return CGSize(width: view.frame.width / 3, height: 100)
+            return CGSize(width: view.frame.width / 2, height: 100)
         }
         
+    }
+}
+
+//Create a protocol to know if there is any changes to the database
+extension ExploreController : updateFavouriteDelegate{
+    func didSendMessage(_ message:String) {
+        print("Im reloading my data")
+
+        favouriteController.retrieveFavouriteByUID(uid: appDelegate.user.uid){
+            favouriteList in
+            
+            self.appDelegate.user.favourite = favouriteList
+            self.favouriteCollection.reloadData();
+            
+            print("Im reloading my data")
+        }
     }
 }
 

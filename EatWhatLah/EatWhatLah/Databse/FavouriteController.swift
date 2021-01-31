@@ -158,6 +158,7 @@ class FavouriteController{
             }
             
             print("Loaded Favourites...")
+            print("Number of fav in ", favouriteListUser.count)
             completionHandler(favouriteListUser)
 
             
