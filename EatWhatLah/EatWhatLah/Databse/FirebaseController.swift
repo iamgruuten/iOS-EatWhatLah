@@ -235,8 +235,10 @@ class FirebaseController{
                     placeObject.venueName = placeDescription!["VenueName"] as! String
                     placeObject.long = placeDescription!["lng"] as! String
                     placeObject.distance = self.appDelegate.getDistance(lat: placeObject.lat, long: placeObject.long)
-                    let dataImage = placeDescription!["ImageData"] as! Data;
-                    placeObject.venueImageData = UIImage(data: dataImage)!
+                    
+                    let dataImage = placeDescription!["imageUrl"] as! String
+                    
+                    placeObject.venueImage = dataImage;
                     placeObject.venueAddress = placeDescription!["Address"] as! String
                     print("Adding Key : " + key)
                     listOfPlaces.append(placeObject)
@@ -250,7 +252,7 @@ class FirebaseController{
     //Add Favourite
     func addFavourite(uid:String, place:Places) {
         //Retrieve user data
-        let ref = Database.database().reference().child("favourite")
+        let ref = Database.database().reference()
         print(uid)
         ref.child("favourite").child(uid).child(place.place_id).updateChildValues(
             [
@@ -258,7 +260,8 @@ class FirebaseController{
                 "lat":place.lat,
                 "lng":place.long,
                 "VenueName":place.venueName,
-                "Address":place.venueAddress
+                "Address":place.venueAddress,
+                "imageUrl":place.venueImage
             ]
         )
     }

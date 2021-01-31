@@ -13,6 +13,7 @@ import FirebaseStorage
 import SwiftSpinner
 import CoreLocation
 
+
 class ExploreController : UIViewController{
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -94,7 +95,8 @@ class ExploreController : UIViewController{
         categoryView.dataSource = self;
         categoryView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10);
         
-        
+        favouriteCollection.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10);
+
         requestPlacesNearby(lat: lat, long: long, radius: "500", keyword: "", type: "restaurant")
         
         profileBtn.layer.cornerRadius = 25.5
@@ -309,7 +311,9 @@ extension ExploreController: UICollectionViewDataSource {
             
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "venueDetailview")
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "venueDetailview") as! VenueDetailController
+            nextViewController.updateFavDelegate = self;
+
             appDelegate.selectedCategory = "";
             nextViewController.modalPresentationStyle = .fullScreen
             
@@ -347,27 +351,33 @@ extension ExploreController: UICollectionViewDataSource {
             
             nextViewController.modalPresentationStyle = .fullScreen
             
+            
             self.present(nextViewController, animated:true, completion:nil)
         }else{
             let cell = collectionView.cellForItem(at: indexPath) as? FavouriteCollectionViewCell
             
             appDelegate.selectedPlaceImage = cell?.venueImage.image
+            
             appDelegate.getPlaceDetails(placeID: appDelegate.user.favourite[indexPath.row].place_id){
                 placeObj in
                 
-                let place = placeObj;
-                self.appDelegate.selectedPlaceImage = cell?.venueImage.image
+                self.appDelegate.selectedPlace = placeObj;
                 
-                self.appDelegate.selectedPlace = place;
-                
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "favouriteCell")
-                self.appDelegate.selectedCategory = "";
-                
-                nextViewController.modalPresentationStyle = .fullScreen
-                
-                self.present(nextViewController, animated:true, completion:nil)
+                DispatchQueue.main.async {
+                    
+                    
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "venueDetailview") as! VenueDetailController
+                    self.appDelegate.selectedCategory = "";
+                    
+                    nextViewController.modalPresentationStyle = .fullScreen
+                    nextViewController.updateFavDelegate = self;
+
+                    self.present(nextViewController, animated:true, completion:nil)
+                    
+
+                }
             }
             
             
@@ -390,6 +400,22 @@ extension ExploreController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: view.frame.width / 2, height: 100)
         }
         
+    }
+}
+
+//Create a protocol to know if there is any changes to the database
+extension ExploreController : updateFavouriteDelegate{
+    func didSendMessage(_ message:String) {
+        print("Im reloading my data")
+
+        favouriteController.retrieveFavouriteByUID(uid: appDelegate.user.uid){
+            favouriteList in
+            
+            self.appDelegate.user.favourite = favouriteList
+            self.favouriteCollection.reloadData();
+            
+            print("Im reloading my data")
+        }
     }
 }
 

@@ -49,7 +49,17 @@ class onBoardController:UIViewController{
                             self.appDelegate.user.favourite = favourtelist
                             
                             for place in favourtelist{
-                                self.favouriteController.addFavouriteToUser(user: userF, place: place)
+                                if(place.venueImage != "0"){
+                                    self.downloaded(from: URL(string: place.venueImage)!){
+                                    venueImage in
+                                    
+                                    place.venueImageData = venueImage;
+                                    self.favouriteController.addFavouriteToUser(user: userF, place: place)
+                                }
+                                }else{
+                                    place.venueImageData = #imageLiteral(resourceName: "noResult");
+                                    self.favouriteController.addFavouriteToUser(user: userF, place: place)
+                                }
                             }
                             
                             //Load into local database as well
@@ -75,13 +85,6 @@ class onBoardController:UIViewController{
                         
                         print("Loaded fav list in Controller: ", list.count)
                         
-                        for place in list{
-                            self.appDelegate.getPlaceDetails(placeID: place.place_id){
-                                details in
-                                
-                                self.appDelegate.favouriteList?.append(details)
-                            }
-                        }
                         self.appDelegate.user = user;
 
                         self.appDelegate.user.favourite = list;
@@ -100,5 +103,29 @@ class onBoardController:UIViewController{
                 
             }
         }
+    }
+    
+    func downloaded(from url: URL, completionHandler:@escaping (_ postArray: UIImage)->Void) {
+        let semaphore = DispatchSemaphore (value: 0)
+        
+        var request = URLRequest(url: url,timeoutInterval: Double.infinity)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                print(String(describing: error))
+                semaphore.signal()
+                
+                completionHandler(#imageLiteral(resourceName: "noResult"))
+                
+                return
+            }
+            
+            completionHandler(UIImage(data: data)!)
+            semaphore.signal()
+        }
+        
+        task.resume()
+        semaphore.wait()
     }
 }

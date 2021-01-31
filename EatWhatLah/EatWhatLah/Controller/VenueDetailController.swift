@@ -9,10 +9,16 @@ import UIKit
 import CoreLocation
 import MapKit
 
+protocol updateFavouriteDelegate {
+    func didSendMessage(_ cookie: String)
+}
+
 class VenueDetailController:ViewController, MKMapViewDelegate{
     
     var appDelegate:AppDelegate = (UIApplication.shared.delegate) as! AppDelegate
     
+    var updateFavDelegate :updateFavouriteDelegate!
+
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var venueStatus: UILabel!
     
@@ -55,6 +61,8 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
     
     
     @IBAction func backOnClick(_ sender: Any) {
+        updateFavDelegate?.didSendMessage("Updated");
+
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -90,19 +98,27 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
     
     override func viewDidLoad() {
         let place = appDelegate.selectedPlace;
-                
+        
         getOperatingHours(placeID: (appDelegate.selectedPlace?.place_id)!)
         
+        //reflect based on venue in coredata
+        let buttonType:String;
+        
         if(appDelegate.user.favourite.contains(where: {$0.place_id == place?.place_id})) {
+            
             favouriteImage.image = UIImage(systemName: "heart.fill")
-            favouriteLabel.titleLabel?.text = "Added To Favourites"
+            buttonType = "Remove From Favourite"
+            added = 1
         }else{
             favouriteImage.image = UIImage(systemName: "heart")
-            favouriteLabel.titleLabel?.text = "Add To Favourites"
-            
+            buttonType = "Add To Favourite"
+
+            added = 0
         }
-        
-        
+        let myNormalAttributedTitle = NSAttributedString(string: buttonType,
+                                                         attributes: [NSAttributedString.Key.foregroundColor : UIColor.blue])
+        favouriteLabel.setAttributedTitle(myNormalAttributedTitle, for: .normal)
+
         imageBackground.image = appDelegate.selectedPlaceImage;
         
         venueName.text = place?.name!.trimmingCharacters(in: .whitespacesAndNewlines);
@@ -235,19 +251,52 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         place.lat = String((appDelegate.selectedPlace?.geometry?.location?.lat)!)
         place.long = String((appDelegate.selectedPlace?.geometry?.location?.lng)!)
         place.place_id = (appDelegate.selectedPlace?.place_id)!;
-        place.venueImageData = imageBackground.image!;
+        place.venueImageData = appDelegate.selectedPlaceImage!;
+        if(appDelegate.selectedPlace?.photos != nil){
+            place.venueImage = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + (appDelegate.selectedPlace?.photos?[0].photo_reference)! + "&sensor=true&key=AIzaSyDt0QPH_9Bl0h9xWLw2PIFLpnOrcDxGYII"
+        }else{
+            place.venueImage = "0"
+        }
+        
         place.venueAddress = (appDelegate.selectedPlace?.vicinity!)!;
         
+        //0 - means dont have
+        
+        //1 - means have
+        
+        let buttonType:String;
+        
         if (added == 0) {
-            
+            added = 1
             favouriteController.addFavouriteToUser(user: appDelegate.user, place: place)
             
             firebaseController.addFavourite(uid: appDelegate.user.uid, place: place)
+            
+            favouriteLabel.setTitle("Remove From Favourites", for: .normal)
+            buttonType = "Remove From Favourite"
+
+            favouriteImage.image = UIImage(systemName: "heart.fill")
+            
+            
         }else{
+            added = 0
+            
             firebaseController.removeFavourite(uid: appDelegate.user.uid, place_id: place.place_id)
             
             favouriteController.removeFavouriteFromUser(user: appDelegate.user, place: place)
+            buttonType = "Add To Favourite"
+            favouriteImage.image = UIImage(systemName: "heart")
+            
+            
+
         }
+        
+        
+        let myNormalAttributedTitle = NSAttributedString(string: buttonType,
+                                                         attributes: [NSAttributedString.Key.foregroundColor : UIColor.blue])
+        favouriteLabel.setAttributedTitle(myNormalAttributedTitle, for: .normal)
+        updateFavDelegate?.didSendMessage("Updated");
+
         
     }
     

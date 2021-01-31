@@ -87,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var request = URLRequest(url: URL(string: ("https://maps.googleapis.com/maps/api/place/details/json?place_id="
                                                     + placeID +
-                                                    "&fields=business_status,geometry,icon,name,opening_hours,place_id,plus_code,rating,reference,scope,types,user_ratings_total,vicinity&key=AIzaSyDt0QPH_9Bl0h9xWLw2PIFLpnOrcDxGYII"))!)
+                                                    "&fields=business_status,geometry,icon,name,opening_hours,place_id,plus_code,rating,reference,scope,types,user_ratings_total,price_level,photo,vicinity&key=AIzaSyDt0QPH_9Bl0h9xWLw2PIFLpnOrcDxGYII"))!)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
@@ -96,11 +96,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 let decoder = JSONDecoder()
                 
-                let responseDecode = try decoder.decode(PlaceModel.self, from: data!)
+                let respDict = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String:Any]
+
                 
-                let placesResponse = responseDecode.results
+                let dataResult = respDict["result"]
+                
+                let dataEdit = try JSONSerialization.data(withJSONObject: dataResult!, options:[])
+
+                let responseDecode = try decoder.decode(Results.self, from: dataEdit)
+                
+                let placesResponse = responseDecode
                             
-                completionHandler(placesResponse![0])
+                completionHandler(placesResponse)
                 
                 print("Completed")
             } catch {
