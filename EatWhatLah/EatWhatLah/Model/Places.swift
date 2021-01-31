@@ -11,12 +11,12 @@ class Places{
     var venueName:String = "";
     var rating:String = "";
     var venueImage:String = "";
-    var venueImageData:Data = Data();
+    var venueImageData:UIImage = UIImage();
     var distance:Double = 0;
     var lat:String = "";
     var long:String = "";
     var place_id:String = "";
-    
+    var venueAddress:String = "";
     
     init(venueName:String, rating:String, venueImage:String, distance:Double, place_id:String, lat:String, long:String) {
         self.venueName = venueName;

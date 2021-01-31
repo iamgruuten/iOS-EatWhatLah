@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 import Firebase
 
 @main
@@ -15,12 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var user:User = User();
     var password:String?
     var selectedPlace:Results?;
+    var selectedFavPlace:Places?;
+
     var ListOfPlaces:[Results] = [];
-    var ListOfFavourite:[Places] = [];
     
     var selectedCategory:String = "";
 
     var selectedPlaceImage:UIImage?;
+    
+    let locationManager: CLLocationManager = {
+        $0.requestWhenInUseAuthorization();
+        $0.desiredAccuracy = kCLLocationAccuracyBest;
+        $0.startUpdatingLocation();
+        $0.startUpdatingHeading();
+        return $0
+        
+    }(CLLocationManager())
     
     //API Rquest based on filter, duplicate found in main but will reformat in the future
     func requestPlacesNearby(lat:String, long:String, radius:String, keyword:String, type:String, completion: @escaping (([Results]) -> Void)){
@@ -136,6 +147,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    // MARK: - Get Distance
+    
+    func getDistance(lat:String, long:String)->Double{
+        
+        let pinLocation = CLLocation(latitude: CLLocationDegrees(lat)!, longitude: CLLocationDegrees(long)!)
+        
+        guard let currentLocation = locationManager.location else {
+            return 0.0
+        }
+        
+        let distance = pinLocation.distance(from: currentLocation)
+            
+        return distance;
     }
     
     override init(){

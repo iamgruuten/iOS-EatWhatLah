@@ -21,6 +21,7 @@ class ExploreController : UIViewController{
     let userController:UserController = UserController();
     let favouriteController:FavouriteController = FavouriteController();
     
+    @IBOutlet var favouriteCollection: UICollectionView!
     var dataNearByVenue = [Places]()
     
     var resultVenues = [Results]();
@@ -30,6 +31,8 @@ class ExploreController : UIViewController{
     var resultBakery = [Results]();
     var resultBar = [Results]();
     var resultHawker = [Results]();
+    var favouriteList = [Places]();
+    
     
     let locationManager: CLLocationManager = {
         $0.requestWhenInUseAuthorization();
@@ -52,8 +55,10 @@ class ExploreController : UIViewController{
     
     
     override func viewDidLoad() {
-        appDelegate.ListOfFavourite = favouriteController.retrieveFavouriteByUID(uid: appDelegate.user.uid)
         self.registerNib();
+        
+        favouriteCollection.dataSource = self
+        favouriteCollection.delegate = self;
         
         //initialize user info
         
@@ -70,15 +75,15 @@ class ExploreController : UIViewController{
         });
         
         appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "400", keyword: "", type: "bakery", completion: { (results) in
-        self.resultBakery = results;
+            self.resultBakery = results;
         });
         
         appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "400", keyword: "", type: "bar", completion: { (results) in
-        self.resultBar = results;
+            self.resultBar = results;
         });
         
         appDelegate.requestPlacesNearby(lat: currentLat, long: currentLng, radius: "400", keyword: "hawker", type: "restaurant", completion: { (results) in
-        self.resultHawker = results;
+            self.resultHawker = results;
         });
         
         let (lat, long) = getCurrentLocation();
@@ -89,7 +94,7 @@ class ExploreController : UIViewController{
         categoryView.delegate = self;
         categoryView.dataSource = self;
         categoryView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10);
-
+        
         
         requestPlacesNearby(lat: lat, long: long, radius: "500", keyword: "", type: "restaurant")
         
@@ -101,7 +106,7 @@ class ExploreController : UIViewController{
         profileBtn.layer.shadowOpacity = 1.0
         
         profileBtn.setImage(appDelegate.user.profilePicture, for: .normal)
-
+        
         let imageView = UIImageView();
         let image = UIImage(systemName: "search")
         imageView.image = image;
@@ -167,7 +172,7 @@ class ExploreController : UIViewController{
                     //Lat and long
                     let lat:String = String((placesResponse?[i].geometry?.location?.lat)!);
                     let long:String = String((placesResponse?[i].geometry?.location?.lng)!);
-
+                    
                     let name:String = (placesResponse?[i].name)!
                     var rating:String = "0"
                     
@@ -234,6 +239,36 @@ class ExploreController : UIViewController{
         }
     }
     
+    func getPlaceDetails(placeID:String, completionHandler:@escaping (_ postArray: Results)->Void){
+        
+        var request = URLRequest(url: URL(string: ("https://maps.googleapis.com/maps/api/place/details/json?place_id="
+                                                    + placeID +
+                                                    "&fields=business_status,geometry,icon,name,opening_hours,place_id,plus_code,rating,reference,scope,types,user_ratings_total,vicinity&key=AIzaSyDt0QPH_9Bl0h9xWLw2PIFLpnOrcDxGYII"))!)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            do {
+                let decoder = JSONDecoder()
+                
+                let responseDecode = try decoder.decode(PlaceModel.self, from: data!)
+                
+                let placesResponse = responseDecode.results
+                            
+                completionHandler(placesResponse![0])
+                
+                print("Completed")
+            } catch {
+                print("error, unable to request data")
+            }
+        })
+        
+        task.resume()
+        print("Reloaded Data")
+        
+    }
+    
 }
 
 
@@ -248,9 +283,10 @@ extension ExploreController: UICollectionViewDataSource {
             
         }else if collectionView == self.categoryView{
             return categoriesList.count
+        }else{
+            return favouriteList.count
         }
         
-        return 0;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -278,6 +314,14 @@ extension ExploreController: UICollectionViewDataSource {
             }
             print("Return UICollectionViewCell")
             
+        }else{
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavouriteCollectionViewCell.reuseIdentifier, for: indexPath) as? FavouriteCollectionViewCell {
+                
+                let place = favouriteList[indexPath.row]
+                
+                cell.configureCell(place: place)
+                return cell
+            }
         }
         
         return UICollectionViewCell()
@@ -300,7 +344,7 @@ extension ExploreController: UICollectionViewDataSource {
             
             self.present(nextViewController, animated:true, completion:nil)
         }else if collectionView == self.categoryView{
-
+            
             let (selectedCat , _ ,_) = categoriesList[indexPath.row]
             
             print(selectedCat)
@@ -325,7 +369,7 @@ extension ExploreController: UICollectionViewDataSource {
             }
             
             appDelegate.selectedCategory = selectedCat;
-
+            
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "viewMoreSB")
@@ -334,6 +378,27 @@ extension ExploreController: UICollectionViewDataSource {
             
             self.present(nextViewController, animated:true, completion:nil)
         }else{
+            let cell = collectionView.cellForItem(at: indexPath) as? FavouriteCollectionViewCell
+            
+            appDelegate.selectedPlaceImage = cell?.venueImage.image
+            getPlaceDetails(placeID: favouriteList[indexPath.row].place_id){
+                placeObj in
+                
+                let place = placeObj;
+                self.appDelegate.selectedPlaceImage = cell?.venueImage.image
+                
+                self.appDelegate.selectedPlace = place;
+                
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "favouriteCell")
+                self.appDelegate.selectedCategory = "";
+                
+                nextViewController.modalPresentationStyle = .fullScreen
+                
+                self.present(nextViewController, animated:true, completion:nil)
+            }
+            
             
         }
     }
