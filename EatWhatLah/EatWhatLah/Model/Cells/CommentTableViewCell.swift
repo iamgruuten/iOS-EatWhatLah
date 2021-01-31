@@ -33,10 +33,9 @@ class CommentTableViewCell: UITableViewCell {
         
     }
     
-    public func configure(with image:UIImage, name:String, comment:String){
-        profilePicture.setImage(image, for: .normal)
-        username.setTitle(name, for: .normal)
-        userComment.text = comment
+    public func configure(with comment:Comment){
+        username.setTitle(comment.commentor, for: .normal)
+        userComment.text = comment.comment
     }
     
     static func nib() -> UINib{

@@ -15,15 +15,14 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet var ownerUsername:UIButton!
     @IBOutlet var profileButton:UIButton!
 
-    
-    var allComment:[String] = ["This is a comment","This is the second comment","This is the last comment"]
+    var post:Post!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ownerUsername.setTitle("Jason", for: .normal)
+        ownerUsername.setTitle(post.postUser, for: .normal)
         commentTableView.register(CommentTableViewCell.nib(), forCellReuseIdentifier: CommentTableViewCell.identifier)
         
-        contentImage.image = UIImage(named: "Burgers")
+        contentImage.image = post.postImage
         contentDescription.text = "This is a very long paragraph of text to describe the image above. In order to save time I am going to start spamming this text with copypaste of the same paragraph. This is a very long paragraph of text to describe the image above. In order to save time I am going to start spamming this text with copypaste of the same paragraph. This is a very long paragraph of text to describe the image above. In order to save time I am going to start spamming this text with copypaste of the same paragraph."
         
         commentTableView.delegate = self
@@ -32,13 +31,13 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     //Table Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allComment.count
+        return post.allComment.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.identifier, for: indexPath) as! CommentTableViewCell
         
-        cell.configure(with: UIImage(named: "user")!, name: "Jason", comment: allComment[indexPath.row])
+        cell.configure(with: post.allComment[indexPath.row])
         
         return cell
     }

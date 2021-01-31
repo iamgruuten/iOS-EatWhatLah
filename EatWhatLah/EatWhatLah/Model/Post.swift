@@ -20,6 +20,7 @@ class Post{
     var likes:Int!
     var usersWhoLiked:[String]!
     var location:Places!
+    var description:String!
     
     init(pUsername:String,pUserImage:UIImage,pImage:UIImage,topCommentUser:String,TopCom:String){
         postUser = pUsername
@@ -27,9 +28,6 @@ class Post{
         postImage = pImage
         topComUser = topCommentUser
         topComment = TopCom
-        //allComment = AllComment
-        //likes = Likes
-        //location = Location
     }
     
     init(){}

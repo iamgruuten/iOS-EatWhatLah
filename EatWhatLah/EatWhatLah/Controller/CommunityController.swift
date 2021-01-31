@@ -19,7 +19,7 @@ class CommunityController:UIViewController{
     let firebase:FirebaseController = FirebaseController()
     //data
     let atfImages:[String] = ["Burgers","Burgers","Burgers"]
-    let feedImages:[Post] = []
+    var feedPost:[Post] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +27,10 @@ class CommunityController:UIViewController{
         //set profile image
         profilePicture.setImage(appDelegate.user.profilePicture, for: .normal)
         
-        //get all users
-        
-        //get post by users
+        firebase.getAllPost{postRetrieve in
+            self.feedPost = postRetrieve;
+            self.atfCollectionView.reloadData()
+        }
         
         //initializing ATF
         atfCollectionView.register(ATFCollectionViewCell.nib(), forCellWithReuseIdentifier: ATFCollectionViewCell.identifier)
@@ -68,12 +69,12 @@ extension CommunityController:UICollectionViewDelegate,UICollectionViewDataSourc
 //Feed Controller
 extension CommunityController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        feedImages.count
+        feedPost.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = feedTableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as! FeedTableViewCell
-        cell.configure(with: feedImages[indexPath.row])
+        cell.configure(with: feedPost[indexPath.row])
         
         return cell
     }
