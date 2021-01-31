@@ -16,16 +16,20 @@ class CommunityController:UIViewController{
     @IBOutlet weak var searchBar: UISearchBar!
     
     let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let firebase:FirebaseController = FirebaseController()
     //data
     let atfImages:[String] = ["Burgers","Burgers","Burgers"]
-    let feedImages:[Post] = [Post.init(pUsername: "Jason", pUserImage: UIImage(named: "user")!, pImage: UIImage(named: "Burgers")!, topCommentUser: "Quan Sheng", TopCom: "cool this is a sentence. cool this is a sentence. cool this is a sentence. cool this is a sentence. cool this is a sentence. cool this is a sentence. cool this is a sentence.coolasdhdkashdkjhajkdhajkdhashdah"),Post.init(pUsername: "Jason", pUserImage: UIImage(named: "user")!, pImage: UIImage(named: "Burgers")!, topCommentUser: "Quan Sheng", TopCom: "cool"),Post.init(pUsername: "Jason", pUserImage: UIImage(named: "user")!, pImage: UIImage(named: "Burgers")!, topCommentUser: "Quan Sheng", TopCom: "cool"),Post.init(pUsername: "Jason", pUserImage: UIImage(named: "user")!, pImage: UIImage(named: "Burgers")!, topCommentUser: "Quan Sheng", TopCom: "cool")
-    ]
+    let feedImages:[Post] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //set profile image
         profilePicture.setImage(appDelegate.user.profilePicture, for: .normal)
+        
+        //get all users
+        
+        //get post by users
         
         //initializing ATF
         atfCollectionView.register(ATFCollectionViewCell.nib(), forCellWithReuseIdentifier: ATFCollectionViewCell.identifier)
