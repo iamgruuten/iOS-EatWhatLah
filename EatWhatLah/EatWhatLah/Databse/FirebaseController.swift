@@ -42,6 +42,10 @@ class FirebaseController{
                 
                 let urlLink = postDescription!["imageURL"] as! String
                 
+                let description = postDescription!["description"] as! String
+                
+                postObject.description = description
+                
                 postObject.postImageURL = URL(string: urlLink)
                 print(urlLink)
                 let storage = Storage.storage()
@@ -132,6 +136,10 @@ class FirebaseController{
                     let postLikes = postDescription!["likes"] as? NSDictionary
                     
                     let urlLink = postDescription!["imageURL"] as! String
+                    
+                    let description = postDescription!["description"] as! String
+                    
+                    postObject.description = description
                     
                     postObject.postImageURL = URL(string: urlLink)
                     print(urlLink)

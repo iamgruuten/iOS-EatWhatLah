@@ -23,7 +23,7 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
         commentTableView.register(CommentTableViewCell.nib(), forCellReuseIdentifier: CommentTableViewCell.identifier)
         
         contentImage.image = post.postImage
-        contentDescription.text = "This is a very long paragraph of text to describe the image above. In order to save time I am going to start spamming this text with copypaste of the same paragraph. This is a very long paragraph of text to describe the image above. In order to save time I am going to start spamming this text with copypaste of the same paragraph. This is a very long paragraph of text to describe the image above. In order to save time I am going to start spamming this text with copypaste of the same paragraph."
+        contentDescription.text = post.description
         
         commentTableView.delegate = self
         commentTableView.dataSource = self
