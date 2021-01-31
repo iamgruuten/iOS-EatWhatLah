@@ -72,10 +72,13 @@ class onBoardController:UIViewController{
                     }
                 }else{
                     self.favouriteController.retrieveFavouriteByUID(uid: self.appDelegate.user.uid){ list in
+                        
+                        print("Loaded fav list in Controller: ", list.count)
                         self.appDelegate.user = user;
 
                         self.appDelegate.user.favourite = list;
 
+                        //We will need to request the favourite detailed place
                         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                         
                         let nextViewController = storyBoard.instantiateInitialViewController()!

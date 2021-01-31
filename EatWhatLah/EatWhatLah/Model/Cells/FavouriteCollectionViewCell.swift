@@ -9,14 +9,8 @@ import UIKit
 
 class FavouriteCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet var venueDistance: UILabel!
     @IBOutlet var venueImage: UIImageView!
-    
-    @IBOutlet var venueAddress: UILabel!
     @IBOutlet var venueName: UILabel!
-    
-    
-    
     
     override func awakeFromNib() {
         
@@ -27,9 +21,7 @@ class FavouriteCollectionViewCell: UICollectionViewCell {
     func configureCell(place:Places){
         
         self.venueName.text = place.venueName;
-        self.venueAddress.text = place.venueAddress;
         self.venueImage.image = place.venueImageData
-        self.venueDistance.text = String(place.distance)
     }
     
     class var reuseIdentifier: String {

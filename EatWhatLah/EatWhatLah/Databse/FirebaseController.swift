@@ -250,15 +250,14 @@ class FirebaseController{
     //Add Favourite
     func addFavourite(uid:String, place:Places) {
         //Retrieve user data
-        let ref = Database.database().reference().child("favourite").child(uid)
+        let ref = Database.database().reference().child("favourite")
         print(uid)
-        ref.child("favourite").child(uid).childByAutoId().updateChildValues(
+        ref.child("favourite").child(uid).child(place.place_id).updateChildValues(
             [
                 "placeID":place.place_id,
                 "lat":place.lat,
                 "lng":place.long,
                 "VenueName":place.venueName,
-                "ImageData":place.venueImageData.pngData()!,
                 "Address":place.venueAddress
             ]
         )

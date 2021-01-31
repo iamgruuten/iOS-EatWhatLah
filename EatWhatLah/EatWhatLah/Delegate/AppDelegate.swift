@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var user:User = User();
     var password:String?
     var selectedPlace:Results?;
-    var selectedFavPlace:Places?;
+    var favouriteList:[Results]?;
 
     var ListOfPlaces:[Results] = [];
     
@@ -82,7 +82,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    
+    //API Request based on placeID
+    func getPlaceDetails(placeID:String, completionHandler:@escaping (_ postArray: Results)->Void){
+        
+        var request = URLRequest(url: URL(string: ("https://maps.googleapis.com/maps/api/place/details/json?place_id="
+                                                    + placeID +
+                                                    "&fields=business_status,geometry,icon,name,opening_hours,place_id,plus_code,rating,reference,scope,types,user_ratings_total,vicinity&key=AIzaSyDt0QPH_9Bl0h9xWLw2PIFLpnOrcDxGYII"))!)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            do {
+                let decoder = JSONDecoder()
+                
+                let responseDecode = try decoder.decode(PlaceModel.self, from: data!)
+                
+                let placesResponse = responseDecode.results
+                            
+                completionHandler(placesResponse![0])
+                
+                print("Completed")
+            } catch {
+                print("error, unable to request data")
+            }
+        })
+        
+        task.resume()
+        print("Reloaded Data")
+        
+    }
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
