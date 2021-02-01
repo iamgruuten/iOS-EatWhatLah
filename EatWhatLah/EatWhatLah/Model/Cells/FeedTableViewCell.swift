@@ -31,8 +31,18 @@ class FeedTableViewCell: UITableViewCell {
     public func configure(with post:Post){
         contentImage.image = post.postImage
         userImage.image = post.postUserImage
-        username.setTitle(post.postUser, for: .normal)
-        username.setTitleColor(UIColor(hex: "#FFFFFF"), for: .normal)
+//        username.setTitle(post.postUser, for: .normal)
+//        username.setTitleColor(UIColor(hex: "#FFFFFF"), for: .normal)
+        let Username = NSAttributedString(
+            string: post.postUser,
+            attributes: [
+                NSAttributedString.Key.strokeColor: UIColor.black,
+                NSAttributedString.Key.foregroundColor: UIColor.white,
+                NSAttributedString.Key.strokeWidth: -2.0,
+                NSAttributedString.Key.font: UIFont(name: "SF Pro Text", size: 15)
+            ]
+        )
+        username.setAttributedTitle(Username, for: .normal)
         comUser.text = post.topComUser
         topComment.text = post.topComment
         topComment.textColor = UIColor(hex: "#FFFFFF")
