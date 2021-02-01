@@ -47,7 +47,12 @@ class CommunityController:UIViewController{
     }
 
     @IBAction func profilePicture(_ sender: Any) {
-        
+        let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let profileController = profileStoryboard.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+        profileController.modalPresentationStyle = .fullScreen
+
+        profileController.user = appDelegate.user
+        self.present(profileController, animated: true)
     }
     
 }

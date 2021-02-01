@@ -23,7 +23,7 @@ class ProfileController: UIViewController{
     
     @IBOutlet var biosTextView: UITextView!
     //let profile = ProfileModel.init()
-    
+    var user:User!
     var listOfPost:[Post] = []
     
     @IBAction func logOutOnClick(_ sender: Any) {
@@ -51,16 +51,16 @@ class ProfileController: UIViewController{
         super.viewDidLoad()
         
         firebase.getAllPost(uid: Auth.auth().currentUser!.uid) { postRetrieve in
-            self.listOfPost = postRetrieve;
+            self.listOfPost = postRetrieve
             self.ProfileContent.reloadData()
         }
         
-        ProfileName.text = appDelegate.user.name
-        ProfileMobile.text = appDelegate.user.email
-        profilePicture.image = appDelegate.user.profilePicture
+        ProfileName.text = user.name
+        ProfileMobile.text = user.email
+        profilePicture.image = user.profilePicture
         
-        if(appDelegate.user.bio != "0"){
-            biosTextView.text = appDelegate.user.bio;
+        if(user.bio != "0"){
+            biosTextView.text = user.bio;
         }else{
             biosTextView.text = "Bio is not set"
         }

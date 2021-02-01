@@ -31,15 +31,37 @@ class CommentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func profilePicture(_ sender: Any) {
+        let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let profileController = profileStoryboard.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+        profileController.modalPresentationStyle = .fullScreen
+        
+        firebase.getUserDataByUID(uid: postLocal.postUserID){userRetrieve in
+            profileController.user = userRetrieve
+        }
+        self.window?.rootViewController?.present(profileController, animated: true)
     }
+    
     @IBAction func username(_ sender: Any) {
+        let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let profileController = profileStoryboard.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+        profileController.modalPresentationStyle = .fullScreen
+        
+        firebase.getUserDataByUID(uid: postLocal.postUserID){userRetrieve in
+            profileController.user = userRetrieve
+        }
+        
+        self.window?.rootViewController?.present(profileController, animated: true)
     }
     @IBAction func likeButton(_ sender: Any) {
         if !(commentLocal.userWhoLiked.contains(appDelegate.user.uid)){
             firebase.addLikesToComment(postID: postLocal.postID, likerUserUID: appDelegate.user.uid, postUserUID: postLocal.postUser, commentID: commentLocal.commentID)
+            
+            likeButton.setImage(UIImage(named: "heart.fill"), for: .normal)
         }
         else{
             firebase.removeLikesFromComments(postID: postLocal.postID, likerUserUID: appDelegate.user.uid, postUserUID: postLocal.postUser, commentID: commentLocal.commentID)
+            
+            likeButton.setImage(UIImage(named: "heart"), for: .normal)
         }
     }
     

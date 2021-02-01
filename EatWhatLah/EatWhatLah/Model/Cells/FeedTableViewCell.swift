@@ -17,6 +17,7 @@ class FeedTableViewCell: UITableViewCell {
     
     var lpost:Post!
     static let identifier = "FeedTableViewCell"
+    let firebase = FirebaseController()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -63,5 +64,16 @@ class FeedTableViewCell: UITableViewCell {
     static func nib() -> UINib{
         return UINib(nibName: "FeedTableViewCell", bundle: nil)
         
+    }
+    
+    @IBAction func username(_ sender: Any) {
+        let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let profileController = profileStoryboard.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+        profileController.modalPresentationStyle = .fullScreen
+        
+        firebase.getUserDataByUID(uid: lpost.postUserID){userRetrieve in
+            profileController.user = userRetrieve
+        }
+        self.window?.rootViewController?.present(profileController, animated: true)
     }
 }

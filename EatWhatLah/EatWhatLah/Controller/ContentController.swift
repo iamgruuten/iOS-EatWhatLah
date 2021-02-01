@@ -16,7 +16,9 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet var profileButton:UIButton!
     @IBOutlet var commentField:UITextField!
     @IBOutlet var likeButton:UIButton!
+    
     var post:Post!
+    var user:User!
     
     let firebase = FirebaseController()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -58,6 +60,15 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     //Button
     @IBAction func ownerUsername(_ sender: Any) {
+        let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let profileController = profileStoryboard.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+        profileController.modalPresentationStyle = .fullScreen
+        
+        firebase.getUserDataByUID(uid: post.postUserID){userRetrieve in
+            self.user = userRetrieve
+        }
+        profileController.user = user
+        self.present(profileController, animated: true)
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -65,14 +76,25 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     @IBAction func profileButton(_ sender: Any) {
+        let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let profileController = profileStoryboard.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+        profileController.modalPresentationStyle = .fullScreen
+
+        profileController.user = appDelegate.user
+        self.present(profileController, animated: true)
     }
+    
     @IBAction func navigationButton(_ sender: Any) {
     }
     @IBAction func likeButton(_ sender: Any) {
         if !(post.usersWhoLiked.contains(appDelegate.user.uid)){
             firebase.addLikeToPost(postID: post.postID, postUserUID: post.postUserID, likerUserUID: appDelegate.user.uid)
+            
+            likeButton.setImage(UIImage(named: "heart.fill"), for: .normal)
         }else{
             firebase.removeLikesFromPost(postID: post.postID, postUserUID: post.postUserID, likerUserUID: appDelegate.user.uid)
+            
+            likeButton.setImage(UIImage(named: "heart"), for: .normal)
         }
     }
 }
