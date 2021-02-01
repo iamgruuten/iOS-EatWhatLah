@@ -313,6 +313,7 @@
                         <outlet property="commentTableView" destination="1oK-HG-jAk" id="8HA-A7-QCh"/>
                         <outlet property="contentDescription" destination="3zE-Qb-lPn" id="s2X-YH-DuN"/>
                         <outlet property="contentImage" destination="Mqq-LF-adA" id="O5p-cw-zcR"/>
+                        <outlet property="likeButton" destination="nh0-zB-iqC" id="bI2-vo-XwP"/>
                         <outlet property="ownerUsername" destination="UgN-xm-zLR" id="qGC-vd-4QH"/>
                         <outlet property="profileButton" destination="orb-tB-H6x" id="s0w-KV-Lxr"/>
                     </connections>

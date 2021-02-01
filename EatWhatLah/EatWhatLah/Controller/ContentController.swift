@@ -15,6 +15,7 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet var ownerUsername:UIButton!
     @IBOutlet var profileButton:UIButton!
     @IBOutlet var commentField:UITextField!
+    @IBOutlet var likeButton:UIButton!
     var post:Post!
     
     let firebase = FirebaseController()
@@ -29,6 +30,13 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         commentTableView.delegate = self
         commentTableView.dataSource = self
+        
+        if (post.usersWhoLiked.contains(appDelegate.user.uid)){
+            likeButton.setBackgroundImage(UIImage(named: "heart.fill"), for: .normal)
+        }
+        else{
+            likeButton.setBackgroundImage(UIImage(named: "heart"), for: .normal)
+        }
     }
     
     @IBAction func submitPost(_ sender: Any) {
@@ -43,7 +51,7 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.identifier, for: indexPath) as! CommentTableViewCell
         
-        cell.configure(with: post.allComment[indexPath.row])
+        cell.configure(with: post.allComment[indexPath.row], post: post)
         
         return cell
     }
@@ -61,6 +69,8 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBAction func navigationButton(_ sender: Any) {
     }
     @IBAction func likeButton(_ sender: Any) {
+        if !(post.usersWhoLiked.contains(appDelegate.user.uid)){
+            firebase.addLikeToPost(postID: post.postID, postUserUID: post.postUser, likerUserUID: appDelegate.user.uid)
+        }
     }
-    
 }

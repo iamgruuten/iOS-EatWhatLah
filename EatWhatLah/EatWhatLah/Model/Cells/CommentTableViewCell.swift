@@ -15,6 +15,11 @@ class CommentTableViewCell: UITableViewCell {
     
     static let identifier = "CommentTableViewCell"
     
+    var postLocal:Post!
+    var commentLocal:Comment!
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let firebase = FirebaseController()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,12 +35,21 @@ class CommentTableViewCell: UITableViewCell {
     @IBAction func username(_ sender: Any) {
     }
     @IBAction func likeButton(_ sender: Any) {
-        
+        if !(commentLocal.userWhoLiked.contains(appDelegate.user.uid)){
+            firebase.addLikesToComment(postID: postLocal.postID, likerUserUID: appDelegate.user.uid, postUserUID: postLocal.postUser, commentID: commentLocal.commentID)
+        }
     }
     
-    public func configure(with comment:Comment){
+    public func configure(with comment:Comment, post:Post){
+        commentLocal = comment
         username.setTitle(comment.commentor, for: .normal)
         userComment.text = comment.comment
+        if (comment.userWhoLiked.contains(appDelegate.user.uid)){
+            likeButton.setBackgroundImage(UIImage(named: "heart.fill"), for: .normal)
+        }
+        else{
+            likeButton.setBackgroundImage(UIImage(named: "heart"), for: .normal)
+        }
     }
     
     static func nib() -> UINib{
