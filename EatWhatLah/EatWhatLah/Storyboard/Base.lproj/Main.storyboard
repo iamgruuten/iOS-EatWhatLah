@@ -1421,22 +1421,19 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="postOnClick:" destination="K6D-f5-V4o" eventType="touchUpInside" id="exA-IZ-Grl"/>
                                             <action selector="saveWithSender:" destination="K6D-f5-V4o" eventType="touchUpInside" id="CbZ-Zj-aWI"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.11372549019607843" green="0.20784313725490194" blue="0.3411764705882353" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="bi8-Qm-dTn" secondAttribute="trailing" constant="20" id="6Tt-Eh-8my"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bi8-Qm-dTn" secondAttribute="trailing" constant="20" symbolic="YES" id="6Tt-Eh-8my"/>
                                     <constraint firstItem="bi8-Qm-dTn" firstAttribute="centerY" secondItem="Vls-wE-2ZT" secondAttribute="centerY" id="CWv-pL-sWG"/>
+                                    <constraint firstItem="bi8-Qm-dTn" firstAttribute="leading" secondItem="Vls-wE-2ZT" secondAttribute="leading" constant="360" id="pWo-fx-xxX"/>
                                     <constraint firstAttribute="height" constant="60" id="xES-Qq-o2P"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="Type your image description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b0L-6x-5hM">
-                                <rect key="frame" x="0.0" y="104" width="273" height="144"/>
-                                <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vEd-Or-ZPS">
                                 <rect key="frame" x="273" y="104" width="141" height="144"/>
                                 <constraints>
@@ -1444,32 +1441,38 @@
                                     <constraint firstAttribute="width" constant="141" id="aqh-ww-KLk"/>
                                 </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-J4-c4b">
+                                <rect key="frame" x="0.0" y="104" width="273" height="144"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZU2-RL-8Zg"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="b0L-6x-5hM" firstAttribute="top" secondItem="Vls-wE-2ZT" secondAttribute="bottom" id="6MB-L2-L4U"/>
                             <constraint firstItem="Vls-wE-2ZT" firstAttribute="centerX" secondItem="ZU2-RL-8Zg" secondAttribute="centerX" id="8as-d4-9in"/>
-                            <constraint firstItem="ZU2-RL-8Zg" firstAttribute="bottom" secondItem="b0L-6x-5hM" secondAttribute="bottom" constant="614" id="GmR-9L-yR2"/>
                             <constraint firstItem="vEd-Or-ZPS" firstAttribute="trailing" secondItem="ZU2-RL-8Zg" secondAttribute="trailing" id="Izw-7K-9cn"/>
-                            <constraint firstItem="vEd-Or-ZPS" firstAttribute="leading" secondItem="b0L-6x-5hM" secondAttribute="trailing" id="NmN-du-dMy"/>
+                            <constraint firstItem="cWh-J4-c4b" firstAttribute="leading" secondItem="ZU2-RL-8Zg" secondAttribute="leading" id="Lbj-sd-50y"/>
                             <constraint firstItem="ZU2-RL-8Zg" firstAttribute="bottom" secondItem="vEd-Or-ZPS" secondAttribute="bottom" constant="614" id="OKo-go-HuC"/>
+                            <constraint firstItem="ZU2-RL-8Zg" firstAttribute="bottom" secondItem="cWh-J4-c4b" secondAttribute="bottom" constant="614" id="YCE-XX-n7O"/>
                             <constraint firstItem="ZU2-RL-8Zg" firstAttribute="trailing" secondItem="vEd-Or-ZPS" secondAttribute="trailing" id="Z7t-Mo-xx9"/>
                             <constraint firstItem="Vls-wE-2ZT" firstAttribute="leading" secondItem="ZU2-RL-8Zg" secondAttribute="leading" id="aI7-tc-1gP"/>
                             <constraint firstItem="Vls-wE-2ZT" firstAttribute="trailing" secondItem="ZU2-RL-8Zg" secondAttribute="trailing" id="c84-79-ezS"/>
-                            <constraint firstItem="b0L-6x-5hM" firstAttribute="leading" secondItem="ZU2-RL-8Zg" secondAttribute="leading" id="fqY-9t-EYD"/>
+                            <constraint firstItem="vEd-Or-ZPS" firstAttribute="leading" secondItem="cWh-J4-c4b" secondAttribute="trailing" id="d0r-J3-gFa"/>
                             <constraint firstItem="vEd-Or-ZPS" firstAttribute="top" secondItem="Vls-wE-2ZT" secondAttribute="bottom" id="uQA-Ad-MTZ"/>
                             <constraint firstItem="Vls-wE-2ZT" firstAttribute="top" secondItem="ZU2-RL-8Zg" secondAttribute="top" id="ucV-Jo-9WM"/>
+                            <constraint firstItem="cWh-J4-c4b" firstAttribute="top" secondItem="Vls-wE-2ZT" secondAttribute="bottom" id="xgf-49-qAr"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="vEd-Or-ZPS" id="ImL-nx-jj3"/>
-                        <outlet property="postDescription" destination="b0L-6x-5hM" id="Dy1-fp-gxC"/>
+                        <outlet property="postDescription" destination="cWh-J4-c4b" id="Imw-r0-acf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Qg-Am-Ogl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1353.6231884057972" y="1017.8571428571428"/>
+            <point key="canvasLocation" x="1695.6521739130435" y="817.63392857142856"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.1137254902" green="0.20784313730000001" blue="0.3411764706" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
