@@ -54,6 +54,8 @@
 		184EB22725C097870098103A /* ViewMoreVenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184EB22625C097870098103A /* ViewMoreVenueController.swift */; };
 		185DF98625B991F300B5929D /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF98525B991F300B5929D /* EmailViewController.swift */; };
 		185DF98B25B9955B00B5929D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF98A25B9955B00B5929D /* Validation.swift */; };
+		18848CBE25C82937007183E2 /* CustomCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18848CBD25C82937007183E2 /* CustomCameraController.swift */; };
+		18848CC225C83070007183E2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18848CC125C83070007183E2 /* PhotoViewController.swift */; };
 		188D6F3625BA5FBC00061EEB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D6F3525BA5FBC00061EEB /* ImagePicker.swift */; };
 		188D6F5625BC025C00061EEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D6F5525BC025C00061EEB /* LoginViewController.swift */; };
 		18F8A0AD25B8802500BF41C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0AC25B8802500BF41C9 /* AppDelegate.swift */; };
@@ -132,6 +134,8 @@
 		184EB22625C097870098103A /* ViewMoreVenueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMoreVenueController.swift; sourceTree = "<group>"; };
 		185DF98525B991F300B5929D /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		185DF98A25B9955B00B5929D /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		18848CBD25C82937007183E2 /* CustomCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraController.swift; sourceTree = "<group>"; };
+		18848CC125C83070007183E2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		188D6F3525BA5FBC00061EEB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		188D6F5525BC025C00061EEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18F8A0A925B8802500BF41C9 /* EatWhatLah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatWhatLah.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -328,6 +332,8 @@
 				188D6F3925BBB4E800061EEB /* Storyboard */,
 				18F8A0B825B8802800BF41C9 /* Assets.xcassets */,
 				18F8A0BD25B8802800BF41C9 /* Info.plist */,
+				18848CBD25C82937007183E2 /* CustomCameraController.swift */,
+				18848CC125C83070007183E2 /* PhotoViewController.swift */,
 			);
 			path = EatWhatLah;
 			sourceTree = "<group>";
@@ -543,6 +549,7 @@
 				184EB1CE25BFA7850098103A /* FavouriteController.swift in Sources */,
 				5DC73BA725C30601002C7132 /* FeedTableViewCell.swift in Sources */,
 				18449E6325C392EB00A07780 /* FirebaseController.swift in Sources */,
+				18848CC225C83070007183E2 /* PhotoViewController.swift in Sources */,
 				184EB1C325BDA6040098103A /* Location.swift in Sources */,
 				184EB1C125BDA6040098103A /* Plus_code.swift in Sources */,
 				5D28336E25C3284E00AD6C81 /* Post.swift in Sources */,
@@ -568,6 +575,7 @@
 				184EB1F425C040330098103A /* Periods.swift in Sources */,
 				184EB1F625C040330098103A /* OperatingHours.swift in Sources */,
 				188D6F5625BC025C00061EEB /* LoginViewController.swift in Sources */,
+				18848CBE25C82937007183E2 /* CustomCameraController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

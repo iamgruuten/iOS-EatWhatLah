@@ -357,7 +357,6 @@ extension ViewMoreVenueController : updateFavouriteDelegate{
             favouriteList in
             
             self.appDelegate.user.favourite = favouriteList
-            self.favouriteCollection.reloadData();
             
             print("Im reloading my data")
         }
