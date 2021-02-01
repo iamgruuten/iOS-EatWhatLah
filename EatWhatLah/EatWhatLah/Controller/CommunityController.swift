@@ -26,7 +26,7 @@ class CommunityController:UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //set profile image
-        profilePicture.setImage(appDelegate.user.profilePicture, for: .normal)
+        profilePicture.setBackgroundImage(appDelegate.user.profilePicture, for: .normal)
         
         firebase.getAllPost{postRetrieve in
             self.feedPost = postRetrieve;
