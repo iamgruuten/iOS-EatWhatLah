@@ -81,10 +81,16 @@ extension ProfileController:UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCollectionViewCell.identifier, for: indexPath) as! ProfileCollectionViewCell
         
-        cell.configure(with: listOfPost[indexPath.row])
-        return cell
+        if listOfPost.count > 0 {
+            cell.configure(with: listOfPost[indexPath.row])
+            return cell
+        }
+        else{
+            return cell
+        }
     }
 }
 
