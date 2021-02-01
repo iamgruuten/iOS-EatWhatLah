@@ -216,8 +216,8 @@
                                     <constraint firstAttribute="width" constant="32" id="qmi-1p-BZG"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgN-xm-zLR">
-                                <rect key="frame" x="60" y="101" width="78" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgN-xm-zLR">
+                                <rect key="frame" x="60" y="101" width="334" height="30"/>
                                 <state key="normal" title="Usernames"/>
                                 <connections>
                                     <action selector="ownerUsername:" destination="Oyb-PC-pbk" eventType="touchUpInside" id="FkA-OI-1uM"/>
@@ -262,7 +262,7 @@
                             <constraint firstItem="fgo-Q0-GaD" firstAttribute="trailing" secondItem="1oK-HG-jAk" secondAttribute="trailing" constant="24" id="UYc-7m-uTo"/>
                             <constraint firstItem="3zE-Qb-lPn" firstAttribute="leading" secondItem="fgo-Q0-GaD" secondAttribute="leading" constant="20" id="WC1-Yz-rfg"/>
                             <constraint firstItem="1oK-HG-jAk" firstAttribute="top" secondItem="3zE-Qb-lPn" secondAttribute="bottom" constant="8" symbolic="YES" id="XxN-SP-7rO"/>
-                            <constraint firstItem="fgo-Q0-GaD" firstAttribute="trailing" secondItem="UgN-xm-zLR" secondAttribute="trailing" constant="276" id="bXb-ot-fQL"/>
+                            <constraint firstItem="fgo-Q0-GaD" firstAttribute="trailing" secondItem="UgN-xm-zLR" secondAttribute="trailing" constant="20" id="bXb-ot-fQL"/>
                             <constraint firstItem="orb-tB-H6x" firstAttribute="top" secondItem="ghf-z8-oAO" secondAttribute="top" constant="43" id="bZ7-ba-Epg"/>
                             <constraint firstItem="nnq-71-LEF" firstAttribute="top" secondItem="Mqq-LF-adA" secondAttribute="bottom" constant="8" symbolic="YES" id="cpf-Is-Ie0"/>
                             <constraint firstItem="mWi-9Q-6Bz" firstAttribute="leading" secondItem="fgo-Q0-GaD" secondAttribute="leading" constant="20" id="d1z-eZ-XSz"/>
@@ -283,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTn-7Z-h5b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2933" y="80"/>
+            <point key="canvasLocation" x="2931.8840579710145" y="79.6875"/>
         </scene>
     </scenes>
     <resources>

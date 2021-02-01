@@ -45,8 +45,11 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     //Button
     @IBAction func ownerUsername(_ sender: Any) {
     }
+    
     @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func profileButton(_ sender: Any) {
     }
     @IBAction func navigationButton(_ sender: Any) {
