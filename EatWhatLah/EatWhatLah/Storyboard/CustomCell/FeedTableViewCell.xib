@@ -53,6 +53,9 @@
                                 </fragment>
                             </attributedString>
                         </state>
+                        <connections>
+                            <action selector="username:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dHc-dy-gxp"/>
+                        </connections>
                     </button>
                     <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdx-JN-qFB">
                         <rect key="frame" x="3" y="275" width="325" height="53"/>
