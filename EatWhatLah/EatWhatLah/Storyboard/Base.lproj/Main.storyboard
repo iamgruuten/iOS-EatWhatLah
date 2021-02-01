@@ -1236,7 +1236,7 @@
                                 </cells>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="All Time Favorites" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mdt-q5-sk2">
-                                <rect key="frame" x="9" y="91" width="142" height="18.5"/>
+                                <rect key="frame" x="9" y="91" width="114" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1274,7 +1274,6 @@
                             <constraint firstItem="b4u-nC-gbT" firstAttribute="bottom" secondItem="0K5-Da-7VZ" secondAttribute="bottom" id="J8c-eg-ko4"/>
                             <constraint firstItem="Mdt-q5-sk2" firstAttribute="top" secondItem="PKW-af-OOw" secondAttribute="bottom" id="JEX-gW-uQl"/>
                             <constraint firstItem="lUD-OQ-cew" firstAttribute="top" secondItem="0K5-Da-7VZ" secondAttribute="top" constant="3" id="Oe3-ra-WpH"/>
-                            <constraint firstItem="0K5-Da-7VZ" firstAttribute="trailing" secondItem="Mdt-q5-sk2" secondAttribute="trailing" constant="263" id="OhW-Em-fcL"/>
                             <constraint firstItem="gfD-0u-3PM" firstAttribute="trailing" secondItem="0K5-Da-7VZ" secondAttribute="trailing" id="TdW-0w-Ul3"/>
                             <constraint firstItem="PKW-af-OOw" firstAttribute="leading" secondItem="0K5-Da-7VZ" secondAttribute="leading" constant="5" id="a0j-sZ-wGg"/>
                             <constraint firstItem="gfD-0u-3PM" firstAttribute="top" secondItem="Mdt-q5-sk2" secondAttribute="bottom" constant="8" symbolic="YES" id="bHp-sx-Tam"/>
