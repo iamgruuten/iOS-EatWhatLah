@@ -10,7 +10,7 @@ import UIKit
 class ProfileCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
-    
+    var lpost:Post!
     static let identifier = "ProfileCollectionViewCell"
     
     override func awakeFromNib() {
@@ -18,6 +18,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     public func configure(with post: Post){
+        lpost = post
         imageView.image = post.postImage
     }
     

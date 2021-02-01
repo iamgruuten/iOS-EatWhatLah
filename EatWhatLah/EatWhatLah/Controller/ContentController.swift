@@ -14,7 +14,7 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet var commentTableView:UITableView!
     @IBOutlet var ownerUsername:UIButton!
     @IBOutlet var profileButton:UIButton!
-
+    @IBOutlet var commentField:UITextField!
     var post:Post!
     
     override func viewDidLoad() {
@@ -27,6 +27,9 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         commentTableView.delegate = self
         commentTableView.dataSource = self
+    }
+    
+    @IBAction func submitPost(_ sender: Any) {
     }
     
     //Table Functions
@@ -45,8 +48,11 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     //Button
     @IBAction func ownerUsername(_ sender: Any) {
     }
+    
     @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func profileButton(_ sender: Any) {
     }
     @IBAction func navigationButton(_ sender: Any) {

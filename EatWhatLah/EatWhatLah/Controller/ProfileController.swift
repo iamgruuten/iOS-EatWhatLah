@@ -68,9 +68,16 @@ class ProfileController: UIViewController{
 
 extension ProfileController:UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCollectionViewCell.identifier, for: indexPath) as! ProfileCollectionViewCell
         
-        print(indexPath)
+        let storyBoard:UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ContentView") as! ContentController
+        
+        nextViewController.post = cell.lpost
+        
+        nextViewController.modalPresentationStyle = .fullScreen
+        self.present(nextViewController, animated: true, completion: nil)
     }
 }
 extension ProfileController:UICollectionViewDataSource{

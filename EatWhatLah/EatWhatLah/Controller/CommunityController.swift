@@ -88,7 +88,7 @@ extension CommunityController:UITableViewDelegate,UITableViewDataSource{
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ContentView") as! ContentController
         
         nextViewController.post = cell.lpost
-            
+        nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated: true, completion: nil)
     }
 }
