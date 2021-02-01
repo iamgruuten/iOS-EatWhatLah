@@ -65,7 +65,6 @@ extension CommunityController:UICollectionViewDelegate,UICollectionViewDataSourc
         return cell
     }
     
-    
 }
 
 //Feed Controller
@@ -79,6 +78,18 @@ extension CommunityController:UITableViewDelegate,UITableViewDataSource{
         cell.configure(with: feedPost[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as! FeedTableViewCell
+        
+        let storyBoard:UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ContentView") as! ContentController
+        
+        nextViewController.post = cell.lpost
+            
+        self.present(nextViewController, animated: true, completion: nil)
     }
 }
 

@@ -15,6 +15,7 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet var comUser:UILabel!
     @IBOutlet var topComment:UILabel!
     
+    var lpost:Post!
     static let identifier = "FeedTableViewCell"
     
     override func awakeFromNib() {
@@ -24,15 +25,18 @@ class FeedTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
 
         // Configure the view for the selected state
     }
     
     public func configure(with post:Post){
+        lpost = post
         contentImage.image = post.postImage
         userImage.image = post.postUserImage
 //        username.setTitle(post.postUser, for: .normal)
 //        username.setTitleColor(UIColor(hex: "#FFFFFF"), for: .normal)
+        
         let Username = NSAttributedString(
             string: post.postUser,
             attributes: [
@@ -42,6 +46,7 @@ class FeedTableViewCell: UITableViewCell {
                 NSAttributedString.Key.font: UIFont(name: "SF Pro Text", size: 15)
             ]
         )
+        
         username.setAttributedTitle(Username, for: .normal)
         if post.allComment.count != 0{
             topComment.text = post.allComment[0].comment
