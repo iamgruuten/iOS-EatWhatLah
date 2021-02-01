@@ -403,7 +403,7 @@ class FirebaseController{
     }
     
     //Get User Details
-    func getUserData(uid:String, completionHandler:@escaping (_ postArray: User)->Void){
+    func getUserDataByUID(uid:String, completionHandler:@escaping (_ postArray: User)->Void){
         
         //Init
         let userObject:User = User();
@@ -432,6 +432,23 @@ class FirebaseController{
                     
                 }
             }
+        })
+        
+    }
+    
+    //Get name only
+    func getUserNameByUID(uid:String, completionHandler:@escaping (_ postArray: String)->Void){
+        
+        //Init
+        
+        //Retrieve user data
+        let ref = Database.database().reference().child("users").child(uid)
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            let userDetails = snapshot.value as? NSDictionary
+            let name = userDetails!["Name"] as! String
+            
+            completionHandler(name)
         })
         
     }
