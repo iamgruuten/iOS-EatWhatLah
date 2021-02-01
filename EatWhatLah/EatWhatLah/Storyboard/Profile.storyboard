@@ -157,7 +157,7 @@
         <!--ContentView-->
         <scene sceneID="Zuj-Tj-Gqc">
             <objects>
-                <viewController title="ContentView" id="Oyb-PC-pbk" customClass="ContentController" customModule="EatWhatLah" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentView" title="ContentView" id="Oyb-PC-pbk" customClass="ContentController" customModule="EatWhatLah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ghf-z8-oAO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
