@@ -17,6 +17,8 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet var commentField:UITextField!
     var post:Post!
     
+    let firebase = FirebaseController()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         ownerUsername.setTitle(post.postUser, for: .normal)
@@ -30,7 +32,7 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     @IBAction func submitPost(_ sender: Any) {
-        
+        firebase.addCommentToPost(postID: post.postID, commentorID: appDelegate.user.uid, postUserUID: post.postUser, comment: commentField.text!)
     }
     
     //Table Functions
