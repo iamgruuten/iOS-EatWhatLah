@@ -34,7 +34,7 @@ class onBoardController:UIViewController{
                 //Condition to check if database exist
                 
                 if(user.uid == ""){
-                    self.firebaseController.getUserData(uid: Auth.auth().currentUser!.uid){
+                    self.firebaseController.getUserDataByUID(uid: Auth.auth().currentUser!.uid){
                         userFB in
                         
                         let userF = userFB

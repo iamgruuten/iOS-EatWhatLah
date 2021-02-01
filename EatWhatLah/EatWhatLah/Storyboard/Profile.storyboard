@@ -74,7 +74,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNW-3H-udh">
-                                <rect key="frame" x="30" y="44" width="36" height="30"/>
+                                <rect key="frame" x="30" y="44" width="30" height="30"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Edit">
@@ -87,7 +87,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jP2-dl-4j4">
-                                <rect key="frame" x="326" y="44" width="68" height="30"/>
+                                <rect key="frame" x="336" y="44" width="58" height="30"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Log Out">
@@ -123,7 +123,6 @@
                         <constraints>
                             <constraint firstItem="oNW-3H-udh" firstAttribute="leading" secondItem="7FD-6x-fLq" secondAttribute="leading" constant="30" id="4Jx-eT-rNN"/>
                             <constraint firstItem="WNA-y1-K2n" firstAttribute="leading" secondItem="Jfw-If-SB6" secondAttribute="trailing" constant="11" id="5Af-A9-2ad"/>
-                            <constraint firstItem="jP2-dl-4j4" firstAttribute="leading" secondItem="oNW-3H-udh" secondAttribute="trailing" constant="260" id="63m-1c-ySW"/>
                             <constraint firstItem="pLa-tG-0kt" firstAttribute="top" secondItem="Jfw-If-SB6" secondAttribute="top" constant="15" id="6si-5o-mVT"/>
                             <constraint firstItem="Jfw-If-SB6" firstAttribute="leading" secondItem="7FD-6x-fLq" secondAttribute="leading" constant="30" id="9qV-Zv-bNF"/>
                             <constraint firstItem="jP2-dl-4j4" firstAttribute="top" secondItem="7FD-6x-fLq" secondAttribute="top" id="ALt-l9-Uiy"/>
@@ -133,7 +132,6 @@
                             <constraint firstItem="BTx-wa-xoc" firstAttribute="top" secondItem="jP2-dl-4j4" secondAttribute="bottom" constant="220" id="Vmv-zt-KuC"/>
                             <constraint firstItem="BTx-wa-xoc" firstAttribute="top" secondItem="Jfw-If-SB6" secondAttribute="bottom" constant="85" id="c8v-J4-Sa3"/>
                             <constraint firstItem="7FD-6x-fLq" firstAttribute="trailing" secondItem="BTx-wa-xoc" secondAttribute="trailing" constant="5" id="cSs-J7-zQK"/>
-                            <constraint firstItem="jP2-dl-4j4" firstAttribute="leading" secondItem="7FD-6x-fLq" secondAttribute="leading" constant="326" id="iWv-43-fWT"/>
                             <constraint firstItem="7FD-6x-fLq" firstAttribute="trailing" secondItem="jP2-dl-4j4" secondAttribute="trailing" constant="20" id="ifl-gC-tu7"/>
                             <constraint firstItem="BTx-wa-xoc" firstAttribute="bottom" secondItem="7FD-6x-fLq" secondAttribute="bottom" id="meL-zJ-7gD"/>
                             <constraint firstItem="WNA-y1-K2n" firstAttribute="top" secondItem="pLa-tG-0kt" secondAttribute="top" constant="31" id="uqx-25-WZS"/>
