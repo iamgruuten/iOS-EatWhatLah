@@ -46,6 +46,13 @@ class ProfileController: UIViewController{
     //var pictures:[String] = ["Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers"]
     
     
+    override func viewWillAppear(_ animated: Bool){
+        
+        ProfileName.text = appDelegate.user.name
+        ProfileMobile.text = appDelegate.user.email
+        profilePicture.image = appDelegate.user.profilePicture
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

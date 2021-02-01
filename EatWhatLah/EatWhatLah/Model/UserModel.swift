@@ -18,6 +18,7 @@ class User{
     var profilePicture:UIImage = UIImage();
     var preference:String = ""
     var posts:[Post]!
+    var locked:Bool = false;
     
     init(){
         name = "";

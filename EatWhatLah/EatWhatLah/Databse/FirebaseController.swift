@@ -479,16 +479,15 @@ class FirebaseController{
     }
     
     //Update user details
-    func updateUserDetails(user:User){
+    func updateUserDetails(name:String, bio:String, uid:String){
         //Retrieve user data
 
-        let ref = Database.database().reference().child("users").child(user.uid)
+        let ref = Database.database().reference().child("users").child(uid)
             
         ref.updateChildValues(
             [
-                "Bio":user.bio,
-                "Email":user.email,
-                "Name":user.name
+                "Bio":bio,
+                "Name":name
             ]
         )
     }

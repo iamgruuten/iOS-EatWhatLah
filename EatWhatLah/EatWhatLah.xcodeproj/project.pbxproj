@@ -64,6 +64,7 @@
 		18848CD925C88CDB007183E2 /* EatWhatLahWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 18848CD525C88CD8007183E2 /* EatWhatLahWidget.intentdefinition */; };
 		18848CDA25C88CDB007183E2 /* EatWhatLahWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 18848CD525C88CD8007183E2 /* EatWhatLahWidget.intentdefinition */; };
 		18848CDD25C88CDB007183E2 /* EatWhatLahWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18848CCD25C88CD8007183E2 /* EatWhatLahWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		18848CFB25C8A968007183E2 /* editProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18848CFA25C8A968007183E2 /* editProfileController.swift */; };
 		188D6F3625BA5FBC00061EEB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D6F3525BA5FBC00061EEB /* ImagePicker.swift */; };
 		188D6F5625BC025C00061EEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D6F5525BC025C00061EEB /* LoginViewController.swift */; };
 		18F8A0AD25B8802500BF41C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0AC25B8802500BF41C9 /* AppDelegate.swift */; };
@@ -174,6 +175,7 @@
 		18848CD525C88CD8007183E2 /* EatWhatLahWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = EatWhatLahWidget.intentdefinition; sourceTree = "<group>"; };
 		18848CD625C88CDB007183E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18848CD825C88CDB007183E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18848CFA25C8A968007183E2 /* editProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProfileController.swift; sourceTree = "<group>"; };
 		188D6F3525BA5FBC00061EEB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		188D6F5525BC025C00061EEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18F8A0A925B8802500BF41C9 /* EatWhatLah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatWhatLah.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -333,6 +335,7 @@
 				184EB22625C097870098103A /* ViewMoreVenueController.swift */,
 				5DC73B9325C2B9DD002C7132 /* ContentController.swift */,
 				18449E5E25C33FFF00A07780 /* onBoardController.swift */,
+				18848CFA25C8A968007183E2 /* editProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				185DF98625B991F300B5929D /* EmailViewController.swift in Sources */,
 				184EB1BF25BDA6040098103A /* Photos.swift in Sources */,
 				18F8A0B725B8802500BF41C9 /* EatWhatLah.xcdatamodeld in Sources */,
+				18848CFB25C8A968007183E2 /* editProfileController.swift in Sources */,
 				184EB1BE25BDA6040098103A /* PlaceModel.swift in Sources */,
 				183CFC3525BD302200C07434 /* Places.swift in Sources */,
 				184EB1C025BDA6040098103A /* Northeast.swift in Sources */,

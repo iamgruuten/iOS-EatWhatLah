@@ -39,7 +39,8 @@ class UserController{
                 userObject.email = user.email;
                 userObject.bio = user.bio;
                 userObject.uid = user.uid;
-                
+                userObject.locked = user.locked;
+
                 //Profile Image
                 let data = (user.profilePicture).pngData()
                 
@@ -79,7 +80,7 @@ class UserController{
                 user.name = userObject.name!;
                 user.uid = userObject.uid!;
                 user.bio = userObject.bio!;
-                
+                user.locked = userObject.locked;
                 user.email = userObject.email!;
                 user.profilePicture = UIImage(data: userObject.image!)!
                 
@@ -102,14 +103,14 @@ class UserController{
         
     }
     
-    func updateUser(user:User){
+    func updateUser(name:String, bio:String, uid:String, locked:Bool){
                 
         do{
             //Check if user exist before creating new row
             
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUserModel")
             
-            fetchRequest.predicate = NSPredicate(format: "uid = %@", user.uid)
+            fetchRequest.predicate = NSPredicate(format: "uid = %@", uid)
         
             let results = try context.fetch(fetchRequest)
             if results.count != 0 {
@@ -117,10 +118,9 @@ class UserController{
                 //update Users
                 let entityVenue = results[0] as! CDUserModel
                 
-                entityVenue.name = user.name;
-                entityVenue.email = user.email;
-                entityVenue.bio = user.bio;
-                
+                entityVenue.name = name;
+                entityVenue.bio = bio;
+                entityVenue.locked = locked;
                 try context.save()
                 
                 print("saved record, added")

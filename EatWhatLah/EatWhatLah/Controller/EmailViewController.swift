@@ -13,6 +13,7 @@ import Firebase
 import FirebaseStorage
 import SwiftSpinner
 import CoreLocation
+import FirebaseDatabase
 
 class EmailViewController : UIViewController, UINavigationControllerDelegate, CLLocationManagerDelegate{
     
@@ -152,6 +153,7 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
             username.layer.borderWidth = 1.0
         }else{
             // Create a root reference
+            
             ref = Database.database().reference()
             
             // Create a user into firebase database
