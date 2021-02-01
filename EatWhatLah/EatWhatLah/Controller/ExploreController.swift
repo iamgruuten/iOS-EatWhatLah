@@ -60,7 +60,8 @@ class ExploreController : UIViewController{
     override func viewDidLoad() {
         self.registerNib();
         
-
+        self.setupToHideKeyboardOnTapOnView()
+        
         convertLatLongToAddress(latitude: locationManager.location!.coordinate.latitude, longitude:  locationManager.location!.coordinate.longitude)
         
         favouriteCollection.dataSource = self

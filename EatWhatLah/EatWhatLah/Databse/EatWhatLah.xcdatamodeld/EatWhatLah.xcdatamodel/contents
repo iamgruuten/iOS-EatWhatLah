@@ -30,6 +30,7 @@
         <attribute name="bio" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="locked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="uid" optional="YES" attributeType="String"/>
         <relationship name="post" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPost" inverseName="userID" inverseEntity="CDPost"/>
@@ -41,6 +42,6 @@
         <element name="CDPost" positionX="63" positionY="63" width="128" height="103"/>
         <element name="CDPreference" positionX="63" positionY="63" width="128" height="88"/>
         <element name="CDSavedLocation" positionX="181.53515625" positionY="26.5234375" width="128" height="148"/>
-        <element name="CDUserModel" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="CDUserModel" positionX="-63" positionY="-18" width="128" height="178"/>
     </elements>
 </model>
