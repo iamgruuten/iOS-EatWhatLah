@@ -11,6 +11,7 @@ import Firebase
 import FirebaseStorage
 import CoreLocation
 
+
 class FirebaseController{
     
     
@@ -130,6 +131,7 @@ class FirebaseController{
                     var listOfComments:[Comment] = []
                     
                     let postObject:Post = Post();
+                    
                     let key:String = post.key as! String;
                     print("Post key = " + key)
                     let postDescription = post.value as? NSDictionary
@@ -169,10 +171,15 @@ class FirebaseController{
                                 commentObj.commentor = commentsListFB?["userID"] as? String;
                                 
                                 //Calculate how liked my comment
-                                for uidLiker in (commentsListFB!["likes"] as? NSDictionary)!{
-                                    let likerUID:String = uidLiker.value as! String
-                                    likers.append(likerUID)
+                                let commentList = commentsListFB!["likes"] as? NSDictionary
+                                
+                                if(commentList != nil){
+                                    for uidLiker in (commentList!){
+                                        let likerUID:String = uidLiker.value as! String
+                                        likers.append(likerUID)
+                                    }
                                 }
+                            
                                 
                                 commentObj.userWhoLiked = likers;
                                 commentObj.likes = likers.count;
@@ -199,9 +206,10 @@ class FirebaseController{
                             listOfPosts.append(postObject)
                             
                         }
-                        
+                        listOfPosts.sort(by: {$0.likes > $1.likes})
+                        completionHandler(listOfPosts)
+
                     }
-                    completionHandler(listOfPosts)
                     
                 }
             }
@@ -212,7 +220,63 @@ class FirebaseController{
     
     
     //Add Post
-    
+    func addPost(uid:String, image:UIImage, description:String){
+        //Upload image to google storage
+        
+        let storage = Storage.storage(url:"gs://eatwhatlah-d17f2.appspot.com")
+        
+        let storageRef = storage.reference()
+        
+        let folderRef = storageRef.child("posts").child(uid)
+        
+        // Collect data from imageView
+        let data = image.pngData()
+                
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/png"
+        
+        // Create a reference to the profile image upload
+        let imageRef = folderRef
+        
+        // Upload the file to the path
+        let uploadTask = imageRef.putData(data!, metadata: metadata) { (metadata, error) in
+            guard let metadata = metadata else {
+                
+                return
+            }
+            // Metadata contains file metadata such as size, content-type.
+            let size = metadata.size
+            print(size)
+            
+            imageRef.downloadURL {
+                
+                (url, error) in
+                if url != nil{
+                    //No Error
+                    let ref = Database.database().reference()
+                    
+                    ref.child("posts").child(uid).updateChildValues(
+                        ["profileURL":url?.absoluteString as Any]
+                    )
+                    
+                } else {
+                    //Error
+                }
+            }
+        }
+        
+        
+        
+        uploadTask.observe(.success) { snapshot in
+            
+            
+        }
+        
+        uploadTask.observe(.failure) { snapshot in
+            if let error = snapshot.error as NSError? {
+        }
+        }
+    }
     
     //Add Likes
     

@@ -123,7 +123,7 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         
         venueName.text = place?.name!.trimmingCharacters(in: .whitespacesAndNewlines);
         reviewLabel.text = String(place?.user_ratings_total ?? 0)
-        
+        ratingLabel.text = String(place?.rating ?? 0)
         venueStatus.text = place?.business_status;
         
         address.text = place?.vicinity;
