@@ -14,8 +14,6 @@ import FirebaseDatabase
 
 class FirebaseController{
     
-    
-    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     //Get Post
@@ -478,6 +476,28 @@ class FirebaseController{
             completionHandler(name)
         })
         
+    }
+    
+    //Update user details
+    func updateUserDetails(user:User){
+        //Retrieve user data
+
+        let ref = Database.database().reference().child("users").child(user.uid)
+            
+        ref.updateChildValues(
+            [
+                "Bio":user.bio,
+                "Email":user.email,
+                "Name":user.name
+            ]
+        )
+    }
+    
+    //Update user Password
+    func passwordUpdate(newPassword:String, completionHandler:@escaping (_ success: Bool)->Void){
+        Auth.auth().currentUser?.updatePassword(to: newPassword)
+        
+        completionHandler(true)
     }
     
 }
