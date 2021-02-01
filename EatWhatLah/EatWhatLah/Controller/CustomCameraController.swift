@@ -19,6 +19,13 @@ class CustomCameraController:UIViewController{
     var stillImageOutput: AVCapturePhotoOutput!
     var stillImage: UIImage?
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    @IBOutlet var galleryView: UIButton?
+
+    
+    @IBOutlet var topViewBlur: UIView!
+    
+    @IBOutlet var bottomViewBlur: UIView!
+    
     
     @IBOutlet var cameraButton:UIButton!
   
@@ -80,7 +87,11 @@ class CustomCameraController:UIViewController{
                 cameraPreviewLayer?.frame = view.layer.frame
                  
         // Bring the camera button to front
+                view.bringSubviewToFront(topViewBlur)
+                view.bringSubviewToFront(bottomViewBlur)
                 view.bringSubviewToFront(cameraButton)
+        view.bringSubviewToFront(galleryView!)
+
                 captureSession.startRunning()
     }
     
@@ -102,6 +113,7 @@ extension CustomCameraController: AVCapturePhotoCaptureDelegate {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let photoViewController = mainStoryboard.instantiateViewController(withIdentifier: "PhotoViewController") as! PhotoViewController
         photoViewController.image = stillImage
+        photoViewController.modalPresentationStyle = .fullScreen
         self.present(photoViewController, animated: true)
         
     }

@@ -344,7 +344,7 @@ extension ExploreController: UICollectionViewDataSource {
             }
             
             appDelegate.selectedCategory = selectedCat;
-            
+
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "viewMoreSB")

@@ -54,7 +54,7 @@ class FirebaseController{
                     
                     let gsReference = storage.reference(forURL:postDescription?["imageURL"] as! String)
                     
-                    gsReference.getData(maxSize: 10 * 1024 * 1024) { data, error in
+                    gsReference.getData(maxSize: 100 * 1024 * 1024) { data, error in
                         if let error = error {
                             // Uh-oh, an error occurred!
                             print(error)
@@ -62,36 +62,40 @@ class FirebaseController{
                             postObject.postImage = UIImage(data: data!)!
                             print("downloaded image")
                             
-                            for comment in postComments!{
-                                var likers:[String] = [];
-                                
-                                let commentObj:Comment = Comment();
-                                let commentsListFB = comment.value as? NSDictionary;
-                                
-                                commentObj.commentID = comment.key as? String;
-                                commentObj.comment = commentsListFB?["comment"] as? String;
-                                commentObj.commentor = commentsListFB?["userID"] as? String;
-                                
-                                //Calculate how liked my comment
-                                for uidLiker in (commentsListFB!["likes"] as? NSDictionary)!{
-                                    let likerUID:String = uidLiker.value as! String
-                                    likers.append(likerUID)
+                            if(postComments != nil){
+                                for comment in postComments!{
+                                    var likers:[String] = [];
+                                    
+                                    let commentObj:Comment = Comment();
+                                    let commentsListFB = comment.value as? NSDictionary;
+                                    
+                                    commentObj.commentID = comment.key as? String;
+                                    commentObj.comment = commentsListFB?["comment"] as? String;
+                                    commentObj.commentor = commentsListFB?["userID"] as? String;
+                                    
+                                    //Calculate how liked my comment
+                                    for uidLiker in (commentsListFB!["likes"] as? NSDictionary)!{
+                                        let likerUID:String = uidLiker.value as! String
+                                        likers.append(likerUID)
+                                    }
+                                    
+                                    commentObj.userWhoLiked = likers;
+                                    commentObj.likes = likers.count;
+                                    
+                                    listOfComments.append(commentObj)
+                                    
                                 }
-                                
-                                commentObj.userWhoLiked = likers;
-                                commentObj.likes = likers.count;
-                                
-                                listOfComments.append(commentObj)
-                                
                             }
                             
                             postObject.allComment = listOfComments
                             
                             var likers:[String] = [];
                             
-                            for like in postLikes!{
-                                let likerUID:String = like.value as! String
-                                likers.append(likerUID)
+                            if(postLikes != nil){
+                                for like in postLikes!{
+                                    let likerUID:String = like.value as! String
+                                    likers.append(likerUID)
+                                }
                             }
                             
                             postObject.usersWhoLiked = likers;
@@ -121,7 +125,9 @@ class FirebaseController{
         let ref = Database.database().reference().child("posts")
         
         print("Getting all post")
-        ref.observeSingleEvent(of: .value, with: {(snapshot) in
+        
+        ref.observe(DataEventType.value, with: {(snapshot) in
+            
             let posts = snapshot.value as! NSDictionary
             
             for i in posts{
@@ -152,7 +158,7 @@ class FirebaseController{
                     
                     let gsReference = storage.reference(forURL:postDescription?["imageURL"] as! String)
                     
-                    gsReference.getData(maxSize: 10 * 1024 * 1024) { data, error in
+                    gsReference.getData(maxSize: 100 * 1024 * 1024) { data, error in
                         if let error = error {
                             // Uh-oh, an error occurred!
                             print(error)
@@ -160,41 +166,46 @@ class FirebaseController{
                             postObject.postImage = UIImage(data: data!)!
                             print("downloaded image")
                             
-                            for comment in postComments!{
-                                var likers:[String] = [];
-                                
-                                let commentObj:Comment = Comment();
-                                let commentsListFB = comment.value as? NSDictionary;
-                                
-                                commentObj.commentID = comment.key as? String;
-                                commentObj.comment = commentsListFB?["comment"] as? String;
-                                commentObj.commentor = commentsListFB?["userID"] as? String;
-                                
-                                //Calculate how liked my comment
-                                let commentList = commentsListFB!["likes"] as? NSDictionary
-                                
-                                if(commentList != nil){
-                                    for uidLiker in (commentList!){
-                                        let likerUID:String = uidLiker.value as! String
-                                        likers.append(likerUID)
+                            if(postComments != nil){
+                                for comment in postComments!{
+                                    var likers:[String] = [];
+                                    
+                                    let commentObj:Comment = Comment();
+                                    let commentsListFB = comment.value as? NSDictionary;
+                                    
+                                    commentObj.commentID = comment.key as? String;
+                                    commentObj.comment = commentsListFB?["comment"] as? String;
+                                    commentObj.commentor = commentsListFB?["userID"] as? String;
+                                    
+                                    //Calculate how liked my comment
+                                    let commentList = commentsListFB!["likes"] as? NSDictionary
+                                    
+                                    if(commentList != nil){
+                                        for uidLiker in (commentList!){
+                                            let likerUID:String = uidLiker.value as! String
+                                            likers.append(likerUID)
+                                        }
                                     }
+                                    
+                                    
+                                    
+                                    commentObj.userWhoLiked = likers;
+                                    commentObj.likes = likers.count;
+                                    
+                                    listOfComments.append(commentObj)
+                                    
                                 }
-                            
-                                
-                                commentObj.userWhoLiked = likers;
-                                commentObj.likes = likers.count;
-                                
-                                listOfComments.append(commentObj)
-                                
                             }
                             
                             postObject.allComment = listOfComments
                             
                             var likers:[String] = [];
                             
-                            for like in postLikes!{
-                                let likerUID:String = like.value as! String
-                                likers.append(likerUID)
+                            if(postLikes != nil){
+                                for like in postLikes!{
+                                    let likerUID:String = like.value as! String
+                                    likers.append(likerUID)
+                                }
                             }
                             
                             postObject.usersWhoLiked = likers;
@@ -205,22 +216,29 @@ class FirebaseController{
                             print("Adding Key : " + key)
                             listOfPosts.append(postObject)
                             
+                            listOfPosts.sort(by: {$0.likes > $1.likes})
+                            
+                            completionHandler(listOfPosts)
                         }
-                        listOfPosts.sort(by: {$0.likes > $1.likes})
-                        completionHandler(listOfPosts)
-
+                        
                     }
-                    
                 }
+                
             }
-        })
+            
+            
+        }
+        
+        )
+        
+        
         
         print("return without waiting/")
     }
     
     
     //Add Post
-    func addPost(uid:String, image:UIImage, description:String){
+    func addPost(uid:String, image:UIImage, description:String, completionHandler:@escaping (_ Success: Bool)->Void){
         //Upload image to google storage
         
         let storage = Storage.storage(url:"gs://eatwhatlah-d17f2.appspot.com")
@@ -230,20 +248,22 @@ class FirebaseController{
         let folderRef = storageRef.child("posts").child(uid)
         
         // Collect data from imageView
+        
         let data = image.pngData()
-                
+        
         let metadata = StorageMetadata()
         metadata.contentType = "image/png"
         
         // Create a reference to the profile image upload
-        let imageRef = folderRef
+        let uid:String = UUID().uuidString;
+        let imageRef = folderRef.child(uid)
         
         // Upload the file to the path
-        let uploadTask = imageRef.putData(data!, metadata: metadata) { (metadata, error) in
+        imageRef.putData(data!, metadata: metadata) { (metadata, error) in
             guard let metadata = metadata else {
-                
                 return
             }
+            
             // Metadata contains file metadata such as size, content-type.
             let size = metadata.size
             print(size)
@@ -255,33 +275,42 @@ class FirebaseController{
                     //No Error
                     let ref = Database.database().reference()
                     
-                    ref.child("posts").child(uid).updateChildValues(
-                        ["profileURL":url?.absoluteString as Any]
+                    ref.child("posts").child(self.appDelegate.user.uid).child(uid).updateChildValues(
+                        [
+                            "imageURL":url?.absoluteString as Any,
+                            "description":description
+                        ]
                     )
                     
+                    completionHandler(true)
                 } else {
                     //Error
+                    completionHandler(false)
                 }
             }
         }
-        
-        
-        
-        uploadTask.observe(.success) { snapshot in
-            
-            
-        }
-        
-        uploadTask.observe(.failure) { snapshot in
-            if let error = snapshot.error as NSError? {
-        }
-        }
     }
     
-    //Add Likes
+    //Add Likes to post
     
+    //Add likes to comment
     
     //Add Comment to post
+    func addCommentToPost(postID:String, commentorID:String, postUserUID:String, comment:String){
+        //Retrieve user data
+
+        let stringUID:String = UUID().uuidString;
+        
+        let ref = Database.database().reference().child("posts").child(postUserUID).child(postID).child("allComments").child(stringUID)
+            
+    
+        ref.updateChildValues(
+            [
+                "comment":comment,
+                "userID":commentorID
+            ]
+        )
+    }
     
     
     //Get Favourites

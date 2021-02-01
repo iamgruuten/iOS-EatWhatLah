@@ -56,6 +56,7 @@
 		185DF98B25B9955B00B5929D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF98A25B9955B00B5929D /* Validation.swift */; };
 		18848CBE25C82937007183E2 /* CustomCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18848CBD25C82937007183E2 /* CustomCameraController.swift */; };
 		18848CC225C83070007183E2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18848CC125C83070007183E2 /* PhotoViewController.swift */; };
+		18848CC625C85B90007183E2 /* postViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18848CC525C85B90007183E2 /* postViewController.swift */; };
 		188D6F3625BA5FBC00061EEB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D6F3525BA5FBC00061EEB /* ImagePicker.swift */; };
 		188D6F5625BC025C00061EEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D6F5525BC025C00061EEB /* LoginViewController.swift */; };
 		18F8A0AD25B8802500BF41C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0AC25B8802500BF41C9 /* AppDelegate.swift */; };
@@ -134,6 +135,7 @@
 		185DF98A25B9955B00B5929D /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		18848CBD25C82937007183E2 /* CustomCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraController.swift; sourceTree = "<group>"; };
 		18848CC125C83070007183E2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		18848CC525C85B90007183E2 /* postViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postViewController.swift; sourceTree = "<group>"; };
 		188D6F3525BA5FBC00061EEB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		188D6F5525BC025C00061EEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18F8A0A925B8802500BF41C9 /* EatWhatLah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatWhatLah.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +262,9 @@
 		188D6F3B25BBB4F300061EEB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				18848CBD25C82937007183E2 /* CustomCameraController.swift */,
+				18848CC125C83070007183E2 /* PhotoViewController.swift */,
+				18848CC525C85B90007183E2 /* postViewController.swift */,
 				18F8A0B025B8802500BF41C9 /* ViewController.swift */,
 				185DF98525B991F300B5929D /* EmailViewController.swift */,
 				5DCD882225B88EA9006D6358 /* CommunityController.swift */,
@@ -326,8 +331,6 @@
 				188D6F3925BBB4E800061EEB /* Storyboard */,
 				18F8A0B825B8802800BF41C9 /* Assets.xcassets */,
 				18F8A0BD25B8802800BF41C9 /* Info.plist */,
-				18848CBD25C82937007183E2 /* CustomCameraController.swift */,
-				18848CC125C83070007183E2 /* PhotoViewController.swift */,
 			);
 			path = EatWhatLah;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				18449DFF25C1B08E00A07780 /* colorExtension.swift in Sources */,
 				184EB1D325BFB9430098103A /* UserController.swift in Sources */,
 				18F8A0F425B9223200BF41C9 /* UserModel.swift in Sources */,
+				18848CC625C85B90007183E2 /* postViewController.swift in Sources */,
 				184EB1C725BF03D10098103A /* VenueDetailController.swift in Sources */,
 				184EB1F125C040320098103A /* Opening_hours.swift in Sources */,
 				5DC73B3E25C06C5D002C7132 /* ProfileController.swift in Sources */,
