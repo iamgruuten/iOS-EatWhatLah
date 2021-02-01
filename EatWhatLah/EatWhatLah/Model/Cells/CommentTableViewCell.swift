@@ -38,6 +38,9 @@ class CommentTableViewCell: UITableViewCell {
         if !(commentLocal.userWhoLiked.contains(appDelegate.user.uid)){
             firebase.addLikesToComment(postID: postLocal.postID, likerUserUID: appDelegate.user.uid, postUserUID: postLocal.postUser, commentID: commentLocal.commentID)
         }
+        else{
+            firebase.removeLikesFromComments(postID: postLocal.postID, likerUserUID: appDelegate.user.uid, postUserUID: postLocal.postUser, commentID: commentLocal.commentID)
+        }
     }
     
     public func configure(with comment:Comment, post:Post){
