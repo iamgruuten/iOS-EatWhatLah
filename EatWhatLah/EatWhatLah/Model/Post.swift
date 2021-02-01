@@ -11,6 +11,7 @@ import UIKit
 class Post{
     var postID:String!
     var postUser:String!
+    var postUserID:String!
     var postUserImage:UIImage!
     var postImage:UIImage!
     var postImageURL:URL! 

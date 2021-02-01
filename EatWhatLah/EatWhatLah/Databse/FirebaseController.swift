@@ -10,11 +10,9 @@ import FirebaseAuth
 import Firebase
 import FirebaseStorage
 import CoreLocation
-
+import FirebaseDatabase
 
 class FirebaseController{
-    
-    
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -130,14 +128,16 @@ class FirebaseController{
             
             let posts = snapshot.value as! NSDictionary
             
+            if(posts.count != 0){
             for i in posts{
                 let postsByUser = i.value as? NSDictionary
-                
+                let useruid = i.key
                 for post in postsByUser!{
                     var listOfComments:[Comment] = []
                     
                     let postObject:Post = Post();
                     
+                    postObject.postUserID = useruid as? String
                     let key:String = post.key as! String;
                     print("Post key = " + key)
                     let postDescription = post.value as? NSDictionary
@@ -149,6 +149,7 @@ class FirebaseController{
                     let urlLink = postDescription!["imageURL"] as! String
                     
                     let description = postDescription!["description"] as! String
+                    
                     
                     postObject.description = description
                     
@@ -225,6 +226,10 @@ class FirebaseController{
                 }
                 
             }
+            }else{
+                completionHandler(listOfPosts)
+
+            }
             
             
         }
@@ -235,7 +240,6 @@ class FirebaseController{
         
         print("return without waiting/")
     }
-    
     
     //Add Post
     func addPost(uid:String, image:UIImage, description:String, completionHandler:@escaping (_ Success: Bool)->Void){
@@ -317,6 +321,27 @@ class FirebaseController{
                 likerUserUID:likerUserUID
             ]
         )
+    }
+    
+    //Remove Likes From post
+    func removeLikesFromPost(postID:String, postUserUID:String, likerUserUID:String){
+        //Retrieve user data
+        
+        let ref = Database.database().reference().child("posts").child(postUserUID).child(postID).child("likes").child(likerUserUID)
+            
+    
+        ref.removeValue()
+        
+    }
+    
+    //Remove likes From comment
+    func removeLikesFromComments(postID:String, likerUserUID:String, postUserUID:String, commentID:String){
+        //Retrieve user data
+        
+        let ref = Database.database().reference().child("posts").child(postUserUID).child(postID).child("allComments").child(commentID).child("likes").child(likerUserUID)
+            
+    
+        ref.removeValue()
     }
     
     //Add Comment to post
@@ -451,6 +476,28 @@ class FirebaseController{
             completionHandler(name)
         })
         
+    }
+    
+    //Update user details
+    func updateUserDetails(user:User){
+        //Retrieve user data
+
+        let ref = Database.database().reference().child("users").child(user.uid)
+            
+        ref.updateChildValues(
+            [
+                "Bio":user.bio,
+                "Email":user.email,
+                "Name":user.name
+            ]
+        )
+    }
+    
+    //Update user Password
+    func passwordUpdate(newPassword:String, completionHandler:@escaping (_ success: Bool)->Void){
+        Auth.auth().currentUser?.updatePassword(to: newPassword)
+        
+        completionHandler(true)
     }
     
 }

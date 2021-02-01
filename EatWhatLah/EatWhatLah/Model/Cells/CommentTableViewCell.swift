@@ -45,10 +45,10 @@ class CommentTableViewCell: UITableViewCell {
         username.setTitle(comment.commentor, for: .normal)
         userComment.text = comment.comment
         if (comment.userWhoLiked.contains(appDelegate.user.uid)){
-            likeButton.setBackgroundImage(UIImage(named: "heart.fill"), for: .normal)
+            likeButton.setImage(UIImage(named: "heart.fill"), for: .normal)
         }
         else{
-            likeButton.setBackgroundImage(UIImage(named: "heart"), for: .normal)
+            likeButton.setImage(UIImage(named: "heart"), for: .normal)
         }
     }
     

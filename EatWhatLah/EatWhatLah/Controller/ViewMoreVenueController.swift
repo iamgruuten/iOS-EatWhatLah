@@ -183,13 +183,24 @@ class ViewMoreVenueController:ViewController, UITableViewDelegate{
     // Enable detection of shake motion
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
+            
+            if(listOfPlaces.count != 0){
             let randomFloat = Int.random(in: 0..<listOfPlaces.count)
             
             let indexPath = IndexPath(row: randomFloat, section: 0)
             
             tableView(VenuesTableView, didSelectRowAt: indexPath);
             print("You shook me, now im gonna randomize!!! RAWRRR -QS developer :D Hi mr keck")
-            
+            }else{
+                
+                    let alert = UIAlertController(title: "Oh No!", message: "There is no result, Please ensure there is something for me to choose", preferredStyle: UIAlertController.Style.alert)
+                    
+                    // add the actions (buttons)
+                    alert.addAction(UIAlertAction(title: "okay!", style: UIAlertAction.Style.default, handler: nil))
+                    
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     

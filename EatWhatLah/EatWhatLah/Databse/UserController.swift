@@ -31,9 +31,9 @@ class UserController{
             if results.count == 0 {
                 
                 //add Users
-                let entityVenue = NSEntityDescription.entity(forEntityName: "CDUserModel", in: context)
+                let entityUser = NSEntityDescription.entity(forEntityName: "CDUserModel", in: context)
                 
-                let userObject = NSManagedObject(entity: entityVenue!, insertInto: context) as! CDUserModel
+                let userObject = NSManagedObject(entity: entityUser!, insertInto: context) as! CDUserModel
                 
                 userObject.name = user.name;
                 userObject.email = user.email;
@@ -100,5 +100,37 @@ class UserController{
             print(error)
         }
         
+    }
+    
+    func updateUser(user:User){
+                
+        do{
+            //Check if user exist before creating new row
+            
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUserModel")
+            
+            fetchRequest.predicate = NSPredicate(format: "uid = %@", user.uid)
+        
+            let results = try context.fetch(fetchRequest)
+            if results.count != 0 {
+                
+                //update Users
+                let entityVenue = results[0] as! CDUserModel
+                
+                entityVenue.name = user.name;
+                entityVenue.email = user.email;
+                entityVenue.bio = user.bio;
+                
+                try context.save()
+                
+                print("saved record, added")
+
+            }else{
+                print("duplicate record, therefore not added")
+            }
+        }catch let error as NSError{
+            print(error)
+        }
+
     }
 }

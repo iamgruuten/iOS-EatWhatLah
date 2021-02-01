@@ -32,10 +32,10 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
         commentTableView.dataSource = self
         
         if (post.usersWhoLiked.contains(appDelegate.user.uid)){
-            likeButton.setBackgroundImage(UIImage(named: "heart.fill"), for: .normal)
+            likeButton.setImage(UIImage(named: "heart.fill"), for: .normal)
         }
         else{
-            likeButton.setBackgroundImage(UIImage(named: "heart"), for: .normal)
+            likeButton.setImage(UIImage(named: "heart"), for: .normal)
         }
     }
     
@@ -70,7 +70,9 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     @IBAction func likeButton(_ sender: Any) {
         if !(post.usersWhoLiked.contains(appDelegate.user.uid)){
-            firebase.addLikeToPost(postID: post.postID, postUserUID: post.postUser, likerUserUID: appDelegate.user.uid)
+            firebase.addLikeToPost(postID: post.postID, postUserUID: post.postUserID, likerUserUID: appDelegate.user.uid)
+        }else{
+            firebase.removeLikesFromPost(postID: post.postID, postUserUID: post.postUserID, likerUserUID: appDelegate.user.uid)
         }
     }
 }
