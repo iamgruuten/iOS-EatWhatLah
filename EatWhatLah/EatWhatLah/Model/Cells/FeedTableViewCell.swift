@@ -43,9 +43,16 @@ class FeedTableViewCell: UITableViewCell {
             ]
         )
         username.setAttributedTitle(Username, for: .normal)
-        comUser.text = post.topComUser
-        topComment.text = post.topComment
-        topComment.textColor = UIColor(hex: "#FFFFFF")
+        if post.allComment.count != 0{
+            topComment.text = post.allComment[0].comment
+            comUser.text = post.allComment[0].commentor
+            topComment.textColor = UIColor(hex: "#FFFFFF")
+        }
+        else{
+            topComment.text = "Come and comment leh~"
+            topComment.textColor = UIColor(hex: "#FFFFFF")
+        }
+        
     }
     
     static func nib() -> UINib{
