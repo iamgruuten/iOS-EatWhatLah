@@ -1253,6 +1253,11 @@
                                 <state key="normal" title="profilePic" backgroundImage="user">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="45"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="profilePicture:" destination="l8I-yg-Sye" eventType="touchUpInside" id="CrO-ma-JCq"/>
                                 </connections>
