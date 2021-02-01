@@ -73,22 +73,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNW-3H-udh">
-                                <rect key="frame" x="30" y="44" width="30" height="30"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Edit">
-                                            <attributes>
-                                                <font key="NSFont" size="15" name="SFProText-Semibold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <segue destination="lyY-mT-8hV" kind="show" id="yWP-o0-FwY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jP2-dl-4j4">
                                 <rect key="frame" x="336" y="44" width="58" height="30"/>
                                 <state key="normal">
@@ -105,9 +89,8 @@
                                     <action selector="logOutOnClick:" destination="lc5-MR-d1r" eventType="touchUpInside" id="w15-XH-RhT"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YNL-X1-f5n">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YNL-X1-f5n">
                                 <rect key="frame" x="158" y="158" width="243" height="101"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Bios">
@@ -120,23 +103,44 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNW-3H-udh">
+                                <rect key="frame" x="30" y="217" width="30" height="30"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Edit">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="SFProText-Semibold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="lyY-mT-8hV" kind="show" id="yWP-o0-FwY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7FD-6x-fLq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="oNW-3H-udh" firstAttribute="leading" secondItem="7FD-6x-fLq" secondAttribute="leading" constant="30" id="4Jx-eT-rNN"/>
                             <constraint firstItem="WNA-y1-K2n" firstAttribute="leading" secondItem="Jfw-If-SB6" secondAttribute="trailing" constant="11" id="5Af-A9-2ad"/>
                             <constraint firstItem="pLa-tG-0kt" firstAttribute="top" secondItem="Jfw-If-SB6" secondAttribute="top" constant="15" id="6si-5o-mVT"/>
                             <constraint firstItem="Jfw-If-SB6" firstAttribute="leading" secondItem="7FD-6x-fLq" secondAttribute="leading" constant="30" id="9qV-Zv-bNF"/>
                             <constraint firstItem="jP2-dl-4j4" firstAttribute="top" secondItem="7FD-6x-fLq" secondAttribute="top" id="ALt-l9-Uiy"/>
                             <constraint firstItem="pLa-tG-0kt" firstAttribute="leading" secondItem="Jfw-If-SB6" secondAttribute="trailing" constant="11" id="BWA-OK-vik"/>
+                            <constraint firstItem="oNW-3H-udh" firstAttribute="leading" secondItem="7FD-6x-fLq" secondAttribute="leading" constant="30" id="FdB-J5-TeV"/>
+                            <constraint firstItem="BTx-wa-xoc" firstAttribute="top" secondItem="YNL-X1-f5n" secondAttribute="bottom" constant="35" id="H0v-zX-6MU"/>
+                            <constraint firstItem="oNW-3H-udh" firstAttribute="top" secondItem="Jfw-If-SB6" secondAttribute="bottom" constant="8" symbolic="YES" id="Poy-YJ-luP"/>
+                            <constraint firstItem="YNL-X1-f5n" firstAttribute="top" secondItem="WNA-y1-K2n" secondAttribute="bottom" constant="8.5" id="Pq4-tP-DOb"/>
+                            <constraint firstItem="7FD-6x-fLq" firstAttribute="trailing" secondItem="YNL-X1-f5n" secondAttribute="trailing" constant="13" id="TOh-o1-ziD"/>
                             <constraint firstItem="BTx-wa-xoc" firstAttribute="leading" secondItem="7FD-6x-fLq" secondAttribute="leading" constant="5" id="TkM-MO-r6z"/>
-                            <constraint firstItem="oNW-3H-udh" firstAttribute="top" secondItem="7FD-6x-fLq" secondAttribute="top" id="U2C-Uj-d0i"/>
                             <constraint firstItem="BTx-wa-xoc" firstAttribute="top" secondItem="jP2-dl-4j4" secondAttribute="bottom" constant="220" id="Vmv-zt-KuC"/>
+                            <constraint firstItem="BTx-wa-xoc" firstAttribute="top" secondItem="oNW-3H-udh" secondAttribute="bottom" constant="47" id="aum-Tg-coe"/>
                             <constraint firstItem="BTx-wa-xoc" firstAttribute="top" secondItem="Jfw-If-SB6" secondAttribute="bottom" constant="85" id="c8v-J4-Sa3"/>
                             <constraint firstItem="7FD-6x-fLq" firstAttribute="trailing" secondItem="BTx-wa-xoc" secondAttribute="trailing" constant="5" id="cSs-J7-zQK"/>
                             <constraint firstItem="7FD-6x-fLq" firstAttribute="trailing" secondItem="jP2-dl-4j4" secondAttribute="trailing" constant="20" id="ifl-gC-tu7"/>
                             <constraint firstItem="BTx-wa-xoc" firstAttribute="bottom" secondItem="7FD-6x-fLq" secondAttribute="bottom" id="meL-zJ-7gD"/>
+                            <constraint firstItem="YNL-X1-f5n" firstAttribute="leading" secondItem="oNW-3H-udh" secondAttribute="trailing" constant="98" id="pF2-Tl-TXm"/>
                             <constraint firstItem="WNA-y1-K2n" firstAttribute="top" secondItem="pLa-tG-0kt" secondAttribute="top" constant="31" id="uqx-25-WZS"/>
                             <constraint firstItem="Jfw-If-SB6" firstAttribute="top" secondItem="7FD-6x-fLq" secondAttribute="top" constant="45" id="vbs-Tw-PIP"/>
                             <constraint firstItem="BTx-wa-xoc" firstAttribute="bottom" secondItem="7FD-6x-fLq" secondAttribute="bottom" id="zDY-iP-rTU"/>
