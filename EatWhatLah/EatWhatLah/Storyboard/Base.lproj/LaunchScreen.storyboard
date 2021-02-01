@@ -38,14 +38,12 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.90196078431372551" green="0.22352941176470587" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
                             <constraint firstItem="Nha-Jc-L3G" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9UX-Ra-8a8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nha-Jc-L3G" secondAttribute="trailing" constant="91" id="E4o-tm-CAd"/>
                             <constraint firstItem="ZA5-nZ-Fqa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="NdO-TN-7W2"/>
                             <constraint firstItem="Nha-Jc-L3G" firstAttribute="top" secondItem="ZA5-nZ-Fqa" secondAttribute="bottom" constant="48" id="PKE-54-mHl"/>
                             <constraint firstItem="ZA5-nZ-Fqa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="bYh-hc-7sZ"/>
-                            <constraint firstItem="Nha-Jc-L3G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="91" id="d5X-8K-7p4"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -58,6 +56,9 @@
         <image name="logoWhite" width="72" height="53"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -30,22 +30,22 @@ class ProfileController: UIViewController{
         do {
             try Auth.auth().signOut();
             
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-
-                    let onBoardController = mainStoryboard.instantiateViewController(withIdentifier: "Main") as! onBoardController
-
-            onBoardController.modalPresentationStyle = .fullScreen
+            let mainStoryboard = UIStoryboard(name: "onboard", bundle: nil)
             
-                    self.present(onBoardController, animated: false)
+            let onBoardController = mainStoryboard.instantiateInitialViewController()
+            
+            onBoardController!.modalPresentationStyle = .fullScreen
+            
+            self.present(onBoardController!, animated: false)
             
             
         } catch let signOutError as NSError {
-          print ("Error signing out: %@", signOutError)
+            print ("Error signing out: %@", signOutError)
         }
     }
     //var pictures:[String] = ["Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers"]
     
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +60,7 @@ class ProfileController: UIViewController{
         profilePicture.image = appDelegate.user.profilePicture
         
         if(appDelegate.user.bio != "0"){
-        biosTextView.text = appDelegate.user.bio;
+            biosTextView.text = appDelegate.user.bio;
         }else{
             biosTextView.text = "Bio is not set"
         }
@@ -81,7 +81,7 @@ extension ProfileController:UICollectionViewDelegate{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCollectionViewCell.identifier, for: indexPath) as! ProfileCollectionViewCell
         
         let storyBoard:UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
-
+        
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ContentView") as! ContentController
         
         nextViewController.post = cell.lpost

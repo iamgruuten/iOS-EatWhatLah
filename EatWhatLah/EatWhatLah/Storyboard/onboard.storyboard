@@ -481,7 +481,7 @@
                                 <rect key="frame" x="0.0" y="529" width="414" height="367"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZc-Nx-m0t">
-                                        <rect key="frame" x="40" y="43" width="159" height="21"/>
+                                        <rect key="frame" x="40" y="43" width="146" height="21"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Eat What Lah... :D">
                                                 <attributes>
@@ -494,7 +494,7 @@
                                         <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgs-Ab-emf">
-                                        <rect key="frame" x="40" y="73" width="248.5" height="29"/>
+                                        <rect key="frame" x="40" y="73" width="228.5" height="28"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Login To Get Started ">
                                                 <attributes>
@@ -507,10 +507,10 @@
                                         <color key="highlightedColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </label>
                                     <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uoQ-6H-nHZ">
-                                        <rect key="frame" x="36" y="124" width="342" height="54"/>
+                                        <rect key="frame" x="36" y="123" width="342" height="53"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1q4-MH-oiK">
-                                                <rect key="frame" x="0.0" y="10" width="342" height="34"/>
+                                                <rect key="frame" x="0.0" y="10" width="342" height="33"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                                 <state key="normal" title="Login with Email">
                                                     <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -520,7 +520,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail" translatesAutoresizingMaskIntoConstraints="NO" id="bzJ-SX-wmq">
-                                                <rect key="frame" x="22" y="10" width="28" height="34"/>
+                                                <rect key="frame" x="22" y="10" width="28" height="33"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.89677762989999998" green="0.22354340549999999" blue="0.27447029950000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -543,10 +543,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XdJ-gb-T85">
-                                        <rect key="frame" x="36" y="188" width="342" height="54"/>
+                                        <rect key="frame" x="36" y="186" width="342" height="53"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gg-7G-jyh">
-                                                <rect key="frame" x="0.0" y="10" width="342" height="34"/>
+                                                <rect key="frame" x="0.0" y="10" width="342" height="33"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                                 <state key="normal" title="Create New Account">
                                                     <color key="titleColor" red="0.99216347930000004" green="0.99214488270000001" blue="0.99215751890000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

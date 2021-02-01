@@ -23,7 +23,6 @@ class onBoardController:UIViewController{
     
     
     override func viewDidLoad() {
-        print("UID Loaded:" + Auth.auth().currentUser!.uid)
 
         if Auth.auth().currentUser != nil {
             userController.retrieveUser(uid: Auth.auth().currentUser!.uid){
