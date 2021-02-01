@@ -57,6 +57,13 @@
 		18848CBE25C82937007183E2 /* CustomCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18848CBD25C82937007183E2 /* CustomCameraController.swift */; };
 		18848CC225C83070007183E2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18848CC125C83070007183E2 /* PhotoViewController.swift */; };
 		18848CC625C85B90007183E2 /* postViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18848CC525C85B90007183E2 /* postViewController.swift */; };
+		18848CCF25C88CD8007183E2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18848CCE25C88CD8007183E2 /* WidgetKit.framework */; };
+		18848CD125C88CD8007183E2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18848CD025C88CD8007183E2 /* SwiftUI.framework */; };
+		18848CD425C88CD8007183E2 /* EatWhatLahWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18848CD325C88CD8007183E2 /* EatWhatLahWidget.swift */; };
+		18848CD725C88CDB007183E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18848CD625C88CDB007183E2 /* Assets.xcassets */; };
+		18848CD925C88CDB007183E2 /* EatWhatLahWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 18848CD525C88CD8007183E2 /* EatWhatLahWidget.intentdefinition */; };
+		18848CDA25C88CDB007183E2 /* EatWhatLahWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 18848CD525C88CD8007183E2 /* EatWhatLahWidget.intentdefinition */; };
+		18848CDD25C88CDB007183E2 /* EatWhatLahWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18848CCD25C88CD8007183E2 /* EatWhatLahWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		188D6F3625BA5FBC00061EEB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D6F3525BA5FBC00061EEB /* ImagePicker.swift */; };
 		188D6F5625BC025C00061EEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D6F5525BC025C00061EEB /* LoginViewController.swift */; };
 		18F8A0AD25B8802500BF41C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8A0AC25B8802500BF41C9 /* AppDelegate.swift */; };
@@ -84,6 +91,30 @@
 		5DC73BA825C30601002C7132 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC73BA625C30601002C7132 /* FeedTableViewCell.xib */; };
 		5DCD882325B88EA9006D6358 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD882225B88EA9006D6358 /* CommunityController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18848CDB25C88CDB007183E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18F8A0A125B8802500BF41C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18848CCC25C88CD8007183E2;
+			remoteInfo = EatWhatLahWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		18848CDE25C88CDB007183E2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				18848CDD25C88CDB007183E2 /* EatWhatLahWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1795CC35D3A281EF2DCDC854 /* Pods-EatWhatLah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatWhatLah.debug.xcconfig"; path = "Target Support Files/Pods-EatWhatLah/Pods-EatWhatLah.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +167,13 @@
 		18848CBD25C82937007183E2 /* CustomCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraController.swift; sourceTree = "<group>"; };
 		18848CC125C83070007183E2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		18848CC525C85B90007183E2 /* postViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postViewController.swift; sourceTree = "<group>"; };
+		18848CCD25C88CD8007183E2 /* EatWhatLahWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EatWhatLahWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		18848CCE25C88CD8007183E2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		18848CD025C88CD8007183E2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		18848CD325C88CD8007183E2 /* EatWhatLahWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatWhatLahWidget.swift; sourceTree = "<group>"; };
+		18848CD525C88CD8007183E2 /* EatWhatLahWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = EatWhatLahWidget.intentdefinition; sourceTree = "<group>"; };
+		18848CD625C88CDB007183E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18848CD825C88CDB007183E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188D6F3525BA5FBC00061EEB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		188D6F5525BC025C00061EEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18F8A0A925B8802500BF41C9 /* EatWhatLah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatWhatLah.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +207,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		18848CCA25C88CD8007183E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18848CD125C88CD8007183E2 /* SwiftUI.framework in Frameworks */,
+				18848CCF25C88CD8007183E2 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18F8A0A625B8802500BF41C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,6 +276,17 @@
 				184EB1EC25C040320098103A /* Result.swift */,
 			);
 			path = OperatingHoursModel;
+			sourceTree = "<group>";
+		};
+		18848CD225C88CD8007183E2 /* EatWhatLahWidget */ = {
+			isa = PBXGroup;
+			children = (
+				18848CD325C88CD8007183E2 /* EatWhatLahWidget.swift */,
+				18848CD525C88CD8007183E2 /* EatWhatLahWidget.intentdefinition */,
+				18848CD625C88CDB007183E2 /* Assets.xcassets */,
+				18848CD825C88CDB007183E2 /* Info.plist */,
+			);
+			path = EatWhatLahWidget;
 			sourceTree = "<group>";
 		};
 		188D6F3925BBB4E800061EEB /* Storyboard */ = {
@@ -306,6 +364,7 @@
 				184EB1FA25C066470098103A /* GoogleService-Info.plist */,
 				18F8A0C725B88D0A00BF41C9 /* fonts */,
 				18F8A0AB25B8802500BF41C9 /* EatWhatLah */,
+				18848CD225C88CD8007183E2 /* EatWhatLahWidget */,
 				18F8A0AA25B8802500BF41C9 /* Products */,
 				4687C70958D12C0E8070D94A /* Pods */,
 				9A8BF4FC7BF04EF1061FDA2C /* Frameworks */,
@@ -316,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				18F8A0A925B8802500BF41C9 /* EatWhatLah.app */,
+				18848CCD25C88CD8007183E2 /* EatWhatLahWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -383,6 +443,8 @@
 			children = (
 				18449E1425C1E01000A07780 /* iOSDropDown.framework */,
 				92364AC69F8CF233761F86B6 /* Pods_EatWhatLah.framework */,
+				18848CCE25C88CD8007183E2 /* WidgetKit.framework */,
+				18848CD025C88CD8007183E2 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -390,6 +452,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		18848CCC25C88CD8007183E2 /* EatWhatLahWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18848CE125C88CDB007183E2 /* Build configuration list for PBXNativeTarget "EatWhatLahWidgetExtension" */;
+			buildPhases = (
+				18848CC925C88CD8007183E2 /* Sources */,
+				18848CCA25C88CD8007183E2 /* Frameworks */,
+				18848CCB25C88CD8007183E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EatWhatLahWidgetExtension;
+			productName = EatWhatLahWidgetExtension;
+			productReference = 18848CCD25C88CD8007183E2 /* EatWhatLahWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		18F8A0A825B8802500BF41C9 /* EatWhatLah */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18F8A0C025B8802800BF41C9 /* Build configuration list for PBXNativeTarget "EatWhatLah" */;
@@ -399,10 +478,12 @@
 				18F8A0A625B8802500BF41C9 /* Frameworks */,
 				18F8A0A725B8802500BF41C9 /* Resources */,
 				2BDE981DE743FC3153F863D0 /* [CP] Embed Pods Frameworks */,
+				18848CDE25C88CDB007183E2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				18848CDC25C88CDB007183E2 /* PBXTargetDependency */,
 			);
 			name = EatWhatLah;
 			productName = EatWhatLah;
@@ -418,6 +499,9 @@
 				LastSwiftUpdateCheck = 1210;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
+					18848CCC25C88CD8007183E2 = {
+						CreatedOnToolsVersion = 12.1;
+					};
 					18F8A0A825B8802500BF41C9 = {
 						CreatedOnToolsVersion = 12.1;
 					};
@@ -437,11 +521,20 @@
 			projectRoot = "";
 			targets = (
 				18F8A0A825B8802500BF41C9 /* EatWhatLah */,
+				18848CCC25C88CD8007183E2 /* EatWhatLahWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		18848CCB25C88CD8007183E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18848CD725C88CDB007183E2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18F8A0A725B8802500BF41C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -517,6 +610,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		18848CC925C88CD8007183E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18848CD425C88CD8007183E2 /* EatWhatLahWidget.swift in Sources */,
+				18848CD925C88CDB007183E2 /* EatWhatLahWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18F8A0A525B8802500BF41C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -556,6 +658,7 @@
 				18848CC625C85B90007183E2 /* postViewController.swift in Sources */,
 				184EB1C725BF03D10098103A /* VenueDetailController.swift in Sources */,
 				184EB1F125C040320098103A /* Opening_hours.swift in Sources */,
+				18848CDA25C88CDB007183E2 /* EatWhatLahWidget.intentdefinition in Sources */,
 				5DC73B3E25C06C5D002C7132 /* ProfileController.swift in Sources */,
 				5DC73B7925C2A17C002C7132 /* CommentTableViewCell.swift in Sources */,
 				184EB1F325C040330098103A /* Open.swift in Sources */,
@@ -577,6 +680,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		18848CDC25C88CDB007183E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18848CCC25C88CD8007183E2 /* EatWhatLahWidgetExtension */;
+			targetProxy = 18848CDB25C88CDB007183E2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		18F8A0B225B8802500BF41C9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -597,6 +708,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		18848CDF25C88CDB007183E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 956353D6VP;
+				INFOPLIST_FILE = EatWhatLahWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = quansheng.EatWhatLah.EatWhatLahWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18848CE025C88CDB007183E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 956353D6VP;
+				INFOPLIST_FILE = EatWhatLahWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = quansheng.EatWhatLah.EatWhatLahWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		18F8A0BE25B8802800BF41C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -717,6 +870,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1795CC35D3A281EF2DCDC854 /* Pods-EatWhatLah.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -737,6 +891,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 33113F49FB3C8F4775662E66 /* Pods-EatWhatLah.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -756,6 +911,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		18848CE125C88CDB007183E2 /* Build configuration list for PBXNativeTarget "EatWhatLahWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18848CDF25C88CDB007183E2 /* Debug */,
+				18848CE025C88CDB007183E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		18F8A0A425B8802500BF41C9 /* Build configuration list for PBXProject "EatWhatLah" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -31,7 +31,10 @@ class ExploreController : UIViewController{
     var resultBakery = [Results]();
     var resultBar = [Results]();
     var resultHawker = [Results]();
+
+    let geoCoder = CLGeocoder()
     
+    @IBOutlet var locationCountry: UILabel!
     
     let locationManager: CLLocationManager = {
         $0.requestWhenInUseAuthorization();
@@ -56,6 +59,9 @@ class ExploreController : UIViewController{
     
     override func viewDidLoad() {
         self.registerNib();
+        
+
+        convertLatLongToAddress(latitude: locationManager.location!.coordinate.latitude, longitude:  locationManager.location!.coordinate.longitude)
         
         favouriteCollection.dataSource = self
         favouriteCollection.delegate = self;
@@ -382,6 +388,46 @@ extension ExploreController: UICollectionViewDataSource {
             
             
         }
+    }
+    
+    func convertLatLongToAddress(latitude:Double,longitude:Double){
+        
+        let geoCoder = CLGeocoder()
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            
+            // Place details
+            var placeMark: CLPlacemark!
+            placeMark = placemarks?[0]
+            
+            // Location name
+            if let locationName = placeMark.location {
+                print(locationName)
+            }
+            // Street address
+            if let street = placeMark.thoroughfare {
+                print(street)
+            }
+            // City
+            if let city = placeMark.locality {
+                print(city)
+            }
+            // State
+            if let state = placeMark.administrativeArea {
+                print(state)
+            }
+            // Zip code
+            if let zipCode = placeMark.postalCode {
+                print(zipCode)
+            }
+            // Country
+            if let country = placeMark.country {
+                print(country)
+            }
+            
+            self.locationCountry.text = placeMark.locality! + ", " + placeMark.country!
+        })
+        
     }
 }
 

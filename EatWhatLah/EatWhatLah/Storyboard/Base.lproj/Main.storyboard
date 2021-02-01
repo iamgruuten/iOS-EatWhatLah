@@ -786,6 +786,7 @@
                     <connections>
                         <outlet property="categoryView" destination="qUL-Rl-dTd" id="sU4-Hu-NfF"/>
                         <outlet property="favouriteCollection" destination="re9-AA-giE" id="M99-v8-Qd5"/>
+                        <outlet property="locationCountry" destination="2gy-7T-2Rt" id="lg1-AD-DJ0"/>
                         <outlet property="nearbyView" destination="a34-Je-71e" id="saX-xf-E1U"/>
                         <outlet property="profileBtn" destination="jcR-C0-6zL" id="6A1-WN-Xt5"/>
                         <outlet property="rngFoodTextField" destination="Lmz-BN-GqW" id="bsV-Ij-qUZ"/>

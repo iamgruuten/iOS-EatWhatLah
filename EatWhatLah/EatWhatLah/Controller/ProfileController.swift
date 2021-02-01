@@ -29,6 +29,16 @@ class ProfileController: UIViewController{
     @IBAction func logOutOnClick(_ sender: Any) {
         do {
             try Auth.auth().signOut();
+            
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+                    let onBoardController = mainStoryboard.instantiateViewController(withIdentifier: "Main") as! onBoardController
+
+            onBoardController.modalPresentationStyle = .fullScreen
+            
+                    self.present(onBoardController, animated: false)
+            
+            
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }
