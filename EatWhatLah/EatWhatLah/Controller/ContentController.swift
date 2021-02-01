@@ -14,7 +14,7 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet var commentTableView:UITableView!
     @IBOutlet var ownerUsername:UIButton!
     @IBOutlet var profileButton:UIButton!
-
+    @IBOutlet var commentField:UITextField!
     var post:Post!
     
     override func viewDidLoad() {
@@ -27,6 +27,9 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         commentTableView.delegate = self
         commentTableView.dataSource = self
+    }
+    
+    @IBAction func submitPost(_ sender: Any) {
     }
     
     //Table Functions
