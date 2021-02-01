@@ -30,6 +30,7 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     @IBAction func submitPost(_ sender: Any) {
+        
     }
     
     //Table Functions
