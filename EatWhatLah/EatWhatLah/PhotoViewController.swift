@@ -11,7 +11,8 @@ class PhotoViewController: UIViewController {
      @IBOutlet var imageView: UIImageView!
        
        var image:UIImage?
-       
+    @IBOutlet var postDescription: UITextField!
+    
        override func viewDidLoad() {
            super.viewDidLoad()
 
@@ -24,7 +25,10 @@ class PhotoViewController: UIViewController {
        }
        
 
-       // MARK: - Action methods
+    @IBAction func confirmOnClick(_ sender: Any) {
+    }
+    
+    // MARK: - Action methods
        
        @IBAction func save(sender: UIButton) {
        }

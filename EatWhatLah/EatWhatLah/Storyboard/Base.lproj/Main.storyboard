@@ -1335,7 +1335,7 @@
         <!--Photo View Controller-->
         <scene sceneID="ccX-B6-Qoa">
             <objects>
-                <viewController id="dog-ay-ICc" customClass="PhotoViewController" customModule="EatWhatLah" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoViewController" id="dog-ay-ICc" customClass="PhotoViewController" customModule="EatWhatLah" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mr7-BG-ZqQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1353,6 +1353,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="confirmOnClick:" destination="dog-ay-ICc" eventType="touchUpInside" id="WHO-Rg-FD2"/>
                                             <action selector="saveWithSender:" destination="dog-ay-ICc" eventType="touchUpInside" id="s2T-QA-Wk0"/>
                                         </connections>
                                     </button>
@@ -1369,7 +1370,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <color key="backgroundColor" red="0.11372549019607843" green="0.20784313725490194" blue="0.3411764705882353" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="6PF-nc-FBq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gGG-tc-1Cu" secondAttribute="trailing" constant="8" symbolic="YES" id="92s-6O-OTD"/>
                                     <constraint firstItem="gGG-tc-1Cu" firstAttribute="leading" secondItem="jqm-7Y-gKe" secondAttribute="leading" constant="20" id="9NS-JZ-qVG"/>
@@ -1401,6 +1402,74 @@
                 <exit id="QCa-2z-wCk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="797" y="316"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="536-57-6Kv">
+            <objects>
+                <viewController storyboardIdentifier="PostViewController" id="K6D-f5-V4o" customClass="PhotoViewController" customModule="EatWhatLah" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5E8-l4-xtL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vls-wE-2ZT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bi8-Qm-dTn">
+                                        <rect key="frame" x="360" y="13.5" width="34" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Post">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveWithSender:" destination="K6D-f5-V4o" eventType="touchUpInside" id="CbZ-Zj-aWI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.11372549019607843" green="0.20784313725490194" blue="0.3411764705882353" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bi8-Qm-dTn" secondAttribute="trailing" constant="20" id="6Tt-Eh-8my"/>
+                                    <constraint firstItem="bi8-Qm-dTn" firstAttribute="centerY" secondItem="Vls-wE-2ZT" secondAttribute="centerY" id="CWv-pL-sWG"/>
+                                    <constraint firstAttribute="height" constant="60" id="xES-Qq-o2P"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="Type your image description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b0L-6x-5hM">
+                                <rect key="frame" x="0.0" y="104" width="273" height="144"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vEd-Or-ZPS">
+                                <rect key="frame" x="273" y="104" width="141" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="9Fi-mh-PPm"/>
+                                    <constraint firstAttribute="width" constant="141" id="aqh-ww-KLk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZU2-RL-8Zg"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b0L-6x-5hM" firstAttribute="top" secondItem="Vls-wE-2ZT" secondAttribute="bottom" id="6MB-L2-L4U"/>
+                            <constraint firstItem="Vls-wE-2ZT" firstAttribute="centerX" secondItem="ZU2-RL-8Zg" secondAttribute="centerX" id="8as-d4-9in"/>
+                            <constraint firstItem="ZU2-RL-8Zg" firstAttribute="bottom" secondItem="b0L-6x-5hM" secondAttribute="bottom" constant="614" id="GmR-9L-yR2"/>
+                            <constraint firstItem="vEd-Or-ZPS" firstAttribute="trailing" secondItem="ZU2-RL-8Zg" secondAttribute="trailing" id="Izw-7K-9cn"/>
+                            <constraint firstItem="vEd-Or-ZPS" firstAttribute="leading" secondItem="b0L-6x-5hM" secondAttribute="trailing" id="NmN-du-dMy"/>
+                            <constraint firstItem="ZU2-RL-8Zg" firstAttribute="bottom" secondItem="vEd-Or-ZPS" secondAttribute="bottom" constant="614" id="OKo-go-HuC"/>
+                            <constraint firstItem="ZU2-RL-8Zg" firstAttribute="trailing" secondItem="vEd-Or-ZPS" secondAttribute="trailing" id="Z7t-Mo-xx9"/>
+                            <constraint firstItem="Vls-wE-2ZT" firstAttribute="leading" secondItem="ZU2-RL-8Zg" secondAttribute="leading" id="aI7-tc-1gP"/>
+                            <constraint firstItem="Vls-wE-2ZT" firstAttribute="trailing" secondItem="ZU2-RL-8Zg" secondAttribute="trailing" id="c84-79-ezS"/>
+                            <constraint firstItem="b0L-6x-5hM" firstAttribute="leading" secondItem="ZU2-RL-8Zg" secondAttribute="leading" id="fqY-9t-EYD"/>
+                            <constraint firstItem="vEd-Or-ZPS" firstAttribute="top" secondItem="Vls-wE-2ZT" secondAttribute="bottom" id="uQA-Ad-MTZ"/>
+                            <constraint firstItem="Vls-wE-2ZT" firstAttribute="top" secondItem="ZU2-RL-8Zg" secondAttribute="top" id="ucV-Jo-9WM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="vEd-Or-ZPS" id="ImL-nx-jj3"/>
+                        <outlet property="postDescription" destination="b0L-6x-5hM" id="Dy1-fp-gxC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Qg-Am-Ogl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1353.6231884057972" y="1017.8571428571428"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.1137254902" green="0.20784313730000001" blue="0.3411764706" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
