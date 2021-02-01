@@ -22,6 +22,7 @@ class CommunityController:UIViewController{
     var feedPost:[Post] = []
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //set profile image
@@ -29,7 +30,7 @@ class CommunityController:UIViewController{
         
         firebase.getAllPost{postRetrieve in
             self.feedPost = postRetrieve;
-            self.atfCollectionView.reloadData()
+            self.feedTableView.reloadData()
         }
         
         //initializing ATF
@@ -46,6 +47,7 @@ class CommunityController:UIViewController{
     }
 
     @IBAction func profilePicture(_ sender: Any) {
+        
     }
     
 }
