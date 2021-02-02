@@ -59,7 +59,7 @@ class ExploreController : UIViewController{
     @IBAction func profileOnClick(_ sender: Any) {
         let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
         let profileController = profileStoryboard.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
-        profileController.modalPresentationStyle = .automatic
+        profileController.modalPresentationStyle = .fullScreen
 
         profileController.user = appDelegate.user
         self.present(profileController, animated: true)

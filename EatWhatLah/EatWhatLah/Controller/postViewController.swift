@@ -20,7 +20,8 @@ class postViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setupToHideKeyboardOnTapOnView()
+
         postDescription.becomeFirstResponder()
         
         let bounds = UIScreen.main.bounds
@@ -103,7 +104,7 @@ class postViewController: UIViewController {
             let imageRef: CGImage = cgimage.cropping(to: rect)!
 
             // Create a new image based on the imageRef and rotate back to the original orientation
-        let image: UIImage = UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
+        let image: UIImage = UIImage(cgImage: imageRef, scale: image.scale, orientation: .right)
         
             return image
         }

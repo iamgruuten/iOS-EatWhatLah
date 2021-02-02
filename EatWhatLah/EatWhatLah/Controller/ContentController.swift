@@ -65,10 +65,12 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
         profileController.modalPresentationStyle = .fullScreen
         
         firebase.getUserDataByUID(uid: post.postUserID){userRetrieve in
-            self.user = userRetrieve
+            let Retuser = userRetrieve
+            
+            profileController.user = Retuser
+            self.present(profileController, animated: true)
         }
-        profileController.user = user
-        self.present(profileController, animated: true)
+        
     }
     
     @IBAction func backButton(_ sender: Any) {

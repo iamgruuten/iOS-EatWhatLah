@@ -28,8 +28,11 @@ class CommunityController:UIViewController{
         profilePicture.setBackgroundImage(appDelegate.user.profilePicture, for: .normal)
         
         firebase.getAllPost{postRetrieve in
+            
             self.feedPost = postRetrieve;
+            
             self.feedTableView.reloadData()
+            self.atfCollectionView.reloadData()
         }
         
         //initializing ATF
@@ -63,6 +66,8 @@ extension CommunityController:UICollectionViewDelegate,UICollectionViewDataSourc
             return 10
         }
         else{
+            print("idk:", feedPost.count)
+
             return feedPost.count
         }
     }
@@ -88,7 +93,8 @@ extension CommunityController:UICollectionViewDelegate,UICollectionViewDataSourc
 //Feed Controller
 extension CommunityController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        feedPost.count
+
+        return feedPost.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -107,7 +113,7 @@ extension CommunityController:UITableViewDelegate,UITableViewDataSource{
         
         cell.configure(with: feedPost[indexPath.row])
         
-        nextViewController.post = cell.lpost
+        nextViewController.post = feedPost[indexPath.row]
         nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated: true, completion: nil)
     }
