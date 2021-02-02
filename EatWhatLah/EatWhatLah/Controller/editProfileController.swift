@@ -58,9 +58,7 @@ class editProfileController:ViewController{
             self.appDelegate.user.bio = bio;
             self.appDelegate.user.name = name;
             self.appDelegate.user.locked = locked;
-            
-            self.navigationController?.popViewController(animated: true)
-
+            self.dismiss(animated: true, completion: nil)
             
         }else{
             let alert = UIAlertController(title: "Oh No!", message: "Please fill in the field", preferredStyle: UIAlertController.Style.alert)
@@ -171,6 +169,6 @@ class editProfileController:ViewController{
     
     @IBAction func cancelOnClick(_ sender: Any) {
         //Cancel
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
 }
