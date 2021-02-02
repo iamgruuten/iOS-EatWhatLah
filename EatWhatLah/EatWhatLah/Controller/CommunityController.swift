@@ -74,9 +74,13 @@ extension CommunityController:UICollectionViewDelegate,UICollectionViewDataSourc
         atfList.sort(by: {$0.likes > $1.likes})
         if(indexPath.row < 10){
             cell.configure(with: atfList[indexPath.row])
+            return cell
+        }else{
+            cell.configure(with: atfList[indexPath.row])
+            return cell
         }
         
-        return cell
+        
     }
     
 }
