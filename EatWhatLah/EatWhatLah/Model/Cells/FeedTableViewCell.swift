@@ -51,7 +51,9 @@ class FeedTableViewCell: UITableViewCell {
         username.setAttributedTitle(Username, for: .normal)
         if post.allComment.count != 0{
             topComment.text = post.allComment[0].comment
-            comUser.text = post.allComment[0].commentor
+            firebase.getUserNameByUID(uid: post.allComment[0].commentor){usernameHandler in
+                self.comUser.text = usernameHandler
+            }
             topComment.textColor = UIColor(hex: "#FFFFFF")
         }
         else{

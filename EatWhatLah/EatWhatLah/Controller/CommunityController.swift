@@ -29,7 +29,8 @@ class CommunityController:UIViewController{
         profilePicture.setBackgroundImage(appDelegate.user.profilePicture, for: .normal)
         
         firebase.getAllPost{postRetrieve in
-            self.feedPost = postRetrieve;
+            self.feedPost = postRetrieve
+            self.atfImages = postRetrieve
             self.feedTableView.reloadData()
         }
         
@@ -96,6 +97,8 @@ extension CommunityController:UITableViewDelegate,UITableViewDataSource{
         let storyBoard:UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
 
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ContentView") as! ContentController
+        
+        cell.configure(with: feedPost[indexPath.row])
         
         nextViewController.post = cell.lpost
         nextViewController.modalPresentationStyle = .fullScreen
