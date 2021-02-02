@@ -38,17 +38,23 @@ class FeedTableViewCell: UITableViewCell {
 //        username.setTitle(post.postUser, for: .normal)
 //        username.setTitleColor(UIColor(hex: "#FFFFFF"), for: .normal)
         
-        let Username = NSAttributedString(
-            string: post.postUser,
-            attributes: [
-                NSAttributedString.Key.strokeColor: UIColor.black,
-                NSAttributedString.Key.foregroundColor: UIColor.white,
-                NSAttributedString.Key.strokeWidth: -2.0,
-                NSAttributedString.Key.font: UIFont(name: "SF Pro Text", size: 15)
-            ]
-        )
+        firebase.getUserNameByUID(uid: lpost.postUserID){
+            name in
+            
+            let Username = NSAttributedString(string:
+                name
+                ,
+                attributes: [
+                    NSAttributedString.Key.strokeColor: UIColor.black,
+                    NSAttributedString.Key.foregroundColor: UIColor.white,
+                    NSAttributedString.Key.strokeWidth: -2.0,
+                    NSAttributedString.Key.font: UIFont(name: "SF Pro Text", size: 15)
+                ]
+            )
+            
+            self.username.setAttributedTitle(Username, for: .normal)
+        }
         
-        username.setAttributedTitle(Username, for: .normal)
         if post.allComment.count != 0{
             topComment.text = post.allComment[0].comment
             firebase.getUserNameByUID(uid: post.allComment[0].commentor){usernameHandler in

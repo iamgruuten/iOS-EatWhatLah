@@ -129,10 +129,15 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         address.text = place?.vicinity;
         
         //Get Distance of two points
-        let distance:Double = getDistance(lat: String((place?.geometry?.location?.lat)!), long: String((place?.geometry?.location?.lng)!))
+        var distance:Double = getDistance(lat: String((place?.geometry?.location?.lat)!), long: String((place?.geometry?.location?.lng)!))
         
+        if(distance > 1000){
+            distance = distance / 1000
+            distanceLabel.text = String(format: "%.2f",distance) + "km away from you"
+
+        }else{
         distanceLabel.text = String(format: "%.2f",distance) + "m away from you"
-        
+        }
         detailView.layer.shadowColor = UIColor.lightGray.cgColor
         detailView.layer.shadowOffset = CGSize(width: 1, height: 1)
         detailView.layer.shadowRadius = 5

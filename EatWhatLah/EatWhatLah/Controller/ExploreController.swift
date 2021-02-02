@@ -14,7 +14,7 @@ import SwiftSpinner
 import CoreLocation
 
 
-class ExploreController : UIViewController{
+class ExploreController : UIViewController, UITextFieldDelegate{
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -25,6 +25,8 @@ class ExploreController : UIViewController{
     var dataNearByVenue = [Places]()
     
     var resultVenues = [Results]();
+    
+    @IBOutlet var placeToEatTextFld: UITextField!
     
     var resultCafe = [Results]();
     var resultBuffet = [Results]();
@@ -67,7 +69,7 @@ class ExploreController : UIViewController{
     
     override func viewDidLoad() {
         self.registerNib();
-        
+        placeToEatTextFld.delegate = self
         self.setupToHideKeyboardOnTapOnView()
         
         convertLatLongToAddress(latitude: locationManager.location!.coordinate.latitude, longitude:  locationManager.location!.coordinate.longitude)
@@ -255,7 +257,24 @@ class ExploreController : UIViewController{
         }
     }
     
+    //Due to lack of data, we chose to hard code it. Sorry mr keck
+    var food:[String] = ["Nasi Lemak", "Chicken Rice", "Nasi Padang", "Mee goreng", "Chicken Chop"]
     
+    @IBAction func watToEatClick(_ sender: Any) {
+        
+            let randomInt = Int.random(in: 0..<food.count)
+            let chosed = food[randomInt]
+            placeToEatTextFld.text = "Why not try " + chosed;
+    }
+    
+    
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == placeToEatTextFld {
+            return false;
+        }
+        return true
+    }
 }
 
 

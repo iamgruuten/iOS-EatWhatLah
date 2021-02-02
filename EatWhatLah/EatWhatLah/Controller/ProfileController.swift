@@ -53,10 +53,11 @@ class ProfileController: UIViewController{
     }
     
     override func viewWillAppear(_ animated: Bool){
-        
+        if(user == nil){
         ProfileName.text = appDelegate.user.name
         ProfileMobile.text = appDelegate.user.email
         profilePicture.image = appDelegate.user.profilePicture
+        }
         
     }
     
@@ -64,15 +65,19 @@ class ProfileController: UIViewController{
         super.viewDidLoad()
         self.setupToHideKeyboardOnTapOnView()
 
-        if (user.uid != appDelegate.user.uid){
+        if (user != nil){
             logOut.isHidden = true
             edit.isHidden = true
+            
         }
         else{
             logOut.isHidden = false
             edit.isHidden = false
+            user = appDelegate.user
         }
-        firebase.getAllPost(uid: Auth.auth().currentUser!.uid) { postRetrieve in
+        
+        
+        firebase.getAllPost(uid: user.uid) { postRetrieve in
             self.listOfPost = postRetrieve
             self.ProfileContent.reloadData()
         }

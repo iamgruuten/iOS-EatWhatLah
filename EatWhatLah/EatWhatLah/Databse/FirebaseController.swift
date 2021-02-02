@@ -212,14 +212,17 @@ class FirebaseController{
                             postObject.usersWhoLiked = likers;
                             postObject.likes = likers.count;
                             postObject.postID = key;
-                            postObject.postUser = self.appDelegate.user.name;
+                            self.getUserNameByUID(uid: useruid as! String){
+                                name in
+                                postObject.postUser = name
+                                print("Adding Key : " + key)
+                                listOfPosts.append(postObject)
+                                
+                                listOfPosts.sort(by: {$0.likes > $1.likes})
+                                
+                                completionHandler(listOfPosts)
+                            }
                             
-                            print("Adding Key : " + key)
-                            listOfPosts.append(postObject)
-                            
-                            listOfPosts.sort(by: {$0.likes > $1.likes})
-                            
-                            completionHandler(listOfPosts)
                         }
                         
                     }

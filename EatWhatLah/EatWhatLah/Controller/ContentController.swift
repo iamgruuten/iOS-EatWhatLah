@@ -24,6 +24,8 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupToHideKeyboardOnTapOnView()
+        
         ownerUsername.setTitle(post.postUser, for: .normal)
         commentTableView.register(CommentTableViewCell.nib(), forCellReuseIdentifier: CommentTableViewCell.identifier)
         
