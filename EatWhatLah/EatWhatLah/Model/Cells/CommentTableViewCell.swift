@@ -67,6 +67,7 @@ class CommentTableViewCell: UITableViewCell {
     
     public func configure(with comment:Comment, post:Post){
         commentLocal = comment
+        postLocal = post
         firebase.getUserDataByUID(uid: comment.commentor){userRetrieve in
             self.username.setTitle(userRetrieve.name, for: .normal)
         }
