@@ -18,7 +18,6 @@ class CommunityController:UIViewController{
     let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     let firebase:FirebaseController = FirebaseController()
     //data
-    var atfImages:[Post] = []
     var feedPost:[Post] = []
     
     override func viewDidLoad() {
@@ -29,8 +28,7 @@ class CommunityController:UIViewController{
         profilePicture.setBackgroundImage(appDelegate.user.profilePicture, for: .normal)
         
         firebase.getAllPost{postRetrieve in
-            self.feedPost = postRetrieve
-            self.atfImages = postRetrieve
+            self.feedPost = postRetrieve;
             self.feedTableView.reloadData()
         }
         
@@ -61,13 +59,18 @@ class CommunityController:UIViewController{
 //ATF Controller
 extension CommunityController:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        atfImages.count
+        if (feedPost.count > 10){
+            return 10
+        }
+        else{
+            return feedPost.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = atfCollectionView.dequeueReusableCell(withReuseIdentifier: ATFCollectionViewCell.identifier, for: indexPath) as! ATFCollectionViewCell
         
-        var atfList = atfImages
+        var atfList = feedPost
         atfList.sort(by: {$0.likes > $1.likes})
         if(indexPath.row < 10){
             cell.configure(with: atfList[indexPath.row])
