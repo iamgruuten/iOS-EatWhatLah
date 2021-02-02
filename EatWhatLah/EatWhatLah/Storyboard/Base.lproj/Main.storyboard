@@ -510,7 +510,7 @@
                                     <color key="titleShadowColor" systemColor="opaqueSeparatorColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="PdU-cP-wji" kind="show" id="0K6-80-tXW"/>
+                                    <action selector="profileOnClick:" destination="nsu-gz-uee" eventType="touchUpInside" id="lH0-fC-ylj"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyD-Ti-0wE">
@@ -802,16 +802,6 @@
                 </scrollView>
             </objects>
             <point key="canvasLocation" x="982.60869565217399" y="-1530.1339285714284"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="1zR-hE-vem">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="PdU-cP-wji" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="aou-dy-cwJ"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F3n-Mp-vQF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1562" y="-1738"/>
         </scene>
         <!--Venue Detail Controller-->
         <scene sceneID="Jtb-uN-cK7">

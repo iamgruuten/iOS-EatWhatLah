@@ -56,6 +56,14 @@ class ExploreController : UIViewController{
     
     @IBOutlet weak var rngFoodTextField: UITextField!
     
+    @IBAction func profileOnClick(_ sender: Any) {
+        let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let profileController = profileStoryboard.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+        profileController.modalPresentationStyle = .automatic
+
+        profileController.user = appDelegate.user
+        self.present(profileController, animated: true)
+    }
     
     override func viewDidLoad() {
         self.registerNib();
