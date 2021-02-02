@@ -54,12 +54,12 @@ class CommentTableViewCell: UITableViewCell {
     }
     @IBAction func likeButton(_ sender: Any) {
         if !(commentLocal.userWhoLiked.contains(appDelegate.user.uid)){
-            firebase.addLikesToComment(postID: postLocal.postID, likerUserUID: appDelegate.user.uid, postUserUID: postLocal.postUser, commentID: commentLocal.commentID)
+            firebase.addLikesToComment(postID: postLocal.postID, likerUserUID: appDelegate.user.uid, postUserUID: postLocal.postUserID, commentID: commentLocal.commentID)
             
             likeButton.setImage(UIImage(named: "heart.fill"), for: .normal)
         }
         else{
-            firebase.removeLikesFromComments(postID: postLocal.postID, likerUserUID: appDelegate.user.uid, postUserUID: postLocal.postUser, commentID: commentLocal.commentID)
+            firebase.removeLikesFromComments(postID: postLocal.postID, likerUserUID: appDelegate.user.uid, postUserUID: postLocal.postUserID, commentID: commentLocal.commentID)
             
             likeButton.setImage(UIImage(named: "heart"), for: .normal)
         }
@@ -67,7 +67,9 @@ class CommentTableViewCell: UITableViewCell {
     
     public func configure(with comment:Comment, post:Post){
         commentLocal = comment
-        username.setTitle(comment.commentor, for: .normal)
+        firebase.getUserDataByUID(uid: comment.commentor){userRetrieve in
+            self.username.setTitle(userRetrieve.name, for: .normal)
+        }
         userComment.text = comment.comment
         if (comment.userWhoLiked.contains(appDelegate.user.uid)){
             likeButton.setImage(UIImage(named: "heart.fill"), for: .normal)
