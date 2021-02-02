@@ -355,11 +355,7 @@ class EmailViewController : UIViewController, UINavigationControllerDelegate, CL
             let alert = UIAlertController(title: "Invalid Email", message: "Please Enter a valid email address", preferredStyle: UIAlertController.Style.alert)
             
             // add the actions (buttons)
-            alert.addAction(UIAlertAction(title: "Noted", style: UIAlertAction.Style.default, handler: { _ in
-                
-                self.dismiss(animated: true, completion: nil)
-                
-            }))
+            alert.addAction(UIAlertAction(title: "Noted", style: UIAlertAction.Style.default, handler: nil))
             
             // show the alert
             self.present(alert, animated: true, completion: nil)

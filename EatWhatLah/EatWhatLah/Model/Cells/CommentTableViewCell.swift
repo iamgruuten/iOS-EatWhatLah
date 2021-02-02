@@ -68,15 +68,20 @@ class CommentTableViewCell: UITableViewCell {
     public func configure(with comment:Comment, post:Post){
         commentLocal = comment
         postLocal = post
+        
         firebase.getUserDataByUID(uid: comment.commentor){userRetrieve in
             self.username.setTitle(userRetrieve.name, for: .normal)
         }
+        
         userComment.text = comment.comment
         if (comment.userWhoLiked.contains(appDelegate.user.uid)){
-            likeButton.setImage(UIImage(named: "heart.fill"), for: .normal)
+            comment.userWhoLiked.append(appDelegate.user.uid)
+            likeButton.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
+            
         }
         else{
-            likeButton.setImage(UIImage(named: "heart"), for: .normal)
+            comment.userWhoLiked.removeLast()
+            likeButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
         }
     }
     

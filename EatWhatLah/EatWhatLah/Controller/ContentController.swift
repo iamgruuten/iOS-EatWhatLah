@@ -36,10 +36,10 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
         commentTableView.dataSource = self
         
         if (post.usersWhoLiked.contains(appDelegate.user.uid)){
-            likeButton.setImage(UIImage(named: "heart.fill"), for: .normal)
+            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }
         else{
-            likeButton.setImage(UIImage(named: "heart"), for: .normal)
+            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
     }
     
@@ -93,12 +93,15 @@ class ContentController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBAction func likeButton(_ sender: Any) {
         if !(post.usersWhoLiked.contains(appDelegate.user.uid)){
             firebase.addLikeToPost(postID: post.postID, postUserUID: post.postUserID, likerUserUID: appDelegate.user.uid)
-            
-            likeButton.setImage(UIImage(named: "heart.fill"), for: .normal)
+            post.usersWhoLiked.append(appDelegate.user.uid)
+
+            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }else{
             firebase.removeLikesFromPost(postID: post.postID, postUserUID: post.postUserID, likerUserUID: appDelegate.user.uid)
+            post.usersWhoLiked.removeLast()
+
+            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
             
-            likeButton.setImage(UIImage(named: "heart"), for: .normal)
         }
     }
 }

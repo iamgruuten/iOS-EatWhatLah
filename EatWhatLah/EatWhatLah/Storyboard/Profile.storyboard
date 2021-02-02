@@ -206,12 +206,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-zB-iqC">
-                                <rect key="frame" x="356" y="581.5" width="34" height="30"/>
+                                <rect key="frame" x="356" y="580" width="34" height="32.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="34" id="E8N-CD-sQ9"/>
                                     <constraint firstAttribute="height" constant="32.5" id="Zog-ue-McK"/>
                                 </constraints>
-                                <state key="normal" title="LikeButton" backgroundImage="heart" catalog="system">
+                                <state key="normal" title="LikeButton">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -561,7 +561,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="location.circle" catalog="system" width="128" height="121"/>
         <image name="user" width="478.02398681640625" height="478.02398681640625"/>
         <systemColor name="labelColor">

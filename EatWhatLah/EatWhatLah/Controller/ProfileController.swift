@@ -65,7 +65,7 @@ class ProfileController: UIViewController{
         super.viewDidLoad()
         self.setupToHideKeyboardOnTapOnView()
 
-        if (user != nil){
+        if (user.uid != appDelegate.user.uid){
             logOut.isHidden = true
             edit.isHidden = true
             
