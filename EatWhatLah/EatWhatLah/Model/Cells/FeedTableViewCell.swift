@@ -14,7 +14,7 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet var username:UIButton!
     @IBOutlet var comUser:UILabel!
     @IBOutlet var topComment:UILabel!
-    
+        
     var lpost:Post!
     static let identifier = "FeedTableViewCell"
     let firebase = FirebaseController()
