@@ -18,7 +18,7 @@ class CommunityController:UIViewController{
     let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     let firebase:FirebaseController = FirebaseController()
     //data
-    let atfImages:[String] = ["Burgers","Burgers","Burgers"]
+    var atfImages:[Post] = []
     var feedPost:[Post] = []
     
     override func viewDidLoad() {
@@ -65,7 +65,12 @@ extension CommunityController:UICollectionViewDelegate,UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = atfCollectionView.dequeueReusableCell(withReuseIdentifier: ATFCollectionViewCell.identifier, for: indexPath) as! ATFCollectionViewCell
-        cell.configure(with: UIImage(named:atfImages[indexPath.row])!)
+        
+        var atfList = atfImages
+        atfList.sort(by: {$0.likes > $1.likes})
+        if(indexPath.row < 10){
+            cell.configure(with: atfList[indexPath.row])
+        }
         
         return cell
     }

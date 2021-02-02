@@ -22,6 +22,9 @@ class ProfileController: UIViewController{
     @IBOutlet weak var ProfileMobile: UILabel!
     
     @IBOutlet var biosTextView: UITextView!
+    
+    @IBOutlet var logOut:UIButton!
+    @IBOutlet var edit:UIButton!
     //let profile = ProfileModel.init()
     var user:User!
     var listOfPost:[Post] = []
@@ -45,6 +48,9 @@ class ProfileController: UIViewController{
     }
     //var pictures:[String] = ["Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers","Burgers"]
     
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     override func viewWillAppear(_ animated: Bool){
         
@@ -56,7 +62,14 @@ class ProfileController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if (user.uid != appDelegate.user.uid){
+            logOut.isHidden = true
+            edit.isHidden = true
+        }
+        else{
+            logOut.isHidden = false
+            edit.isHidden = false
+        }
         firebase.getAllPost(uid: Auth.auth().currentUser!.uid) { postRetrieve in
             self.listOfPost = postRetrieve
             self.ProfileContent.reloadData()

@@ -38,7 +38,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLa-tG-0kt">
-                                <rect key="frame" x="161" y="104" width="48" height="21"/>
+                                <rect key="frame" x="161" y="104" width="51" height="21"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Name">
                                         <attributes>
@@ -51,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNA-y1-K2n">
-                                <rect key="frame" x="161" y="135" width="29.5" height="14"/>
+                                <rect key="frame" x="161" y="135" width="32.5" height="14"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
@@ -74,7 +74,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jP2-dl-4j4">
-                                <rect key="frame" x="339" y="44" width="55" height="30"/>
+                                <rect key="frame" x="336" y="44" width="58" height="30"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Log Out">
@@ -90,7 +90,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YNL-X1-f5n">
-                                <rect key="frame" x="158" y="158" width="243" height="101"/>
+                                <rect key="frame" x="158" y="157.5" width="243" height="101.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Bios">
@@ -117,6 +117,22 @@
                                 </state>
                                 <connections>
                                     <segue destination="lyY-mT-8hV" kind="show" id="yWP-o0-FwY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2kN-vW-eTY">
+                                <rect key="frame" x="28" y="44" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="&lt; Back">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="SFProText-Semibold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="lc5-MR-d1r" eventType="touchUpInside" id="rQC-x2-Mj9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -152,6 +168,8 @@
                         <outlet property="ProfileMobile" destination="WNA-y1-K2n" id="VRU-Xn-rDC"/>
                         <outlet property="ProfileName" destination="pLa-tG-0kt" id="nWM-Ii-W8N"/>
                         <outlet property="biosTextView" destination="YNL-X1-f5n" id="sx4-8j-rpJ"/>
+                        <outlet property="edit" destination="oNW-3H-udh" id="NSD-sD-wah"/>
+                        <outlet property="logOut" destination="jP2-dl-4j4" id="yFE-rt-cq2"/>
                         <outlet property="profilePicture" destination="Jfw-If-SB6" id="0pF-NU-b2R"/>
                     </connections>
                 </viewController>

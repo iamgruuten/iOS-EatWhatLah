@@ -10,7 +10,7 @@ import UIKit
 class ATFCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var contentImage:UIImageView!
-    
+    var postLocal:Post!
     static let identifier = "ATFCollectionViewCell"
     
     override func awakeFromNib() {
@@ -18,8 +18,9 @@ class ATFCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    public func configure(with image: UIImage){
-        contentImage.image = image
+    public func configure(with post:Post){
+        postLocal = post
+        contentImage.image = post.postImage
     }
     
     static func nib() -> UINib{
