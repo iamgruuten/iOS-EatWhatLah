@@ -8,6 +8,7 @@
 import UIKit
 import CoreLocation
 import MapKit
+import WidgetKit
 
 protocol updateFavouriteDelegate {
     func didSendMessage(_ cookie: String)
@@ -59,43 +60,7 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         
     }(CLLocationManager())
     
-    
-    @IBAction func backOnClick(_ sender: Any) {
-        updateFavDelegate?.didSendMessage("Updated");
-
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    //Redirects user to map to navigate to the area
-    @IBAction func exploreOnClick(_ sender: Any) {
-        
-        //Open in map for directions
-        
-        let lat1 : NSString = String((appDelegate.selectedPlace?.geometry?.location?.lat)!) as NSString
-        let lng1 : NSString = String((appDelegate.selectedPlace?.geometry?.location?.lng)!) as NSString
-        
-        let latitude:CLLocationDegrees =  lat1.doubleValue
-        let longitude:CLLocationDegrees =  lng1.doubleValue
-        
-        let regionDistance:CLLocationDistance = 10000
-        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
-        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
-        let options = [
-            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
-            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
-        ]
-        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
-        let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = "\(appDelegate.selectedPlace?.name ?? "Pinned Location")"
-        mapItem.openInMaps(launchOptions: options)
-        
-        
-    }
-    
-    @IBAction func favouriteButton(_ sender: Any) {
-        
-    }
-    
+  
     override func viewDidLoad() {
         let place = appDelegate.selectedPlace;
         
@@ -248,6 +213,51 @@ class VenueDetailController:ViewController, MKMapViewDelegate{
         task.resume()
         
     }
+    
+    //MARK - ACTIONS
+    
+    @IBAction func backOnClick(_ sender: Any) {
+        updateFavDelegate?.didSendMessage("Updated");
+
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    //Redirects user to map to navigate to the area
+    @IBAction func exploreOnClick(_ sender: Any) {
+        
+        let userDefaults = UserDefaults(suiteName: "group.widgetdatapass")
+        
+        guard let venueName = appDelegate.selectedPlace?.name, !venueName.isEmpty else{
+            return
+        }
+        
+        userDefaults?.setValue(venueName, forKey: "venue")
+        WidgetCenter.shared.reloadAllTimelines()
+        
+        //Open in map for directions
+        
+        let lat1 : NSString = String((appDelegate.selectedPlace?.geometry?.location?.lat)!) as NSString
+        let lng1 : NSString = String((appDelegate.selectedPlace?.geometry?.location?.lng)!) as NSString
+        
+        let latitude:CLLocationDegrees =  lat1.doubleValue
+        let longitude:CLLocationDegrees =  lng1.doubleValue
+        
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "\(appDelegate.selectedPlace?.name ?? "Pinned Location")"
+        mapItem.openInMaps(launchOptions: options)
+        
+        
+    }
+    
+    
     
     @IBAction func addOnClick(_ sender: Any) {
         //Add to firebase

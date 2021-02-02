@@ -979,7 +979,6 @@
                                         </state>
                                         <connections>
                                             <action selector="addOnClick:" destination="W3P-DU-1Zd" eventType="touchUpInside" id="Irt-NC-1VM"/>
-                                            <action selector="favouriteButton:" destination="W3P-DU-1Zd" eventType="touchUpInside" id="DDl-0p-K86"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Tk6-zV-Aqh">

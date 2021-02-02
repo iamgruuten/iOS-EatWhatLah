@@ -176,6 +176,8 @@
 		18848CD625C88CDB007183E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18848CD825C88CDB007183E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18848CFA25C8A968007183E2 /* editProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProfileController.swift; sourceTree = "<group>"; };
+		18848CFE25C97580007183E2 /* EatWhatLah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EatWhatLah.entitlements; sourceTree = "<group>"; };
+		18848D0125C97584007183E2 /* EatWhatLahWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EatWhatLahWidgetExtension.entitlements; sourceTree = "<group>"; };
 		188D6F3525BA5FBC00061EEB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		188D6F5525BC025C00061EEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18F8A0A925B8802500BF41C9 /* EatWhatLah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatWhatLah.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -364,6 +366,7 @@
 		18F8A0A025B8802500BF41C9 = {
 			isa = PBXGroup;
 			children = (
+				18848D0125C97584007183E2 /* EatWhatLahWidgetExtension.entitlements */,
 				184EB1FA25C066470098103A /* GoogleService-Info.plist */,
 				18F8A0C725B88D0A00BF41C9 /* fonts */,
 				18F8A0AB25B8802500BF41C9 /* EatWhatLah */,
@@ -386,6 +389,7 @@
 		18F8A0AB25B8802500BF41C9 /* EatWhatLah */ = {
 			isa = PBXGroup;
 			children = (
+				18848CFE25C97580007183E2 /* EatWhatLah.entitlements */,
 				18449E1825C2B4B400A07780 /* Extensions */,
 				188D6F5825BC0F0900061EEB /* Databse */,
 				188D6F3E25BBB52C00061EEB /* Delegate */,
@@ -717,6 +721,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EatWhatLahWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 956353D6VP;
 				INFOPLIST_FILE = EatWhatLahWidget/Info.plist;
@@ -738,6 +743,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EatWhatLahWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 956353D6VP;
 				INFOPLIST_FILE = EatWhatLahWidget/Info.plist;
@@ -877,6 +883,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EatWhatLah/EatWhatLah.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 956353D6VP;
 				INFOPLIST_FILE = EatWhatLah/Info.plist;
@@ -898,6 +905,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EatWhatLah/EatWhatLah.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 956353D6VP;
 				INFOPLIST_FILE = EatWhatLah/Info.plist;
