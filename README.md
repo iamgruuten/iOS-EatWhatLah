@@ -16,4 +16,4 @@ pod install
 Usage
 open iOS-EatWhatLah.xcworkspace/
 
-##Only run this project on a real iPhone device
+## Only run this project on a real iPhone device
